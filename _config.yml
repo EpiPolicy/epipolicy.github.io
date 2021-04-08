@@ -1,1 +1,46 @@
-theme: jekyll-theme-cayman
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: EpiPolicy
+# email: your-email@example.com
+# description: >- # this means to ignore newlines until "baseurl:"
+#   EpiPolicy is a population-based epidemic simulator and policy aid 
+#   that allows users to customize its compartmental model to capture 
+#   different epidemic scenarios for epidemics like COVID-19. 
+#   Its user interface makes it easy to define various interventions 
+#   such as social distancing, school closure, vaccination, 
+#   and disease-specific interventions. EpiPolicy aids policy 
+#   makers by simulating and constructing locale-specific intervention 
+#   schedules that reduce disease burden, and minimize social and 
+#   economic costs.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  EpiPolicy
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

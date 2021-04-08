@@ -1,3 +1,9 @@
+---
+layout: page
+title: State Data
+permalink: /state-data/
+---
+
 # State data
 A typical Epipolicy compartmental model will have <code>c</code> compartments, <code>p</code> parameters. These parameters include all the transition rates such as incubation rate, transmission rate as well as epidemiological parameters such as probability of death, probability of developing symptoms.
 

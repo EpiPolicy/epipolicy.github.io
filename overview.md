@@ -1,3 +1,9 @@
+---
+layout: page
+title: Overview
+permalink: /overview/
+---
+
 # Overview of the model
 In summary, Epipolicy compartmental model involves the compartmental model itself with human mobility between locales and human interaction within facilities of a locale. It further makes a distinction of the transition rates in the compartmental model when looking at different population groups.
 #### Terminologies:
