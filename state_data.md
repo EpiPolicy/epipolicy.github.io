@@ -13,9 +13,10 @@ Furthermore, the model will have <code>l</code> locales, <code>f</code> faciliti
 
 State matrix <code>S</code> has <code>c x l x g</code> entries where <code>S[c<sub>1</sub>, l<sub>1</sub>, g<sub>1</sub>]</code> is the current population of group <code>g<sub>1</sub></code> of locale <code>l<sub>1</sub></code> in compartment <code>c<sub>1</sub></code>
 
+
 ##### Requirements:
 
-- $$ S[c_1, l_1, g_1] \geq 0 $$
+- <div class="left-formula">$$ S[c_1, l_1, g_1] \geq 0 $$</div>
 
 ### 2. Locale matrix
 
@@ -23,8 +24,10 @@ Locale matrix <code>L</code> has <code>g x l x l</code> entries where <code>L[g<
 
 ##### Requirements:
 
+<div class="left-formula" markdown="1">
 - $$ L[g_1, l_1, l_2] \in [0, 1] $$
 - $$ \sum_{l_2=0}^{l-1} L[g_1, l_1, l_2] = 1 $$
+</div>
 
 The second requirement implies that whenever an entry is changed, other entries are normalized so that their sum remains 1. For example, children spend 40% at household, 35% at school, 25% at public space. A school closure policy implies that their time at school is 0%. By normalizing other entries, children now spend $\frac{0.4}{0.4+0.25} \approx 61.5%$ at household and $\frac{0.25}{0.4+0.25} \approx 38.5%$.
 
@@ -34,8 +37,10 @@ Facility matrix <code>F</code> has <code>l x f x g</code> entries where <code>F[
 
 ##### Requirements:
 
+<div class="left-formula" markdown="1">
 - $$ F[l_1, f_1, g_1] \in [0, 1] $$
 - $$ \sum_{f_1=0}^{f-1} F[l_1, f_1, g_1] = 1 $$
+</div>
 
 ### 4. Contact matrix
 

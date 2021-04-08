@@ -3,3 +3,9 @@
 ---
 
 @import "minima";
+
+.left-formula {
+    .MathJax {
+        text-align: left !important;
+    }
+}
