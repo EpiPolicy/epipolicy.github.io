@@ -43,3 +43,12 @@ Contact matrix <code>C</code> has <code>l x f x g x g</code> entries where <code
 The second requirement implies that even though the total percentage of time interacting with other groups can be 100%, not all of that will be effective for disease transmission. For example, considering household as a relatively small network of interaction compared to public space. This implies that interactions in household are less likely to be transmissive all the time.
 
 To guarantee the the second requirement, the same normalization is applied when the sum of interactions is greater than 1
+
+### 5. Parameter matrix
+
+Parameter matrix <code>P</code> has <code>p x l x f x g</code> entries where <code>P[p<sub>1</sub>, l<sub>1</sub>, f<sub>1</sub>, g<sub>1</sub>]</code> is the parameter <code>p<sub>1</sub></code> applied in facility <code>f<sub>1</sub></code> of locale <code>l<sub>1</sub></code> to group <code>g<sub>1</sub></code>
+
+Examples include:
+- Parameters can vary in different locales such as transmission rate in locales with different population density.
+- Parameters can vary in different facilities such as household and public space when mask is required. In other words, mask is wore in public space but not in household.
+- Parameters can vary in different groups such as probability of developing symptoms where seniors are more likely than adults.
