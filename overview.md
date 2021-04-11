@@ -4,7 +4,7 @@ title: Overview
 permalink: /overview/
 ---
 
-In summary, Epipolicy compartmental model involves the compartmental model itself with human mobility between locales and human interaction within facilities of a locale. It further makes a distinction of the transition rates in the compartmental model when looking at different population groups.
+In summary, **Epipolicy** compartmental model involves the compartmental model itself with human mobility between locales and human interaction within facilities of a locale. It further makes a distinction of the transition rates in the compartmental model when looking at different population groups.
 #### Terminologies:
 - **Locale**: a geographical location or an administrative area that we would like our population to reside and travel between. Locales can be fine-grained as a city/province or can be coarse-grained as a country.
 - **Facility**: a location within a locale that our population will spend time interacting with other population. Typical facilities are household, workplace, school, community space, etc.
