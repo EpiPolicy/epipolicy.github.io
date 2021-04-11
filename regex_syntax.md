@@ -1,3 +1,9 @@
+---
+layout: page
+title: Regex Syntax
+permalink: /regex-syntax/
+---
+
 # Regex syntax
 
 ### 1. Locale regex
