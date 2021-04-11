@@ -5,3 +5,11 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 Markdown is used to build the pages. For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 Check out the [documentation](https://docs.github.com/categories/github-pages-basics/) for more information about GitHub Pages.
+
+## Serve website in your computer for development
+
+Run with:
+
+    ./run_server.sh
+
+In order to have that working you need [jekyll installed](https://jekyllrb.com/docs/installation/)
