@@ -4,3 +4,7 @@ _site
 .jekyll-metadata
 vendor
 .DS_Store
+.yarn-integrity
+Gemfile.lock
+lib/.yarn-integrity
+.gitignore

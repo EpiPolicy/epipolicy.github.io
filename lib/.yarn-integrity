@@ -1,0 +1,18 @@
+{
+  "systemParams": "darwin-x64-88",
+  "modulesFolders": [
+    "lib"
+  ],
+  "flags": [],
+  "linkedModules": [],
+  "topLevelPatterns": [
+    "bootstrap@^5.0.0-beta3",
+    "jquery@^3.6.0"
+  ],
+  "lockfileEntries": {
+    "bootstrap@^5.0.0-beta3": "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.0.0-beta3.tgz#c959f61fbd03667a1b158f763856994859d7a465",
+    "jquery@^3.6.0": "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
+  },
+  "files": [],
+  "artifacts": {}
+}
