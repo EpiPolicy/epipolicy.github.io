@@ -23,5 +23,30 @@
         "name": "Intervention",
         "url": "/intervention",
         "markdown-file": "intervention_overview.md"
+    },
+    {
+        "name": "Facilities",
+        "url": "/facilities",
+        "markdown-file": "facilities.md"
+    },
+    {
+        "name": "Schedule",
+        "url": "/schedule",
+        "markdown-file": "schedule.md"
+    },
+    {
+        "name": "Initialize",
+        "url": "/initialize",
+        "markdown-file": "initialize.md"
+    },
+    {
+        "name": "Results",
+        "url": "/results",
+        "markdown-file": "results.md"
+    },
+    {
+        "name": "Compare",
+        "url": "/compare",
+        "markdown-file": "compare.md"
     }
 ]
