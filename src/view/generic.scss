@@ -1,0 +1,72 @@
+@import "variables";
+
+body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  height: 100%;
+}
+
+// Scrollbars
+::-webkit-scrollbar {
+  width: $scrollbar-size;
+  height: $scrollbar-size;
+  margin: $scrollbar-margin;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+//Buttons
+.btn {
+  background: $action-color;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 5px #fafafa;
+
+  &:hover {
+    cursor: pointer;
+    color: white;
+    background: lighten($action-color, 10%);
+  }
+
+  &.btn-xs {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    padding: $btn-padding-y-sm / 4 $btn-padding-x-sm / 2;
+  }
+
+  &.btn-xxs {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+    padding: $btn-padding-y-sm / 4 $btn-padding-x-sm / 2;
+  }
+}
+
+// Panel
+.crest-panel {
+  border: 1px solid gray;
+  background: #fff;
+  border-radius: 5px;
+  padding: $md-margin;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}

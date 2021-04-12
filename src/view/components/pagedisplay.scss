@@ -1,0 +1,12 @@
+@import "../variables";
+
+#page-display {
+  padding: $lg-margin;
+
+  #page-content {
+    .latex {
+      display: inline-block;
+    }
+  }
+
+}

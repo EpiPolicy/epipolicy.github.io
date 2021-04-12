@@ -1,15 +1,20 @@
-## EpiPolicy Website Repository
+## EpiPolicy Documentation Website
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### `yarn start`
 
-Markdown is used to build the pages. For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Check out the [documentation](https://docs.github.com/categories/github-pages-basics/) for more information about GitHub Pages.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## Serve website in your computer for development
+### `yarn build`
 
-Run with:
+Builds the app for production to the `docs` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-    ./run_server.sh
+The build is minified and the filenames include the hashes.
 
-In order to have that working you need [jekyll installed](https://jekyllrb.com/docs/installation/)
+### `yarn deploy`
+
+To deploy the website to GitHub Pages

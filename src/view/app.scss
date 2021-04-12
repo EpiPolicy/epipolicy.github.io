@@ -1,0 +1,40 @@
+@import 'variables';
+
+@import '~bootstrap/scss/bootstrap';
+
+$fa-font-path: "~font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome';
+
+@import 'generic';
+
+#root {
+  height: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  font-weight: 200;
+
+  #app {
+    height: 100%;
+
+    .container-fluid {
+      height: 100%;
+
+      .row {
+        height: 100%;
+      }
+    }
+  }
+
+  #sidebar-container {
+    background-color: $panel-background;
+    padding: 0;
+  }
+
+  #main-panel-container {
+    background-color: $background-color;
+    padding: $lg-margin;
+  }
+
+}

@@ -1,0 +1,15 @@
+@import "../variables";
+
+#sidebar {
+  position: fixed;
+  height: 100%;
+  padding: $lg-margin;
+
+  .menu-item {
+    cursor: pointer;
+    &.active {
+      font-weight: bold;
+    }
+  }
+
+}
