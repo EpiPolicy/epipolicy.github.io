@@ -37,7 +37,7 @@
     {
         "name": "Initialize",
         "url": "/initialize",
-        "markdown-file": "initialize.md"
+        "markdown-file": "intialize_simulation.md"
     },
     {
         "name": "Results",
