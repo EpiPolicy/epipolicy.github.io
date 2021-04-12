@@ -13,7 +13,7 @@ Furthermore, the model will have $$l$$ locales, $$f$$ facilities, $$g$$ groups.
 State matrix $$S$$ has $$c \times l \times g$$ entries where $$S[c_1, l_1, g_1]$$ is the current population of group $$g_1$$ of locale $$l_1$$ in compartment $$c_1$$
 
 
-##### Requirements:
+#### Requirements:
 
 - <div class="left-formula">$$ S[c_1, l_1, g_1] \geq 0 $$</div>
 
@@ -21,7 +21,7 @@ State matrix $$S$$ has $$c \times l \times g$$ entries where $$S[c_1, l_1, g_1]$
 
 Locale matrix $$L$$ has $$g \times l \times l$$ entries where $$L[g_1, l_1, l_2]$$ is the percentage of time the group $$g_1$$ of locale $$l_1$$ will spend in locale $$l_2$$ due to human mobility
 
-##### Requirements:
+#### Requirements:
 
 <div class="left-formula" markdown="1">
 - $$ L[g_1, l_1, l_2] \in [0, 1] $$
@@ -34,7 +34,7 @@ The second requirement implies that whenever an entry is changed, other entries 
 
 Facility matrix $$F$$ has $$l \times f \times g$$ entries where $$F[l_1, f_1, g_1]$$ is the percentage of time the group $$g_1$$ in locale $$l_1$$ will spend in its facility $$f_1$$
 
-##### Requirements:
+#### Requirements:
 
 <div class="left-formula" markdown="1">
 - $$ F[l_1, f_1, g_1] \in [0, 1] $$
@@ -45,7 +45,7 @@ Facility matrix $$F$$ has $$l \times f \times g$$ entries where $$F[l_1, f_1, g_
 
 Contact matrix $$C$$ has $$l \times f \times g \times g$$ entries where $$C[l_1, f_1, g_1, g_2]$$ is the percentage of time the group $$g_1$$ in facility $$f_1$$ of locale $$l_1$$ will interacting with group $$g_2$$ in an effective disease-transmissive manner.
 
-##### Requirements:
+#### Requirements:
 
 <div class="left-formula" markdown="1">
 - $$ C[l_1, f_1, g_1, g_2] \in [0, 1] $$

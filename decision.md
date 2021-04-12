@@ -27,7 +27,7 @@ This approach does not require to have exact dimensional format. It instead assu
 
 In a sense, loose signature is an additional feature to strict signature to simplify some of the common expressions. However, we need to define required signature in each of the matrix so that we can identify which matrix this selector is referring to.
 
-#### Proposal:
+#### Required-signature for Loose Signature Approach:
 Required signature for each matrix:
 - State matrix: requires compartment regex
 <pre>{'compartment':'*'}</pre>
@@ -133,7 +133,7 @@ for group in groups:
   result = sim.select({'compartment':'S', 'locale':'UAE.AbuDhabi', 'group':group})</code></pre>
 
 However, users still have to manually enter the list of groups. We can compensate this by providing special selectors:
-<pre>groups = sim.select({'list':'groups'})</pre>
+<pre>groups = sim.select({'attribute':'groups'})</pre>
 
 ### 4. Implicit vs Explicit control parameter
 
@@ -174,7 +174,7 @@ Required UI:
 <pre><code>def effect(control_parameters):
     administration_rate = control_parameters['administration_rate']
     capacity = control_parameters['capacity']
-    locales = sim.select({'list':'locales'})
+    locales = sim.select({'attribute':'locales'})
     for i, locale in enumerate(locales):
       sim.move({'compartment':'S', 'locale':locale},
               {'compartment':'V', 'locale':locale},
@@ -202,3 +202,9 @@ We still want to maintain the sum of 300. However, the partition number depends 
 #### If not, then how do we know which control parameters should be shown in the schedule?
 
 #### There seems to be two types of control parameters: an influential type and a constant type. In the above example, administration_rate is an influential type since its affect the capacities in all locales while capacity is a constant type.
+
+### 8.Schedule/Intervention regex
+
+<pre>sim.select({'intervention':'vaccination', <br>'control_parameters':'administration_rate'})</pre>
+
+<pre>sim.select({'attribute':'current_day'})</pre>

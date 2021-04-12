@@ -48,7 +48,7 @@ Examples:
 - All groups:
 <pre>{'group':'*'}</pre>
 - All groups that are not children:
-<pre>{'group':'~Children'</pre>
+<pre>{'group':'~Children'}</pre>
 
 ### 4. Facility regex
 Examples:
