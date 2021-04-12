@@ -1,7 +1,7 @@
 import { makeObservable, observable, computed, action } from 'mobx';
 import pages_config from "../pages.json";
 import axios from 'axios';
-import showdown from 'showdown';
+import marked from 'marked';
 
 class Model {
   pages = pages_config;
@@ -16,16 +16,21 @@ class Model {
   }
 
   latexReplace(text) {
-    return text.replace(/<div class="latex">(.*?)<\/div>/g, 
-      (match, p1) => '<div class="latex">$$' + p1 + '$$</div>');
+    text = text.replace(/<latex>(.*?)<\/latex>/g, 
+      (match, p1) => '<div class="latex">$' + p1 + '$</div>');
+    text = text.replace(/<latex-line>(.*?)<\/latex-line>/g, 
+      (match, p1) => '<div class="latex latex-line>$$' + p1 + '$$</div>');
+    text = text.replace(/<latex-line-left>(.*?)<\/latex-line-left>/g, 
+      (match, p1) => '<div class="latex latex-line latex-line-left">$$' + p1 + '$$</div>');
+    return text;
   }
 
   loadMarkdownFilePage() {
-    const converter = new showdown.Converter();
+    // const converter = new showdown.Converter();
     axios.get('pages/' + this.activePage['markdown-file'])
       .then(response => {
-        this.activePageContent = converter.makeHtml(response.data);
-        this.activePageContent = this.latexReplace(this.activePageContent);
+        // this.activePageContent = converter.makeHtml(response.data);
+        this.activePageContent = this.latexReplace(marked(response.data));
       })
       .catch(err => {
         this.activePageContent = "Error: " + err;

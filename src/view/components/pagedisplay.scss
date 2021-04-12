@@ -7,6 +7,15 @@
     .latex {
       display: inline-block;
     }
+    .latex-line {
+      display: block;
+    }
+    .latex-line-left {
+      display: block;
+      .MathJax {
+        text-align: left;
+      }
+    }
   }
 
 }
