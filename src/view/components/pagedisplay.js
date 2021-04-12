@@ -12,6 +12,10 @@ class PageDisplay extends React.Component {
   }
 
   render() {
+    if (!this.model.activePage) {
+      return null;
+    }
+
     return (
       <div id="page-display">
         <h2>{this.model.activePage.name}</h2>
