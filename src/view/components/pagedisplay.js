@@ -2,7 +2,6 @@ import React from 'react';
 import { observer } from 'mobx-react';
 import './pagedisplay.scss';
 import axios from 'axios';
-// import {parseMath, M} from 'jqmath';
 
 class PageDisplay extends React.Component {
 
@@ -30,12 +29,10 @@ class PageDisplay extends React.Component {
 
   componendDidMount() {
     setTimeout(() => { window.MathJax.typeset(); }, 100);
-    // setTimeout(() => {parseMath(document.body)}, 100);
   }
 
   componentDidUpdate() {
     setTimeout(() => { window.MathJax.typeset(); }, 100);
-    // setTimeout(() => {parseMath(document.body)}, 100);
   }
 
 }
