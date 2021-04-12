@@ -1,9 +1,3 @@
----
-layout: page
-title: Decision
-permalink: /decision/
----
-
 ### 1. Strict signature vs loose signature
 
 All matrices in Epipolicy has unique signature in their dimensions:

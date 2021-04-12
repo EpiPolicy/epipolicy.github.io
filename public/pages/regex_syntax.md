@@ -1,9 +1,3 @@
----
-layout: page
-title: Regex Syntax
-permalink: /regex-syntax/
----
-
 ### 1. Locale regex
 
 A typical locale hierarchy in **Epipolicy** can be identified in multiple levels of administration. For example, consider a 3-level hierarchy: country, state, county in the US. To identify Bronx county of New York state, the following regex is used:

@@ -13,5 +13,15 @@
         "name": "Regex Syntax",
         "url": "/regex-syntax",
         "markdown-file": "regex_syntax.md"
+    },
+    {
+        "name": "Decision",
+        "url": "/decision",
+        "markdown-file": "decision.md"
+    },
+    {
+        "name": "Intervention",
+        "url": "/intervention",
+        "markdown-file": "intervention_overview.md"
     }
 ]
