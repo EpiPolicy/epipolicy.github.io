@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Mon Apr 12 2021 10:08:59 GMT+0400 (Gulf Standard Time)
+------------------------------------------------------
+
+Modified files:
+* .DS_Store
+
+
+Created files:
+* .autogit/autogit.json
+
+
+Deleted files:
+
+
+Renamed files:
