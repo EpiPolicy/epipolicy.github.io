@@ -10,3 +10,4 @@ lib/.yarn-integrity
 .gitignore
 node_modules
 yarn-error.log
+public/private-pages/*.md
