@@ -57,6 +57,7 @@
     {
         "name": "Decision",
         "url": "/decision",
+        "protected": true,
         "markdown-file": "decision.md"
     },
     {
