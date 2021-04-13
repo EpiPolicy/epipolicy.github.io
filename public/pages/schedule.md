@@ -15,7 +15,7 @@ In order to define the schedule of an intervention, you can click on its name in
 
 1. Click the **+** button at the top-right of the table to define a new iteration. 
 2. To delete an iteration, click the **x** button in the last cell of the row of the iteration you want to delete. 
-3. To repeat an iteration periodically, click on the options button in the last cell of the row of the iteration you want to repeat. You can repeat interventions on a daily, weekly, monthly or annual basis.
+3. To [repeat](/assets/schedule-qa.png)  an iteration periodically, click on the options button in the last cell of the row of the iteration you want to repeat. You can repeat interventions on a daily, weekly, monthly or annual basis.
 
 
 
