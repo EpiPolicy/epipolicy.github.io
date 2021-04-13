@@ -51,6 +51,11 @@
                 "name": "Compare",
                 "url": "compare",
                 "markdown-file": "compare.md"
+            },
+            {
+                "name": "References",
+                "url": "references",
+                "markdown-file": "references.md"
             }
         ]
     },
