@@ -54,5 +54,10 @@
         "url": "/privatedoc",
         "protected": true,
         "markdown-file": "privatedoc.pmd"
+    },
+    {
+        "name": "HTML Page",
+        "url": "/htmlpage",
+        "html-file": "htmlpage.html"
     }
 ]
