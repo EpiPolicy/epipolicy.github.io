@@ -10,11 +10,10 @@ fs.readFile(filename + '.md', function (err, data) {
     let encryptedString = encrypted.toString();
     // console.log('encrypted.toString()\n', encryptedString, '\n');
     
-    let decrypted = CryptoJS.AES.decrypt(encryptedString, password);
-    let decryptedString = decrypted.toString(CryptoJS.enc.Utf8);
-    // console.log('decrypted.toString()\n', decryptedString), '\n'
+    // let decrypted = CryptoJS.AES.decrypt(encryptedString, password);
+    // console.log('decrypted.toString()\n', decrypted.toString(CryptoJS.enc.Utf8)), '\n'
 
-    let buff = Buffer.from(encrypted.toString());
+    let buff = Buffer.from(encryptedString);
     fs.writeFile(filename + '.pmd', buff, (err, res) => {
         if (err) console.error(err);
     });
