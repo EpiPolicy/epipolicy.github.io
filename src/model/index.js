@@ -29,25 +29,42 @@ class Model {
     return text;
   }
 
+  generateErrorPage(errMsg) {
+    return '<div className="error">' + errMsg +'</div>';
+  } 
+
   loadMarkdownFilePage() {
-    // const converter = new showdown.Converter();
-    axios.get('pages/' + this.activePage['markdown-file'])
+    let urlRoot = this.activePage.protected ? 'private-pages/' : 'pages/';
+    axios.get(urlRoot + this.activePage['markdown-file'])
       .then(response => {
-        // this.activePageContent = converter.makeHtml(response.data);
-        this.activePageContent = this.latexReplace(marked(response.data));
+        let data = response.data;
+        if (this.activePage.protected) {
+          if (this.loginInfo) {
+            try {
+              let decrypted = CryptoJS.AES.decrypt(response.data, this.loginInfo.password);
+              data = decrypted.toString(CryptoJS.enc.Utf8);
+              console.log(data)
+            } catch (err) {
+              this.activePageContent = this.generateErrorPage(err);
+            }
+          } else {
+            this.activePageContent = this.generateErrorPage('Login needed in order to decrypt this file');
+          }
+        }
+        this.activePageContent = this.latexReplace(marked(data));
       })
       .catch(err => {
-        this.activePageContent = "Error: " + err;
+        this.activePageContent = this.generateErrorPage(err);
       });
   }
 
   loadHTMLFilePage() {
-    axios.get('pages/' + this.activePage['markdown-file'])
+    axios.get('html-pages/' + this.activePage['html-file'])
       .then(response => {
         this.activePageContent = response.data;
       })
       .catch(err => {
-        this.activePageContent = "Error: " + err;
+        this.activePageContent = err;
       });
   }
 

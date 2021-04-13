@@ -12,18 +12,6 @@ class Sidebar extends React.Component {
     };
   }
 
-  renderMenuItem(page) {
-    const path = window.location.pathname;
-
-    return <div 
-      key={page.url}
-      className={'menu-item' + (page.active ? ' active' : '')}
-      onClick={() => this.goTo(page)}
-      >
-        {page.name}
-    </div>; 
-  }
-
   renderLoginBox() {
     if (this.model.loginInfo) {
       return <div className="login-box" onClick={() => this.model.logOut()}>
@@ -59,11 +47,29 @@ class Sidebar extends React.Component {
     })
   }
 
+  renderMenuItem(page) {
+    const path = window.location.pathname;
+
+    return <div 
+      key={page.url}
+      className={'menu-item' + (page.active ? ' active' : '')}
+      onClick={() => this.goTo(page)}
+      >
+        {page.name}
+    </div>; 
+  }
+  
   render() {
+    let pages = null;
+    if (this.model.loginInfo) {
+      pages = this.model.pages;
+    } else {
+      pages = this.model.pages.filter(p => !p.protected)
+    }
     return (
       <div id="sidebar">
         <h1 onClick={() => window.MathJax.typeset() }>EpiPolicy</h1>
-        {this.model.pages.map(p => this.renderMenuItem(p))}
+        {pages.map(p => this.renderMenuItem(p))}
         {this.renderLoginBox()}
       </div>
     );
