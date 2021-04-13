@@ -12,4 +12,16 @@
     }
   }
 
+  .login-box {
+    position: absolute;
+    bottom: $lg-margin;
+    cursor: pointer;
+
+    .login-error {
+      width: 100%;
+      text-align: right;
+      color: red;
+    }
+  }
+
 }

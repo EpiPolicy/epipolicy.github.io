@@ -48,5 +48,16 @@
         "name": "Compare",
         "url": "/compare",
         "markdown-file": "compare.md"
+    },
+    {
+        "name": "Private Doc",
+        "url": "/privatedoc",
+        "protected": true,
+        "markdown-file": "privatedoc.pmd"
+    },
+    {
+        "name": "HTML Page",
+        "url": "/htmlpage",
+        "html-file": "htmlpage.html"
     }
 ]
