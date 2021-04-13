@@ -13,9 +13,18 @@ class Model {
 
   checkPagesActivation() {
     const path = window.location.pathname;
-    for (let page of this.pages) {
+    let checkPagesFn = pages => {
+      for (let page of pages) {  
+        checkFn(page);
+      }
+    }
+    let checkFn = page => {
+      if (page.children) {
+        checkPagesFn(page.children);
+      }
       page.active = path === page.url;
     }
+    checkPagesFn(this.pages);
     this.loadActivePage();
   }
 
@@ -69,6 +78,7 @@ class Model {
   }
 
   loadActivePage() {
+    console.log('loadActivePage', this.activePage)
     if (!this.activePage) {
       return;
     } else if (this.activePage['markdown-file']) {
@@ -79,12 +89,23 @@ class Model {
   }
 
   get activePage() {
-    for (let page of this.pages) {
-      if (page.active) {
-        return page;
+    let getActivePageFromPagesFn = pages => {
+      for (let page of pages) {
+        let activePage = getActivePageFromPageFn(page);
+        if (activePage) return activePage;
       }
     }
-    return null;
+    let getActivePageFromPageFn = page => {
+      console.log('checking... ', page.name)
+      if (page.children) {
+        return getActivePageFromPagesFn(page.children);
+      }
+      if (page.active) return page;
+    }
+
+    let activePage = getActivePageFromPagesFn(this.pages);
+    console.log('activePage', activePage)
+    return activePage;
   }
 
   logIn(password) {

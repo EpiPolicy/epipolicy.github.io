@@ -1,53 +1,63 @@
 [
     {
-        "name": "Overview",
-        "url": "/overview",
-        "markdown-file": "overview.md"
+        "name": "Introduction",
+        "children": [
+            {
+                "name": "Overview",
+                "url": "/overview",
+                "markdown-file": "overview.md"
+            },
+            {
+                "name": "State Data",
+                "url": "/state-data",
+                "markdown-file": "state_data.md"
+            },
+            {
+                "name": "Regex Syntax",
+                "url": "/regex-syntax",
+                "markdown-file": "regex_syntax.md"
+            }
+        ]
     },
     {
-        "name": "State Data",
-        "url": "/state-data",
-        "markdown-file": "state_data.md"
-    },
-    {
-        "name": "Regex Syntax",
-        "url": "/regex-syntax",
-        "markdown-file": "regex_syntax.md"
+        "name": "Interface",
+        "children": [
+            {
+                "name": "Intervention",
+                "url": "/intervention",
+                "markdown-file": "intervention_overview.md"
+            },
+            {
+                "name": "Facilities",
+                "url": "/facilities",
+                "markdown-file": "facilities.md"
+            },
+            {
+                "name": "Schedule",
+                "url": "/schedule",
+                "markdown-file": "schedule.md"
+            },
+            {
+                "name": "Initialize",
+                "url": "/initialize",
+                "markdown-file": "intialize_simulation.md"
+            },
+            {
+                "name": "Results",
+                "url": "/results",
+                "markdown-file": "results.md"
+            },
+            {
+                "name": "Compare",
+                "url": "/compare",
+                "markdown-file": "compare.md"
+            }
+        ]
     },
     {
         "name": "Decision",
         "url": "/decision",
         "markdown-file": "decision.md"
-    },
-    {
-        "name": "Intervention",
-        "url": "/intervention",
-        "markdown-file": "intervention_overview.md"
-    },
-    {
-        "name": "Facilities",
-        "url": "/facilities",
-        "markdown-file": "facilities.md"
-    },
-    {
-        "name": "Schedule",
-        "url": "/schedule",
-        "markdown-file": "schedule.md"
-    },
-    {
-        "name": "Initialize",
-        "url": "/initialize",
-        "markdown-file": "intialize_simulation.md"
-    },
-    {
-        "name": "Results",
-        "url": "/results",
-        "markdown-file": "results.md"
-    },
-    {
-        "name": "Compare",
-        "url": "/compare",
-        "markdown-file": "compare.md"
     },
     {
         "name": "Private Doc",
