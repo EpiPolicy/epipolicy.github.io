@@ -75,5 +75,13 @@ node decryptall.js 'my-password'
 
 `main.md` file shouldn't be changed, since it's used by the website to check if the password is correct during the log in.
 
+To encrypt single files go with your terminal in the `private-pages` folder and run:
+```
+node encrypt.js privatedoc 'my-password' 
+```
+to encrypt `privatedoc.md` to `privatedoc.pmd`.
 
-
+Similarly to decrypt a single file:
+```
+node decrypt.js privatedoc 'my-password'
+```
