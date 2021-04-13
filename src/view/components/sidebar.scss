@@ -2,8 +2,15 @@
 
 #sidebar {
   position: fixed;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   padding: $lg-margin;
+  overflow: hidden;
+
+  .menu {
+    flex-grow: 1;
+  }
 
   .menu-item {
     cursor: pointer;
@@ -12,13 +19,24 @@
     }
   }
 
+  .menu-parent-item {
+    color: gray;
+  }
+
+  .menu-children {
+    margin-left: $md-margin;
+  }
+
   .login-box {
-    position: absolute;
-    bottom: $lg-margin;
+    width: 100%;
     cursor: pointer;
 
+    input {
+      width: 100px;
+    }
+
     .login-error {
-      width: 100%;
+      width: 80%;
       text-align: right;
       color: red;
     }

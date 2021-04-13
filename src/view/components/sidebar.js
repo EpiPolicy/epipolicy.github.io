@@ -25,10 +25,12 @@ class Sidebar extends React.Component {
         <input 
           autoFocus 
           type="password"
-          onKeyPress={event => {
-              this.setState({loginError: null});
+          onKeyDown={event => {
+            this.setState({loginError: null});
               if (event.key === 'Enter') {
                 this.checkLoginPassword(event.target.value);
+              } else if (event.key === 'Escape') {
+                this.setState({loginBox: false});
               }
             }
           }
@@ -50,26 +52,34 @@ class Sidebar extends React.Component {
   renderMenuItem(page) {
     const path = window.location.pathname;
 
-    return <div 
-      key={page.url}
-      className={'menu-item' + (page.active ? ' active' : '')}
-      onClick={() => this.goTo(page)}
-      >
-        {page.name}
-    </div>; 
+    if (page.children) {
+      return <div>
+        <div className="menu-parent-item">{page.name}</div>
+        <div className="menu-children">
+          {page.children.map(p => this.renderMenuItem(p))}
+        </div>
+      </div>
+    } else {
+      if (!this.model.loginInfo && page.protected) {
+        return null;
+      }
+      return <div 
+        key={page.url}
+        className={'menu-item' + (page.active ? ' active' : '')}
+        onClick={() => this.goTo(page)}
+        >
+          {page.name}
+      </div>; 
+    }
   }
   
   render() {
-    let pages = null;
-    if (this.model.loginInfo) {
-      pages = this.model.pages;
-    } else {
-      pages = this.model.pages.filter(p => !p.protected)
-    }
     return (
       <div id="sidebar">
         <h1 onClick={() => window.MathJax.typeset() }>EpiPolicy</h1>
-        {pages.map(p => this.renderMenuItem(p))}
+        <div className="menu">
+          {this.model.pages.map(p => this.renderMenuItem(p))}
+        </div>
         {this.renderLoginBox()}
       </div>
     );

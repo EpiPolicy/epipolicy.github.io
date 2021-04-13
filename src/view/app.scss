@@ -28,7 +28,9 @@ $fa-font-path: "~font-awesome/fonts";
   }
 
   #sidebar-container {
-    background-color: $panel-background;
+    #sidebar {
+      background-color: $panel-background;
+    }
     padding: 0;
   }
 
