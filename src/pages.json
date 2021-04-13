@@ -4,17 +4,17 @@
         "children": [
             {
                 "name": "Overview",
-                "url": "/overview",
+                "url": "overview",
                 "markdown-file": "overview.md"
             },
             {
                 "name": "State Data",
-                "url": "/state-data",
+                "url": "state-data",
                 "markdown-file": "state_data.md"
             },
             {
                 "name": "Regex Syntax",
-                "url": "/regex-syntax",
+                "url": "regex-syntax",
                 "markdown-file": "regex_syntax.md"
             }
         ]
@@ -24,51 +24,51 @@
         "children": [
             {
                 "name": "Intervention",
-                "url": "/intervention",
+                "url": "intervention",
                 "markdown-file": "intervention_overview.md"
             },
             {
                 "name": "Facilities",
-                "url": "/facilities",
+                "url": "facilities",
                 "markdown-file": "facilities.md"
             },
             {
                 "name": "Schedule",
-                "url": "/schedule",
+                "url": "schedule",
                 "markdown-file": "schedule.md"
             },
             {
                 "name": "Initialize",
-                "url": "/initialize",
+                "url": "initialize",
                 "markdown-file": "intialize_simulation.md"
             },
             {
                 "name": "Results",
-                "url": "/results",
+                "url": "results",
                 "markdown-file": "results.md"
             },
             {
                 "name": "Compare",
-                "url": "/compare",
+                "url": "compare",
                 "markdown-file": "compare.md"
             }
         ]
     },
     {
         "name": "Decision",
-        "url": "/decision",
+        "url": "decision",
         "protected": true,
         "markdown-file": "decision.md"
     },
     {
         "name": "Private Doc",
-        "url": "/privatedoc",
+        "url": "privatedoc",
         "protected": true,
         "markdown-file": "privatedoc.pmd"
     },
     {
         "name": "HTML Page",
-        "url": "/htmlpage",
+        "url": "htmlpage",
         "html-file": "htmlpage.html"
     }
 ]

@@ -12,7 +12,7 @@ class Model {
   loginInfo = null;
 
   checkPagesActivation() {
-    const path = window.location.pathname;
+    const path = window.location.hash.slice(1);
     let checkPagesFn = pages => {
       for (let page of pages) {  
         checkFn(page);

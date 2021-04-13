@@ -50,7 +50,7 @@ class Sidebar extends React.Component {
   }
 
   renderMenuItem(page) {
-    const path = window.location.pathname;
+    const path = window.location.hash.slice(1);
 
     if (page.children) {
       return <div>
@@ -87,7 +87,7 @@ class Sidebar extends React.Component {
 
   goTo(page) {
      document.title = page.name;
-     window.history.pushState({url: page.url}, page.name, page.url);
+     window.history.pushState({url: '#' + page.url}, page.name, '#' + page.url);
      this.model.checkPagesActivation();
   }
 
