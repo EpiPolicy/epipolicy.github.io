@@ -13,18 +13,15 @@ class PageDisplay extends React.Component {
     if (!this.model.activePage || !this.model.activePageContent) {
       return null;
     }
-    console.log('render', this.model.activePage.name);
-
     return (
       <div id="page-display">
-        <h2>{this.model.activePage.name}</h2>
+        {this.model.activePage['hide-title'] ? null : <h2>{this.model.activePage.name}</h2>}
         <div
           id="page-content"
           dangerouslySetInnerHTML={{__html: this.model.activePageContent}}>
         </div>
       </div>
     );
-    
   }
 
   mathJax() {

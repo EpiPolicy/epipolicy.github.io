@@ -16,27 +16,34 @@ $fa-font-path: "~font-awesome/fonts";
   font-weight: 200;
 
   #app {
+    width: 100%;
     height: 100%;
+    display: flex;
 
-    .container-fluid {
+    #sidebar-container {
+      position: fixed;
       height: 100%;
-
-      .row {
-        height: 100%;
-      }
-    }
-  }
-
-  #sidebar-container {
-    #sidebar {
       background-color: $panel-background;
+      overflow: hidden;
+      width: 16 * $md-margin;
+      
+      #sidebar {
+        position: fixed;
+        // background-color: $panel-background;
+      }
+      padding: 0;
     }
-    padding: 0;
-  }
+  
+    #main-panel-container {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      background-color: $background-color;
+      margin-left: 16 * $md-margin;
+      padding: $lg-margin;
+    }
 
-  #main-panel-container {
-    background-color: $background-color;
-    padding: $lg-margin;
   }
 
 }

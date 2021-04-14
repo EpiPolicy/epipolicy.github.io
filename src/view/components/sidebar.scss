@@ -1,12 +1,15 @@
 @import "../variables";
 
 #sidebar {
-  position: fixed;
   display: flex;
   flex-direction: column;
   height: 100%;
   padding: $lg-margin;
   overflow: hidden;
+
+  .title {
+    cursor: pointer;
+  }
 
   .menu {
     flex-grow: 1;

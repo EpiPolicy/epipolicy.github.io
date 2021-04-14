@@ -1,5 +1,11 @@
 [
     {
+        "name": "Homepage",
+        "url": "",
+        "hide-title": true,
+        "html-file": "home.html"
+    },
+    {
         "name": "Introduction",
         "children": [
             {

@@ -25,12 +25,12 @@ class Model {
     return text;
   }
 
-  loadMarkdownFilePage() {
-    let urlRoot = this.activePage.protected ? 'private-pages/' : 'pages/';
-    axios.get(urlRoot + this.activePage['markdown-file'])
+  loadMarkdownFilePage(pageInfo) {
+    let urlRoot = pageInfo.protected ? 'private-pages/' : 'pages/';
+    axios.get(urlRoot + pageInfo['markdown-file'])
       .then(response => {
         let data = response.data;
-        if (this.activePage.protected) {
+        if (pageInfo.protected) {
           if (this.loginInfo) {
             try {
               let decrypted = CryptoJS.AES.decrypt(response.data, this.loginInfo.password);
@@ -50,8 +50,8 @@ class Model {
       });
   }
 
-  loadHTMLFilePage() {
-    axios.get('html-pages/' + this.activePage['html-file'])
+  loadHTMLFilePage(pageInfo) {
+    axios.get('html-pages/' + pageInfo['html-file'])
       .then(response => {
         this.setActivePageContent(response.data);
       })
@@ -62,11 +62,11 @@ class Model {
 
   loadActivePage() {
     if (!this.activePage) {
-      return;
+      return null;
     } else if (this.activePage['markdown-file']) {
-      this.loadMarkdownFilePage();
+      this.loadMarkdownFilePage(this.activePage);
     } else if (this.activePage['html-file']) {
-      this.loadHTMLFilePage();
+      this.loadHTMLFilePage(this.activePage);
     }
   }
 
