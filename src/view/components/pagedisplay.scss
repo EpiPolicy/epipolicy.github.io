@@ -3,6 +3,21 @@
 #page-display {
   padding: $lg-margin;
 
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 300ms;
+
+  @keyframes fadeInOpacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
   #page-content {
     .latex {
       display: inline-block;
@@ -17,5 +32,6 @@
       }
     }
   }
+
 
 }

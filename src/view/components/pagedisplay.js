@@ -10,9 +10,10 @@ class PageDisplay extends React.Component {
   }
 
   render() {
-    if (!this.model.activePage) {
+    if (!this.model.activePage || !this.model.activePageContent) {
       return null;
     }
+    console.log('render', this.model.activePage.name);
 
     return (
       <div id="page-display">

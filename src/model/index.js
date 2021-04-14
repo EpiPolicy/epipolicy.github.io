@@ -11,6 +11,69 @@ class Model {
   activePageContent = null;
   loginInfo = null;
 
+  generateErrorPage(errMsg) {
+    return '<div className="error">' + errMsg +'</div>';
+  } 
+
+  latexReplace(text) {
+    text = text.replace(/<latex>(.*?)<\/latex>/g, 
+      (match, p1) => '<div class="latex">$' + p1 + '$</div>');
+    text = text.replace(/<latex-line>(.*?)<\/latex-line>/g, 
+      (match, p1) => '<div class="latex latex-line>$$' + p1 + '$$</div>');
+    text = text.replace(/<latex-line-left>(.*?)<\/latex-line-left>/g, 
+      (match, p1) => '<div class="latex latex-line latex-line-left">$$' + p1 + '$$</div>');
+    return text;
+  }
+
+  loadMarkdownFilePage() {
+    let urlRoot = this.activePage.protected ? 'private-pages/' : 'pages/';
+    axios.get(urlRoot + this.activePage['markdown-file'])
+      .then(response => {
+        let data = response.data;
+        if (this.activePage.protected) {
+          if (this.loginInfo) {
+            try {
+              let decrypted = CryptoJS.AES.decrypt(response.data, this.loginInfo.password);
+              data = decrypted.toString(CryptoJS.enc.Utf8);
+              console.log(data)
+            } catch (err) {
+              this.setActivePageContent(this.generateErrorPage(err));
+            }
+          } else {
+            this.setActivePageContent(this.generateErrorPage('Login needed in order to decrypt this file'));
+          }
+        }
+        this.setActivePageContent(this.latexReplace(marked(data)));
+      })
+      .catch(err => {
+        this.setActivePageContent(this.generateErrorPage(err));
+      });
+  }
+
+  loadHTMLFilePage() {
+    axios.get('html-pages/' + this.activePage['html-file'])
+      .then(response => {
+        this.setActivePageContent(response.data);
+      })
+      .catch(err => {
+        this.setActivePageContent(err);
+      });
+  }
+
+  loadActivePage() {
+    if (!this.activePage) {
+      return;
+    } else if (this.activePage['markdown-file']) {
+      this.loadMarkdownFilePage();
+    } else if (this.activePage['html-file']) {
+      this.loadHTMLFilePage();
+    }
+  }
+
+  setActivePageContent(content) {
+    this.activePageContent = content;
+  }
+
   checkPagesActivation() {
     const path = window.location.hash.slice(1);
     let checkPagesFn = pages => {
@@ -25,67 +88,8 @@ class Model {
       page.active = path === page.url;
     }
     checkPagesFn(this.pages);
+    this.setActivePageContent(null);
     this.loadActivePage();
-  }
-
-  latexReplace(text) {
-    text = text.replace(/<latex>(.*?)<\/latex>/g, 
-      (match, p1) => '<div class="latex">$' + p1 + '$</div>');
-    text = text.replace(/<latex-line>(.*?)<\/latex-line>/g, 
-      (match, p1) => '<div class="latex latex-line>$$' + p1 + '$$</div>');
-    text = text.replace(/<latex-line-left>(.*?)<\/latex-line-left>/g, 
-      (match, p1) => '<div class="latex latex-line latex-line-left">$$' + p1 + '$$</div>');
-    return text;
-  }
-
-  generateErrorPage(errMsg) {
-    return '<div className="error">' + errMsg +'</div>';
-  } 
-
-  loadMarkdownFilePage() {
-    let urlRoot = this.activePage.protected ? 'private-pages/' : 'pages/';
-    axios.get(urlRoot + this.activePage['markdown-file'])
-      .then(response => {
-        let data = response.data;
-        if (this.activePage.protected) {
-          if (this.loginInfo) {
-            try {
-              let decrypted = CryptoJS.AES.decrypt(response.data, this.loginInfo.password);
-              data = decrypted.toString(CryptoJS.enc.Utf8);
-              console.log(data)
-            } catch (err) {
-              this.activePageContent = this.generateErrorPage(err);
-            }
-          } else {
-            this.activePageContent = this.generateErrorPage('Login needed in order to decrypt this file');
-          }
-        }
-        this.activePageContent = this.latexReplace(marked(data));
-      })
-      .catch(err => {
-        this.activePageContent = this.generateErrorPage(err);
-      });
-  }
-
-  loadHTMLFilePage() {
-    axios.get('html-pages/' + this.activePage['html-file'])
-      .then(response => {
-        this.activePageContent = response.data;
-      })
-      .catch(err => {
-        this.activePageContent = err;
-      });
-  }
-
-  loadActivePage() {
-    console.log('loadActivePage', this.activePage)
-    if (!this.activePage) {
-      return;
-    } else if (this.activePage['markdown-file']) {
-      this.loadMarkdownFilePage();
-    } else if (this.activePage['html-file']) {
-      this.loadHTMLFilePage();
-    }
   }
 
   get activePage() {
@@ -103,7 +107,6 @@ class Model {
     }
 
     let activePage = getActivePageFromPagesFn(this.pages);
-    console.log('activePage', activePage)
     return activePage;
   }
 
@@ -142,6 +145,8 @@ class Model {
       logIn: action,
       logOut: action,
       activePageContent: observable,
+      loadActivePage: action,
+      setActivePageContent: action,
       activePage: computed
     });
 
