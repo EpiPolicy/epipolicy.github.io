@@ -29,7 +29,10 @@
   "scripts": {
     "start": "node ./node_modules/react-scripts/bin/react-scripts.js start",
     "build": "node ./node_modules/react-scripts/bin/react-scripts.js build && rm -rf docs && mv build docs",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "build-pages": "node ./scripts/build_pages.js",
+    "encrypt-all": "node ./scripts/encrypt_all.js",
+    "decrypt-all": "node ./scripts/decrypt_all.js"
   },
   "eslintConfig": {
     "extends": [

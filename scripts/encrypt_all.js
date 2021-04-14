@@ -1,4 +1,4 @@
-let privatePagesFolder = './public/private-pages';
+let privatePagesFolder = __dirname + '/../public/private-pages';
 let encrypt = require(privatePagesFolder + '/encrypt').encrypt;
 let password = process.argv[2];
 fs.readdir(privatePagesFolder, (err, files) => {

@@ -3,7 +3,8 @@ CryptoJS = require('crypto-js')
 fs = require('fs')
 
 function decrypt(filename, password) {
-    console.log('decrypting ' + filename + '.md to ' + filename + '.pmd with password ' + password);
+    console.log('decrypting ' + filename.replace(/^.*[\\\/]/, '') + '.pmd to ' 
+                + filename.replace(/^.*[\\\/]/, '') + '.md');
 
     fs.readFile(filename + '.pmd', function (err, data) {
         if (err) {
