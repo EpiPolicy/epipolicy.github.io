@@ -96,7 +96,6 @@ class Model {
       }
     }
     let getActivePageFromPageFn = page => {
-      console.log('checking... ', page.name)
       if (page.children) {
         return getActivePageFromPagesFn(page.children);
       }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 import './pagedisplay.scss';
-import axios from 'axios';
 
 class PageDisplay extends React.Component {
 
@@ -27,12 +26,16 @@ class PageDisplay extends React.Component {
     
   }
 
+  mathJax() {
+    window.MathJax.typeset();
+  }
+
   componendDidMount() {
-    setTimeout(() => { window.MathJax.typeset(); }, 100);
+    this.mathJax();
   }
 
   componentDidUpdate() {
-    setTimeout(() => { window.MathJax.typeset(); }, 100);
+    this.mathJax();
   }
 
 }

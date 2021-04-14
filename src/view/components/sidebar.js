@@ -50,10 +50,8 @@ class Sidebar extends React.Component {
   }
 
   renderMenuItem(page) {
-    const path = window.location.hash.slice(1);
-
     if (page.children) {
-      return <div>
+      return <div key={page.name}>
         <div className="menu-parent-item">{page.name}</div>
         <div className="menu-children">
           {page.children.map(p => this.renderMenuItem(p))}
@@ -64,9 +62,9 @@ class Sidebar extends React.Component {
         return null;
       }
       return <div 
-        key={page.url}
-        className={'menu-item' + (page.active ? ' active' : '')}
-        onClick={() => this.goTo(page)}
+          key={page.url}
+          className={'menu-item' + (page.active ? ' active' : '')}
+          onClick={() => this.goTo(page)}
         >
           {page.name}
       </div>; 
