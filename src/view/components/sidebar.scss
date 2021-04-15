@@ -9,6 +9,11 @@
 
   .title {
     cursor: pointer;
+    margin-bottom: $lg-margin;
+  }
+
+  .title-logo {
+    height: 1.5 * $font-size-base;
   }
 
   .menu {
@@ -16,9 +21,14 @@
   }
 
   .menu-item {
+    color: $action-color;
+    font-size: $font-size-base;
     cursor: pointer;
     &.active {
       font-weight: bold;
+    }
+    &:hover {
+      color: $action-color-highlighted;
     }
   }
 

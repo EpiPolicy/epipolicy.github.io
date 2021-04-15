@@ -14,7 +14,7 @@ class PageDisplay extends React.Component {
       return null;
     }
     return (
-      <div id="page-display">
+      <div id="page-display" className={this.model.activePage['no-padding'] ? 'no-padding' : ''}>
         {this.model.activePage['hide-title'] ? null : <h2>{this.model.activePage.name}</h2>}
         <div
           id="page-content"
