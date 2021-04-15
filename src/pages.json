@@ -3,6 +3,7 @@
         "name": "Homepage",
         "url": "",
         "hide-title": true,
+        "no-padding": true,
         "html-file": "home.html"
     },
     {
@@ -26,7 +27,9 @@
         ]
     },
     {
-        "name": "Interface",
+        "name": "Docs",
+        "url": "docs",
+        "hidden": true,
         "children": [
             {
                 "name": "Intervention",
@@ -76,10 +79,5 @@
         "url": "privatedoc",
         "protected": true,
         "markdown-file": "privatedoc.pmd"
-    },
-    {
-        "name": "HTML Page",
-        "url": "htmlpage",
-        "html-file": "htmlpage.html"
     }
 ]
