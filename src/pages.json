@@ -11,8 +11,10 @@
         "children": [
             {
                 "name": "Overview",
-                "url": "overview",
-                "markdown-file": "overview.md"
+                "url": "",
+                "hide-title": true,
+                "no-padding": true,
+                "html-file": "home.html"
             },
             {
                 "name": "State Data",

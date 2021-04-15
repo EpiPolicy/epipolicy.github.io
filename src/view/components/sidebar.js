@@ -50,6 +50,9 @@ class Sidebar extends React.Component {
   }
 
   renderMenuItem(page) {
+    if (page.hidden) {
+      return null;
+    }
     if (page.children) {
       return <div key={page.name}>
         <div className="menu-parent-item">{page.name}</div>
