@@ -26,6 +26,14 @@
     .page-content {
         margin: 1.6rem;
     }
+    .tutorial-video-container {
+        width: 100%;
+        text-align: center;
+    }
+    .tutorial-video {
+        border: 1px solid #ddd;
+        width: 95%;
+    }
     footer {
 
     }
@@ -50,6 +58,47 @@
         and human interaction within facilities of a locale. It further makes a distinction of the transition rates in the 
         compartmental model when looking at different population groups.
     </p>
+
+    <h3>EpiPolicy in Action</h3>
+
+    <div>
+        Consider a team of epidemiologists and public-health officials that are working to curb the COVID-19 epidemic 
+        in a mock country we call 
+        <div data-toggle="tooltip" data-html="true" class="tooltip-link" title="The goal of this tutorial is to motivate and demonstrate the use of EpiPolicy, not to present or analyze the specific modeling choices or measures of any government in handling an epidemic.">United Provinces (UP)</div>. 
+        —a fictitious, economically developed country with three administrative regions, Hills, Beaches,and Pastures, and a population of 2.2 million. 
+        Amira and Ben are members of the expert team, and they start using EpiPolicy by defining the Compartmental Model.
+    </div><br/> <!-- we don't use pharagraphers due to incompatibilities, for example tooltips. -->
+
+    <h4>Compartmental Model</h4>
+    <div>
+        Amira first needs to specify her disease model in the Model page. EpiPolicy provides a set of standard models obtained from 
+        existing literature (e.g. SEIR and SIR), which can be used as-is or modified as needed. 
+        Users can also create their own models from scratch by specifying compartments,equations, and parameters. 
+        Amira constructs an SEIR COVID-19 model with additional compartments modeling diseaseseverity, hospitalization, 
+        vaccination and quarantine. She also introduces parameters for reinfection and vaccine failure.
+        EpiPolicy graphically visualizes the model.
+    </div><br/>
+
+    <div class="tutorial-video-container">
+        <video class="tutorial-video" autoplay="autoplay" muted loop>
+            <source src="assets/compartmental-models.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <h4>Population Modeling</h4>
+    <div>
+        Amira opens the Locales page to describe administrative locales relevant to the team’s public-health policies. 
+        Amira can either provide custom shapefiles and regional population data in a JSON format or utilize a plug-in that loads this data 
+        directly from NASA’s GPW data for a specific country. A country can have multiple administrate levels: 0 for the entire country, 
+        1 for states or provinces within a country, 2 for sub-regions or counties within level 1 locales and so on. 
+        <br/>
+        Amira selects UP as the country, 2020 as the year, and chooses 1 as the administration level.
+    </div><br/>
+
+    <p><div>
+        
+    </div></p>
+
 
 </div>
 
