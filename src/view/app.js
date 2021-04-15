@@ -3,10 +3,6 @@ import {observer} from 'mobx-react';
 import './app.scss';
 import Sidebar from './components/sidebar';
 import PageDisplay from './components/pagedisplay';
-import $ from 'jquery';
-
-window.$ = $;
-window.jQuery = $;
 
 class App extends React.Component {
 

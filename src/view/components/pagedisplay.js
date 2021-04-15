@@ -1,6 +1,12 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 import './pagedisplay.scss';
+import $ from 'jquery';
+
+// Bootstrap initialization
+window.$ = $;
+window.jQuery = $;
+require('bootstrap');
 
 class PageDisplay extends React.Component {
 
@@ -28,12 +34,18 @@ class PageDisplay extends React.Component {
     window.MathJax.typeset();
   }
 
+  bootstrapToolTips() {
+    $('[data-toggle="tooltip"]').tooltip();
+  }
+
   componendDidMount() {
     this.mathJax();
+    this.bootstrapToolTips();
   }
 
   componentDidUpdate() {
     this.mathJax();
+    this.bootstrapToolTips();
   }
 
 }

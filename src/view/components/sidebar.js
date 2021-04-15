@@ -75,7 +75,7 @@ class Sidebar extends React.Component {
     return (
       <div id="sidebar">
         <h1 className="title" onClick={() => this.goTo(this.model.pages[0])}>
-          <img className="title-logo" src="logo512.png" /> EpiPolicy
+          <img alt="EpiPolicy" className="title-logo" src="logo512.png" /> EpiPolicy
         </h1>
         <div className="menu">
           {this.model.pages.slice(1).map(p => this.renderMenuItem(p))}
