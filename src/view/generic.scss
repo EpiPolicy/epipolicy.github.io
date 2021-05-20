@@ -84,7 +84,10 @@ a {
   display: inline-block;
 }
 
-.page-content {
+#page-content {
+  margin: 0;
+}
+
+.page-body {
   max-width: 46rem!important;
-  margin: 1.6rem;
 }
