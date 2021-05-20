@@ -25,6 +25,11 @@
                 "name": "Regex Syntax",
                 "url": "regex-syntax",
                 "markdown-file": "regex_syntax.md"
+            },
+            {
+                "name": "PyEpiPolicy",
+                "url": "pyepipolicy",
+                "html-file": "pyepipolicy.html"
             }
         ]
     },
