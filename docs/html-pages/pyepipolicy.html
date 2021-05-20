@@ -1,0 +1,102 @@
+<style>
+</style>
+
+<div class="page-body">
+    <p>
+        Once you created and run your simulation using the EpiPolicy UI you can export the entire project as a JSON file. 
+        This opens up several possibilities for the more advanced users:
+    </p>
+    <ul>
+        <li>
+            The EpiPolicy project file is easily modifiable via code using libraries such as <code>pyepipolicy</code>.
+            This is useful when some parts of the simulation needs to changed programmatically by code
+            or by another domain specific user interface.
+        </li>
+        <li>
+            Intervention <code>effect</code> and <code>cost</code> functions code can be 
+            written using your favourite IDE and can be directly injected to the simulation.
+        </li>
+        <li>
+            Changes to the simulation can be easily debugged, even by running the simulation
+            for just few days rather than for the whole planned duration.
+        </li>
+        <li>
+            Simulation results can be programmatically collected and saved in your custom format.
+        </li>
+        <li>
+            Simulation results can be arbitrarily displayed using libraries such as <code>matplotlib</code>.
+        </li>
+    </ul>
+
+    <h3>Running a simulation using Python</h3>
+
+    <p>
+        The Python library called <code>pyepipolicy</code> allows developers to load and 
+        to change the EpiPolicy project files, to run simulations, and to inspect simulation results.
+    </p>
+    <p>
+        For example, the following code load a EpiPolicy project file, runs a simulation, and show r<sub>0</sub> values
+        using <code>matplotlib</code>.
+    </p>
+
+    <pre><code>
+import pyepipolicy
+import matplotlib.pyplot as plt
+
+config = pyepipolicy.Config('localhost', port=8042)
+project = pyepipolicy.Project('my-epipolicy-project.json')
+results = project.run(config)
+
+fig = plt.figure()
+ax = plt.axes()
+ax.plot(results.r0())
+fig.show()
+    </code></pre>
+
+    <p>
+        The <code>Config</code> class used in the code is used to specify where the simulation will 
+        be running. By default EpiPolicy simulator server runs at the port 8042. 
+    </p>
+
+    <p>
+        The <code>Project</code> class is used to load a EpiPolicy project file. This class provides several methods 
+        to change parts of the projects. More about this can be found in the <code>Project</code> class documentation using your IDE.
+    </p>
+
+    <p>
+        The <code>Project</code> class has the ability to run the project given the configuration of where to run it as argument. 
+        The <code>run(config)</code> method returns the simulation results as an <code>Results</code> object.
+        The <code>Results</code> class provides several methods to read the results, provided as a JSON file. For example to
+        have as an array all r<sub>0</sub> values the method <code>r0()</code> can be called. This provides one value for each
+        day of the simulation. Similarly, to get all values of a specific compartment, the method <code>compartment(name)</code> 
+        can be called. More about this can be found in the <code>Results</code> class documentation using your IDE. 
+    </p>
+
+    <h3>Running simulations in Jupyter</h3>
+    
+    <p>To run simulations in Jupyter you can use the same code as described above.</p>
+    
+    <p>
+        The only problem you might face is to install <code>pyepipolicy</code> in Jupyter.
+        In order to do this you need to make sure to install <code>pyepipolicy</code> using the right <code>pip</code> executable.
+        One way to do it is open a new Jupyter notebook and to run the following code
+    </p>
+    
+    <pre><code>
+import sys
+sys.executable
+    </code></pre>
+    
+    This code will output the Python executable path that Jupyter uses to run the Python code. 
+    If the printed path is <code>/path/to/python3.9</code> then to install <code>pyepipolicy</code> you can open 
+    a new terminal window and execute the following command:
+    
+    <pre><code>
+/path/to/python3.9 -m pip install pyepipolicy
+    </code></pre>
+    
+    <p>
+        Once it is installed try to refresh the Jupyter page or restart the Kernel in order to be able to import <code>pyepipolicy</code>.
+    </p>
+</div>
+    
