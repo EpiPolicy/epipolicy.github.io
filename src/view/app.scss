@@ -30,6 +30,7 @@ $fa-font-path: "~font-awesome/fonts";
       
       #sidebar {
         position: fixed;
+        width: $sidebar-width;
       }
       padding: 0;
     }
