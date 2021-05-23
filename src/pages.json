@@ -35,9 +35,13 @@
   },
   {
     "name": "Tutorials",
+    "children": []
+  },
+  {
+    "name": "Case Studies",
     "children": [
       {
-        "name": "School Openings during Covid19",
+        "name": "Effect of Opening Schools during COVID-19",
         "url": "alberto-2",
         "markdown-file": "alberto_2.md"
       }
