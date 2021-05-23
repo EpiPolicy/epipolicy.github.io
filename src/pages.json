@@ -1,90 +1,100 @@
 [
-    {
-        "name": "Homepage",
+  {
+    "name": "Homepage",
+    "url": "",
+    "hide-title": true,
+    "no-padding": true,
+    "html-file": "home.html"
+  },
+  {
+    "name": "Introduction",
+    "children": [
+      {
+        "name": "Overview",
         "url": "",
         "hide-title": true,
         "no-padding": true,
         "html-file": "home.html"
-    },
-    {
-        "name": "Introduction",
-        "children": [
-            {
-                "name": "Overview",
-                "url": "",
-                "hide-title": true,
-                "no-padding": true,
-                "html-file": "home.html"
-            },
-            {
-                "name": "State Data",
-                "url": "state-data",
-                "markdown-file": "state_data.md"
-            },
-            {
-                "name": "Regex Syntax",
-                "url": "regex-syntax",
-                "markdown-file": "regex_syntax.md"
-            },
-            {
-                "name": "PyEpiPolicy",
-                "url": "pyepipolicy",
-                "html-file": "pyepipolicy.html"
-            }
-        ]
-    },
-    {
-        "name": "Docs",
-        "url": "docs",
-        "hidden": true,
-        "children": [
-            {
-                "name": "Intervention",
-                "url": "intervention",
-                "markdown-file": "intervention_overview.md"
-            },
-            {
-                "name": "Facilities",
-                "url": "facilities",
-                "markdown-file": "facilities.md"
-            },
-            {
-                "name": "Schedule",
-                "url": "schedule",
-                "markdown-file": "schedule.md"
-            },
-            {
-                "name": "Initialize",
-                "url": "initialize",
-                "markdown-file": "intialize_simulation.md"
-            },
-            {
-                "name": "Results",
-                "url": "results",
-                "markdown-file": "results.md"
-            },
-            {
-                "name": "Compare",
-                "url": "compare",
-                "markdown-file": "compare.md"
-            },
-            {
-                "name": "References",
-                "url": "references",
-                "markdown-file": "references.md"
-            }
-        ]
-    },
-    {
-        "name": "Decision",
-        "url": "decision",
-        "protected": true,
-        "markdown-file": "decision.md"
-    },
-    {
-        "name": "Private Doc",
-        "url": "privatedoc",
-        "protected": true,
-        "markdown-file": "privatedoc.pmd"
-    }
+      },
+      {
+        "name": "State Data",
+        "url": "state-data",
+        "markdown-file": "state_data.md"
+      },
+      {
+        "name": "Regex Syntax",
+        "url": "regex-syntax",
+        "markdown-file": "regex_syntax.md"
+      },
+      {
+        "name": "PyEpiPolicy",
+        "url": "pyepipolicy",
+        "html-file": "pyepipolicy.html"
+      }
+    ]
+  },
+  {
+    "name": "Tutorials",
+    "children": [
+      {
+        "name": "School Openings during Covid19",
+        "url": "alberto-2",
+        "markdown-file": "alberto_2.md"
+      }
+    ]
+  },
+  {
+    "name": "Docs",
+    "url": "docs",
+    "hidden": true,
+    "children": [
+      {
+        "name": "Intervention",
+        "url": "intervention",
+        "markdown-file": "intervention_overview.md"
+      },
+      {
+        "name": "Facilities",
+        "url": "facilities",
+        "markdown-file": "facilities.md"
+      },
+      {
+        "name": "Schedule",
+        "url": "schedule",
+        "markdown-file": "schedule.md"
+      },
+      {
+        "name": "Initialize",
+        "url": "initialize",
+        "markdown-file": "intialize_simulation.md"
+      },
+      {
+        "name": "Results",
+        "url": "results",
+        "markdown-file": "results.md"
+      },
+      {
+        "name": "Compare",
+        "url": "compare",
+        "markdown-file": "compare.md"
+      },
+      {
+        "name": "References",
+        "url": "references",
+        "markdown-file": "references.md"
+      }
+    ]
+  },
+  {
+    "name": "Decision",
+    "url": "decision",
+    "protected": true,
+    "markdown-file": "decision.md"
+  },
+  {
+    "name": "Private Doc",
+    "url": "privatedoc",
+    "protected": true,
+    "markdown-file": "privatedoc.pmd"
+  }
 ]
