@@ -8,18 +8,15 @@ class App extends React.Component {
 
   render() {
     return <div id="app">
-      <div className="container-fluid no-gutters">
-        <div className="row">
-          <div id="sidebar-container" className="col-2">
-            <Sidebar model={this.props.model} />
-          </div>
-          <div id="main-panel-container" className="col-10">
-            <PageDisplay model={this.props.model} />
-          </div>
-        </div>
+      <div id="sidebar-container">
+        <Sidebar model={this.props.model} />
+      </div>
+      <div id="main-panel-container">
+        <PageDisplay model={this.props.model} />
       </div>
     </div>;
   }
+
 }
 
 export default observer(App);

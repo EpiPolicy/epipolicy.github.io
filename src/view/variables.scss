@@ -1,19 +1,27 @@
+$font-size-base: 1.2rem;
+
 $xxs-margin: 0.1rem;
 $xs-margin: 0.2rem;
 $sm-margin: 0.4rem;
 $md-margin: 0.8rem;
 $lg-margin: 1.6rem;
 
-$font-size-base: 0.8rem;
-
 $navbar-height: 2 * $lg-margin;
 
 $scrollbar-margin: 0;
-$scrollbar-size: $xxs-margin;
+$scrollbar-size: $sm-margin;
+
+$sidebar-width: 13 * $font-size-base;
 
 $panel-background: #F1F1F1;
+$sidebar-background: #fcfcfc;
 $background-color: #fff;
-$action-color: #57b5fc;
+$action-color: #285f86;
+$action-color-highlighted: #3f7ca8;
 
-$h2-font-size: 1.4rem;
-$h3-font-size: 1rem;
+$h1-font-size: 1.75 * $font-size-base;
+$h2-font-size: 1.4 * $font-size-base;
+$h3-font-size: 1.2 * $font-size-base;
+$h4-font-size: $font-size-base;
+$h5-font-size: $font-size-base;
+$h6-font-size: $font-size-base;

@@ -1,7 +1,12 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 import './pagedisplay.scss';
-import axios from 'axios';
+import $ from 'jquery';
+
+// Bootstrap initialization
+window.$ = $;
+window.jQuery = $;
+require('bootstrap');
 
 class PageDisplay extends React.Component {
 
@@ -11,28 +16,36 @@ class PageDisplay extends React.Component {
   }
 
   render() {
-    if (!this.model.activePage) {
+    if (!this.model.activePage || !this.model.activePageContent) {
       return null;
     }
-
     return (
-      <div id="page-display">
-        <h2>{this.model.activePage.name}</h2>
+      <div id="page-display" className={this.model.activePage['no-padding'] ? 'no-padding' : ''}>
+        {this.model.activePage['hide-title'] ? null : <h2>{this.model.activePage.name}</h2>}
         <div
           id="page-content"
           dangerouslySetInnerHTML={{__html: this.model.activePageContent}}>
         </div>
       </div>
     );
-    
+  }
+
+  mathJax() {
+    window.MathJax.typeset();
+  }
+
+  bootstrapToolTips() {
+    $('[data-toggle="tooltip"]').tooltip();
   }
 
   componendDidMount() {
-    setTimeout(() => { window.MathJax.typeset(); }, 100);
+    this.mathJax();
+    this.bootstrapToolTips();
   }
 
   componentDidUpdate() {
-    setTimeout(() => { window.MathJax.typeset(); }, 100);
+    this.mathJax();
+    this.bootstrapToolTips();
   }
 
 }

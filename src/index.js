@@ -3,10 +3,6 @@ import ReactDOM from 'react-dom';
 import App from './view/app';
 import Model from './model';
 import reportWebVitals from './reportWebVitals';
-import {toJS} from 'mobx';
-
-document.model = Model;
-document.toJS = toJS;
 
 ReactDOM.render(
   <React.StrictMode>

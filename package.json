@@ -4,15 +4,19 @@
   "homepage": "https://miromannino.github.io",
   "private": true,
   "dependencies": {
+    "@popperjs/core": "^2.9.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.0-beta3",
+    "crypto-js": "^4.0.0",
     "d3": "^6.6.2",
     "font-awesome": "4.7.0",
     "http-proxy-middleware": "^1.1.1",
+    "jquery": "^3.6.0",
     "lodash": "^4.17.21",
+    "marked": "^2.0.3",
     "mobx": "^6.2.0",
     "mobx-devtools": "^0.9.27",
     "mobx-react": "^7.1.0",
@@ -22,13 +26,15 @@
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "sass": "^1.32.8",
-    "showdown": "^1.9.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "node ./node_modules/react-scripts/bin/react-scripts.js start",
     "build": "node ./node_modules/react-scripts/bin/react-scripts.js build && rm -rf docs && mv build docs",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "build-pages": "node ./scripts/build_pages.js",
+    "encrypt-all": "node ./scripts/encrypt_all.js",
+    "decrypt-all": "node ./scripts/decrypt_all.js"
   },
   "eslintConfig": {
     "extends": [

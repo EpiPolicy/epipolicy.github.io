@@ -1,71 +1,152 @@
 import { makeObservable, observable, computed, action } from 'mobx';
 import pages_config from "../pages.json";
 import axios from 'axios';
-import showdown from 'showdown';
+import marked from 'marked';
+import CryptoJS from 'crypto-js';
+
+let PASSWORD_CONTROL_STRING = 'salimmo sù, el primo e io secondo,\ntanto ch’i’ vidi de le cose belle\nche porta ’l ciel, per un pertugio tondo.\nE quindi uscimmo a riveder le stelle.';
 
 class Model {
   pages = pages_config;
   activePageContent = null;
+  loginInfo = null;
 
-  checkPagesActivation() {
-    const path = window.location.pathname;
-    for (let page of this.pages) {
-      page.active = path === page.url;
-    }
-    this.loadActivePage();
-  }
+  generateErrorPage(errMsg) {
+    return '<div className="error">' + errMsg +'</div>';
+  } 
 
   latexReplace(text) {
-    return text.replace(/<div class="latex">(.*?)<\/div>/g, 
-      (match, p1) => '<div class="latex">$$' + p1 + '$$</div>');
+    text = text.replace(/<latex>(.*?)<\/latex>/g, 
+      (match, p1) => '<div class="latex">$' + p1 + '$</div>');
+    text = text.replace(/<latex-line>(.*?)<\/latex-line>/g, 
+      (match, p1) => '<div class="latex latex-line>$$' + p1 + '$$</div>');
+    text = text.replace(/<latex-line-left>(.*?)<\/latex-line-left>/g, 
+      (match, p1) => '<div class="latex latex-line latex-line-left">$$' + p1 + '$$</div>');
+    return text;
   }
 
-  loadMarkdownFilePage() {
-    const converter = new showdown.Converter();
-    axios.get('pages/' + this.activePage['markdown-file'])
+  loadMarkdownFilePage(pageInfo) {
+    let urlRoot = pageInfo.protected ? 'private-pages/' : 'pages/';
+    axios.get(urlRoot + pageInfo['markdown-file'])
       .then(response => {
-        this.activePageContent = converter.makeHtml(response.data);
-        this.activePageContent = this.latexReplace(this.activePageContent);
+        let data = response.data;
+        if (pageInfo.protected) {
+          if (this.loginInfo) {
+            try {
+              let decrypted = CryptoJS.AES.decrypt(response.data, this.loginInfo.password);
+              data = decrypted.toString(CryptoJS.enc.Utf8);
+              console.log(data)
+            } catch (err) {
+              this.setActivePageContent(this.generateErrorPage(err));
+            }
+          } else {
+            this.setActivePageContent(this.generateErrorPage('Login needed in order to decrypt this file'));
+          }
+        }
+        this.setActivePageContent(this.latexReplace(marked(data)));
       })
       .catch(err => {
-        this.activePageContent = "Error: " + err;
+        this.setActivePageContent(this.generateErrorPage(err));
       });
   }
 
-  loadHTMLFilePage() {
-    axios.get('pages/' + this.activePage['markdown-file'])
+  loadHTMLFilePage(pageInfo) {
+    axios.get('html-pages/' + pageInfo['html-file'])
       .then(response => {
-        this.activePageContent = response.data;
+        this.setActivePageContent(response.data);
       })
       .catch(err => {
-        this.activePageContent = "Error: " + err;
+        this.setActivePageContent(err);
       });
   }
 
   loadActivePage() {
     if (!this.activePage) {
-      return;
+      return null;
     } else if (this.activePage['markdown-file']) {
-      this.loadMarkdownFilePage();
+      this.loadMarkdownFilePage(this.activePage);
     } else if (this.activePage['html-file']) {
-      this.loadHTMLFilePage();
+      this.loadHTMLFilePage(this.activePage);
     }
   }
 
-  get activePage() {
-    for (let page of this.pages) {
-      if (page.active) {
-        return page;
+  setActivePageContent(content) {
+    this.activePageContent = content;
+  }
+
+  checkPagesActivation() {
+    const path = window.location.hash.slice(1);
+    let checkPagesFn = pages => {
+      for (let page of pages) {  
+        checkFn(page);
       }
     }
-    return null;
+    let checkFn = page => {
+      if (page.children) {
+        checkPagesFn(page.children);
+      }
+      page.active = path === page.url;
+    }
+    checkPagesFn(this.pages);
+    this.setActivePageContent(null);
+    this.loadActivePage();
+  }
+
+  get activePage() {
+    let getActivePageFromPagesFn = pages => {
+      for (let page of pages) {
+        let activePage = getActivePageFromPageFn(page);
+        if (activePage) return activePage;
+      }
+    }
+    let getActivePageFromPageFn = page => {
+      if (page.children) {
+        return getActivePageFromPagesFn(page.children);
+      }
+      if (page.active) return page;
+    }
+
+    let activePage = getActivePageFromPagesFn(this.pages);
+    return activePage;
+  }
+
+  logIn(password) {
+    return new Promise((resolve, reject) => {
+      axios.get('private-pages/main.pmd')
+      .then(response => {
+        try {
+          let decrypted = CryptoJS.AES.decrypt(response.data, password);
+          let decryptedString = decrypted.toString(CryptoJS.enc.Utf8);
+          console.log('login check. decrypted:\n' + decryptedString);
+          if (PASSWORD_CONTROL_STRING === decryptedString) {
+            this.loginInfo = {
+              password: password,
+            }
+          } else {
+            this.loginInfo = null;
+          }
+          resolve();
+        } catch (err) {
+          reject('Login failed');
+        }
+      });
+    });
+  }
+
+  logOut() {
+    this.loginInfo = null;
   }
 
   constructor() {
     makeObservable(this, {
       pages: observable,
       checkPagesActivation: action,
+      loginInfo: observable,
+      logIn: action,
+      logOut: action,
       activePageContent: observable,
+      loadActivePage: action,
+      setActivePageContent: action,
       activePage: computed
     });
 

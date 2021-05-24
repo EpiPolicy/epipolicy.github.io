@@ -2,9 +2,10 @@
 
 body {
   height: 100%;
+  width: 100%;
   margin: 0;
-  overflow-x: hidden;
   padding: 0;
+  overflow-x: hidden;
   font-family: "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -12,6 +13,7 @@ body {
 
 html {
   height: 100%;
+  width: 100%;
 }
 
 // Scrollbars
@@ -59,14 +61,33 @@ html {
   }
 }
 
-// Panel
-.crest-panel {
-  border: 1px solid gray;
-  background: #fff;
-  border-radius: 5px;
-  padding: $md-margin;
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
+}
+
+h1, h2, h3 {
+  margin-bottom: 0.5rem;
+}
+h4 {
+  margin-bottom: 0.1rem;
+}
+h5, h6 {
+  margin-bottom: 0;
+}
+
+a {
+  color: $action-color;
+}
+
+.tooltip-link {
+  color: $action-color;
+  display: inline-block;
+}
+
+#page-content {
+  margin: 0;
+}
+
+.page-body {
+  max-width: 46rem!important;
 }

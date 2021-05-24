@@ -1,14 +1,57 @@
 @import "../variables";
 
 #sidebar {
-  position: fixed;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   padding: $lg-margin;
+  overflow: hidden;
+
+  .title {
+    cursor: pointer;
+    margin-bottom: $lg-margin;
+  }
+
+  .title-logo {
+    height: 1.5 * $font-size-base;
+  }
+
+  .menu {
+    flex-grow: 1;
+  }
 
   .menu-item {
+    color: $action-color;
+    font-size: $font-size-base;
     cursor: pointer;
     &.active {
       font-weight: bold;
+    }
+    &:hover {
+      color: $action-color-highlighted;
+    }
+  }
+
+  .menu-parent-item {
+    color: gray;
+  }
+
+  .menu-children {
+    margin-left: $md-margin;
+  }
+
+  .login-box {
+    width: 100%;
+    cursor: pointer;
+
+    input {
+      width: 100px;
+    }
+
+    .login-error {
+      width: 80%;
+      text-align: right;
+      color: red;
     }
   }
 
