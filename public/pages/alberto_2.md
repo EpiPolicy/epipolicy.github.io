@@ -87,4 +87,7 @@ Next, we define the schedule of each intervention individually.
     
 After the schedule is defined, you can proceed to the _Initialize_ page and start the simulation.
 
-The config file for reference is available [here](/assets/alberto-2-case-study.json).
+<img src="/assets/alberto-2-res.png" alt="schedule"/>  
+<br>
+
+The JSON file for reference is available [here](/assets/alberto-2-case-study.json).
