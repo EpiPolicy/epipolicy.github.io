@@ -1,7 +1,7 @@
 The config file for this tutorial is available [here](/assets/SIRMB.json).
 
 In this tutorial, we will try to implement mask and border closure with an SIRS model considering that:
-- Mask-wearing only applies to public places such as school, workplace, community
+- Mask-wearing  applies only to public places such as school, workplace, community
 - Border closure is the restriction of movement between two locales.
 
 ### Model page
