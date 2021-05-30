@@ -1,8 +1,8 @@
 The config file for this tutorial is available [here](/assets/SIRMB.json).
 
-In this tutorial, we will try to implement mask and border closure with SIRS model considering that:
-- Mask only applies to public places such as school, workplace, community
-- Border closure is restricting movement between two locales.
+In this tutorial, we will try to implement mask and border closure with an SIRS model considering that:
+- Mask-wearing only applies to public places such as school, workplace, community
+- Border closure is the restriction of movement between two locales.
 
 ### Model page
 
@@ -48,10 +48,10 @@ The mobility matrix is premade with customizable values.
 ### Intervention page
 
 #### Effect of mask
-Mask reduces at most 70% transmission rate when 100% of the population is complied. Mask is only enforced at public places such as school, workplace, etc but not household.
+Mask-wearing reduces the transmission rate by at most at most 70% when 100% of the population complies. Mask compliance is enforced only at public places such as school, workplace, etc but not household.
 
 Tip:
-- Using "~" before a facility's name to identify facilities that does not have that name.
+- Using "~" before a facility's name to identify a facility that does not have that name. [Dennis asks that you give motivation for this. Why would one do this?]
 
 
 ```python
@@ -61,7 +61,7 @@ def effect(cp, locales):
 
 #### Effect of border closure
 
-Border closure with 100% degree will restrict all movement from one locale to another.
+Border closure at degree 100%  will restrict all movement from one locale to another.
 
 ```python
 def effect(cp, locales):
