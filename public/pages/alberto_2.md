@@ -1,9 +1,10 @@
 This case study is based on a paper titled [The effect of opening schools on the course of Covid-19: a mathematical study](https://arxiv.org/abs/2104.04136v1) by Gandolfi et al.
+
 There are two models discussed in the paper, SIR and SPIAR, based on two sub-populations. For this case study, we will focus on the SPIAR model, described in section 4.15. 
 
 ### Describing the Model and Running a Simple Simulation
 
-The first step is to define your model in the _Model_ page in EpiPolicy. Following the model described in the paper (shown below), create a new row in the _Compartments_ table for each compartment in the model. You can provide a name for the compartment as well as a description. Then, proceed to describe the equations for each compartment. Note that you have to mark susceptible and infectious compartments by providing relevant tags in the _tags_ column. In the model under-consideration, compartment S represents the susceptible population and compartments P, I, and A represent the infectious population. As you define your model, a visual summary will be automatically generated for you at the end of the _Model_ page.
+The first step is to define your model in the _Model_ page in EpiPolicy. Following the model described in the paper (shown below), create a new row in the _Compartments_ table for each compartment in the model. You can provide a name for the compartment as well as a description. Then, proceed to describe the equations for each compartment. Note that you have to mark susceptible and infectious compartments by providing relevant tags in the _tags_ column. In the model under-consideration, compartment *S* represents the susceptible population and compartments *P*, *I*, and *A* represent the infectious populations. As you define your model, a visual summary will be automatically generated for you at the end of the _Model_ page.
 
 <img src="/assets/alberto-2-spiar-eq.png" alt="model-equations"/>  
 <br><br>
@@ -69,3 +70,21 @@ def effect(cp, locales):
 ### Schedule
 
 After defining the interventions, we can specify when and for how long to implement them in the _Schedule_ page. 
+
+<img src="/assets/alberto-2-schedule.png" alt="schedule"/>  
+<br>
+
+First, we specify a duration of 40 days from Jan 1, 2022 till Feb 10, 2022 (in EpiPolicy, the unit of time is 1 day).
+Next, we define the schedule of each intervention individually.
+
+1. **Lockdown**: We create one row in the schedule for this intervention. We set the start date as Jan 4, 2022 and the end date as Jan 20, 2022.
+2. **Vaccination**: We create one row in the schedule for this intervention. We set the start date as Jan 21, 2022 and the end date as Feb 10, 2022.
+3. **School Closure**: We create three rows in the schedule for this intervention. As the transmission rate in schools (β11) varies according to the level of measures taken inside the school to contain the spread of disease, we specify this difference in each duration according to the values in Figure 8 as follows:
+    * Jan 1, 2022 - Jan 3, 2022, β11 = 8
+    * Jan 4, 2022 - Jan 20, 2022, β11 = 2
+    * Jan 21, 2022, Feb 10, 2022, β11 = 3
+    
+    
+After the schedule is defined, you can proceed to the _Initialize_ page and start the simulation.
+
+The config file for reference is available [here](/assets/alberto-2-case-study.json).
