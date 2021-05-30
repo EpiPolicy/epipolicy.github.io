@@ -35,7 +35,23 @@
   },
   {
     "name": "Tutorials",
-    "children": []
+    "children": [
+      {
+        "name": "Vaccination",
+        "url": "vaccination",
+        "markdown-file": "vaccination.md"
+      },
+      {
+        "name": "Hospitalization",
+        "url": "hospitalization",
+        "markdown-file": "hospitalization.md"
+      },
+      {
+        "name": "Mask and border closure",
+        "url": "mask_border",
+        "markdown-file": "mask_border.md"
+      }
+    ]
   },
   {
     "name": "Case Studies",
