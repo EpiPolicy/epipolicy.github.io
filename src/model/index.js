@@ -32,12 +32,8 @@ class Model {
   } 
 
   latexReplace(text) {
-    text = text.replace(/<latex>(.*?)<\/latex>/g, 
-      (match, p1) => '<div class="latex">$' + p1 + '$</div>');
-    text = text.replace(/<latex-line>(.*?)<\/latex-line>/g, 
-      (match, p1) => '<div class="latex latex-line>$$' + p1 + '$$</div>');
-    text = text.replace(/<latex-line-left>(.*?)<\/latex-line-left>/g, 
-      (match, p1) => '<div class="latex latex-line latex-line-left">$$' + p1 + '$$</div>');
+    text = text.replace(/<tex>(.+?)<\/tex>/g, 
+      (match, p1) => '<span class="tex">$' + p1 + '$</span>');
     return text;
   }
 

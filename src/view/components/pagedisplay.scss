@@ -24,14 +24,10 @@
   }
 
   #page-content {
-    .latex {
+    .tex {
       display: inline-block;
     }
-    .latex-line {
-      display: block;
-    }
-    .latex-line-left {
-      display: block;
+    texb {
       .MathJax {
         text-align: left;
       }
