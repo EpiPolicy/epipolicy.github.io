@@ -3,11 +3,11 @@ A facility is used to model unique environments that affect disease dynamics and
 
 In **EpiPolicy**, you can define the facilities you want to include in your simulation in the *Facilities* page by following the following steps: 
 1. Define the facilities you want to model by specifying a name for the facilitiy and, optionally, a description.
-    <img src="https://epipolicy.github.io/assets/facilities-1.png" alt="drawing"/>
+    <img src="/assets/facilities-1.png" alt="drawing"/>
 2. Define the proportion of time spent by each group in each facility.
-    <img src="https://epipolicy.github.io/assets/facilities-2.png" alt="drawing"/>
+    <img src="/assets/facilities-2.png" alt="drawing"/>
 3. Define the proportion of time spent by each group interacting with other groups within each facility.
-    <img src="https://epipolicy.github.io/assets/facilities-3.png" alt="drawing"/>  
+    <img src="/assets/facilities-3.png" alt="drawing"/>  
 
 Once you have defined base values for your groups and facilities in steps 2 and 3, you can further refine your data by providing specific values for each locale by creating a new row via the add button at the top-right of each section and specifying your target locales in the first column (via [specification syntax](/#regex-syntax)).
 
@@ -16,5 +16,5 @@ You can also opt to utilize a built-in plugin to use [SynthPop](https://github.c
 The SynthPop plugin can be accessed via the *New* button located at the top of the page.
 
 <figure>
-    <img src="https://epipolicy.github.io/assets/facilities-synthpop-button.png" alt="drawing"/>  
+    <img src="/assets/facilities-synthpop-button.png" alt="drawing"/>  
 </figure>

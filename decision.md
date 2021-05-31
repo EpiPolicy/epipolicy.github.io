@@ -169,7 +169,7 @@ In vaccination intervention, different locales can have different vaccine capaci
 
 Required UI:
 
-![CP](https://epipolicy.github.io/assets/cp.png)
+![CP](/assets/cp.png)
 
 <pre><code>def effect(control_parameters):
     administration_rate = control_parameters['administration_rate']
