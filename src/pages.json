@@ -37,9 +37,9 @@
     "name": "Tutorials",
     "children": [
       {
-        "name": "The SIR Model",
-        "url": "sir_model",
-        "markdown-file": "sir_model.md"
+        "name": "1. Create your first model",
+        "url": "create_your_first_model",
+        "markdown-file": "create_your_first_model.md"
       },
       {
         "name": "Vaccination",
