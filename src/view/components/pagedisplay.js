@@ -23,7 +23,7 @@ class PageDisplay extends React.Component {
     }
     return (
       <div id="page-display" className={this.model.activePage['no-padding'] ? 'no-padding' : ''}>
-        {this.model.activePage['hide-title'] ? null : <h2>{this.model.activePage.name}</h2>}
+        {this.model.activePage['hide-title'] ? null : <h1>{this.model.activePage.name}</h1>}
         <div
           id="page-content"
           dangerouslySetInnerHTML={{__html: this.model.activePageContent}}>
@@ -43,9 +43,9 @@ class PageDisplay extends React.Component {
   componentDidUpdate() {
     this.mathJax();
     this.bootstrapToolTips();
-    // document.querySelectorAll('pre code').forEach((el) => {
-    //   hljs.highlightElement(el);
-    // });
+    document.querySelectorAll('pre code').forEach((el) => {
+      hljs.highlightElement(el);
+    });
   }
 
 }

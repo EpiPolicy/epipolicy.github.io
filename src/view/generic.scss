@@ -61,31 +61,37 @@ html {
   }
 }
 
+
+// HEADERS
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
+// H1 IS USED FOR WEBSITE and PAGE TITLE (i.e. EpiPolicy)
 h1 {
-  // USED FOR WEBSITE TITLE (i.e. EpiPolicy)
-  margin: 0 0 1rem 0;
+  margin: 0 0 $xl-margin 0;
 }
+// H2 IS USED FOR SECTIONS
 h2 {
-  // USED FOR PAGE TITLE (only one per page)
-  margin: 0 0 1rem 0;
+  margin: $xl-margin 0 $lg-margin 0; 
+}
+// H3 IS USED FOR SUB-SECTIONS
+h4 {
+  margin: $lg-margin 0 $md-margin 0;
 }
 h3 {
-  // USED FOR SECTIONS
-  margin: 2rem 0 1rem 0; 
-}
-h4 {
-  // USED FOR SUB-SECTIONS
-  margin: 1rem 0 0.5rem 0;
+  margin: $md-margin 0 $sm-margin 0;
 }
 h5, h6 {
   margin: 0;
 }
 
+
 a {
   color: $action-color;
+}
+
+p {
+  margin-bottom: $lg-margin;
 }
 
 .tooltip-link {
