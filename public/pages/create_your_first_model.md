@@ -46,7 +46,7 @@ Between <tex>I</tex> and <tex>R</tex>, the transition rate is assumed to be <tex
     <video class="tutorial-video" width="800px" autoplay muted loop>
         <source src="assets/1-predefined.m4v" type="video/mp4">
     </video>
-</div><br/>
+</div>
 
 ### Start from scratch
 
@@ -56,7 +56,7 @@ Firstly, name your model:
     <video class="tutorial-video" width="800px" autoplay muted loop>
         <source src="assets/1-name.m4v" type="video/mp4">
     </video>
-</div><br/>
+</div>
 
 Then list your compartment's name, description, equation and its appropriate tags.
 

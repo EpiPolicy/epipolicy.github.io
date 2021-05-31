@@ -78,11 +78,14 @@ h2 {
 h4 {
   margin: $lg-margin 0 $md-margin 0;
 }
+// H3 IS USED FOR SUB-SUB-SECTIONS
 h3 {
-  margin: $md-margin 0 $sm-margin 0;
+  margin: $lg-margin 0 $sm-margin 0;
 }
+// H5 and H6 NOT USED
 h5, h6 {
   margin: 0;
+  background-color: red;
 }
 
 
@@ -90,8 +93,12 @@ a {
   color: $action-color;
 }
 
-p {
+p, pre {
   margin-bottom: $lg-margin;
+}
+
+pre code {
+  font-size: 0.8 * $font-size-base;
 }
 
 .tooltip-link {
@@ -113,4 +120,12 @@ p {
 .tutorial-video {
   border: 1px solid #ddd;
   width: 100%;
+}
+
+figure {
+  margin-bottom: $lg-margin;
+}
+
+ol, ul, dl {
+  margin-bottom: $lg-margin;
 }

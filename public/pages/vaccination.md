@@ -10,7 +10,9 @@ In this tutorial, we  implement a two-dose vaccination scheme with SIRS model. S
 - The transition rate <tex>v_1</tex> from <tex>S</tex> to <tex>V_1</tex> is <tex>0</tex> because we want to model the vaccination by direct transition rather than the transition rate.
 - The transition rate <tex>v_2</tex> from <tex>V_1</tex> to <tex>V_2</tex> is <tex>0.0476 \approx \frac{1}{21}</tex> implying that the duration between the first dose and the second dose is 21 days on average.
 
-<img src="https://epipolicy.github.io/assets/SIRV12.png" alt="model-parameters" width="1200"/>  
+<figure>
+    <img src="https://epipolicy.github.io/assets/SIRV12.png" alt="model-parameters"/>  
+</figure>
 
 ### Intervention page
 
@@ -65,16 +67,22 @@ def cost(cp):
 
 In the schedule page, we create a vaccination program starting from March 2021 to May 2021.
 
-<img src="https://epipolicy.github.io/assets/SIRV12-schedule.png" alt="model-parameters" width="1200"/>  
+<figure>
+    <img src="https://epipolicy.github.io/assets/SIRV12-schedule.png" alt="model-parameters"/>  
+</figure>
 
 ### Initialize page
 
 In the initialize page, we create a simulation starting with 100 infectious people.
 
-<img src="https://epipolicy.github.io/assets/SIRV12-initialize.png" alt="model-parameters" width="1200"/>  
+<figure>
+    <img src="https://epipolicy.github.io/assets/SIRV12-initialize.png" alt="model-parameters"/>  
+</figure>
 
 ### Compare page
 
 Epipolicy allows user to compare different scenarios. Below is the comparison of the vaccinated scenario and a non-vaccinated scenario in which we simply remove the schedule of the vaccination:
 
-<img src="https://epipolicy.github.io/assets/SIRV12-compare.png" alt="model-parameters" width="1200"/>  
+<figure>
+    <img src="https://epipolicy.github.io/assets/SIRV12-compare.png" alt="model-parameters"/>  
+</figure>
