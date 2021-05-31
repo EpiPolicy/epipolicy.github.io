@@ -1,8 +1,8 @@
-The config file for this tutorial is available [here](/assets/SIRV12.json).
+The config file for this tutorial is available [here](https://epipolicy.github.io/assets/SIRV12.json).
 
 In this tutorial, we will try to implement a two-dose vaccination scheme with SIRS model. Specifically, the ODE system that describes our model is:
 
-<img src="/assets/SIRV12-equations.png" alt="model-parameters" width="300"/>  
+<img src="https://epipolicy.github.io/assets/SIRV12-equations.png" alt="model-parameters" width="300"/>  
 
 ### Model page
 
@@ -10,7 +10,7 @@ In this tutorial, we will try to implement a two-dose vaccination scheme with SI
 - The transition rate <latex>v_1</latex> from <latex>S</latex> to <latex>V_1</latex> is <latex>0</latex> since we want to model the vaccination by direct transition rather than the transition rate.
 - The transition rate <latex>v_2</latex> from <latex>V_1</latex> to <latex>V_2</latex> is <latex>0.0476 \approx \frac{1}{21}</latex> implying that the duration between the first dose and the second dose is 21 days on average.
 
-<img src="/assets/SIRV12.png" alt="model-parameters" width="1200"/>  
+<img src="https://epipolicy.github.io/assets/SIRV12.png" alt="model-parameters" width="1200"/>  
 
 ### Intervention page
 
@@ -65,16 +65,16 @@ def cost(cp):
 
 In the schedule page, we create a vaccination program starting from March 2021 to May 2021.
 
-<img src="/assets/SIRV12-schedule.png" alt="model-parameters" width="1200"/>  
+<img src="https://epipolicy.github.io/assets/SIRV12-schedule.png" alt="model-parameters" width="1200"/>  
 
 ### Initialize page
 
 In the initialize page, we create a simulation starting with 100 infectious people.
 
-<img src="/assets/SIRV12-initialize.png" alt="model-parameters" width="1200"/>  
+<img src="https://epipolicy.github.io/assets/SIRV12-initialize.png" alt="model-parameters" width="1200"/>  
 
 ### Compare page
 
 Epipolicy allows user to compare different scenarios. Below is the comparison of the vaccinated scenario and a non-vaccinated scenario in which we simply remove the schedule of the vaccination:
 
-<img src="/assets/SIRV12-compare.png" alt="model-parameters" width="1200"/>  
+<img src="https://epipolicy.github.io/assets/SIRV12-compare.png" alt="model-parameters" width="1200"/>  

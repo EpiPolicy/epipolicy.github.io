@@ -1,6 +1,6 @@
-The *Schedule* page allows you to specify the [duration](/assets/duration.png) of your simulation as well as the implementation details of the interventions specified in the [interventions](/#intervention) page.
+The *Schedule* page allows you to specify the [duration](https://epipolicy.github.io/assets/duration.png) of your simulation as well as the implementation details of the interventions specified in the [interventions](/#intervention) page.
 
-<img src="/assets/schedule.png" alt="drawing" style="width:70%;"/>
+<img src="https://epipolicy.github.io/assets/schedule.png" alt="drawing" style="width:70%;"/>
 
 
 *Interventions Timeline* ⑤ shows the schedule of each intervention. 
@@ -11,7 +11,7 @@ In order to define the schedule of an intervention, you can click on its name in
 ### Triggers
 **EpiPolicy** allows you to invoke interventions dynamically. In order to do so, you can check the *Has Trigger* checkbox ②. Once you do it, you will be able to specify conditions in the form of Python functions in a code box, similar to the way you define interventions and costs. The function must return a ``True`` or ``False`` value. The intervention will be invoked if the function returns ``True``.
 
-<img src="/assets/trigger.png" alt="drawing" style="width:50%;"/>
+<img src="https://epipolicy.github.io/assets/trigger.png" alt="drawing" style="width:50%;"/>
 
 ### Add/Remove Iterations
 
@@ -19,7 +19,7 @@ In order to define the schedule of an intervention, you can click on its name in
 2. To delete an iteration, click the **x** button in the last cell of the row of the iteration you want to delete. 
 3. To repeat)  an iteration periodically, click on the options button in the last cell of the row of the iteration you want to repeat. You can repeat interventions on a daily, weekly, monthly or annual basis.
     <br>
-    <img src="/assets/schedule-qa.png" alt="drawing" style="width:50%;"/>
+    <img src="https://epipolicy.github.io/assets/schedule-qa.png" alt="drawing" style="width:50%;"/>
 
 
 

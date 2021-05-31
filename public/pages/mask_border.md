@@ -1,4 +1,4 @@
-The config file for this tutorial is available [here](/assets/SIRMB.json).
+The config file for this tutorial is available [here](https://epipolicy.github.io/assets/SIRMB.json).
 
 In this tutorial, we will try to implement mask and border closure with an SIRS model considering that:
 - Mask-wearing  applies only to public places such as school, workplace, community
@@ -9,7 +9,7 @@ In this tutorial, we will try to implement mask and border closure with an SIRS 
 - A standard SIRS system is used
 - Immunity-loss period is 33 days on average
 
-<img src="/assets/SIRMB.png" alt="model-parameters" width="1200"/>  
+<img src="https://epipolicy.github.io/assets/SIRMB.png" alt="model-parameters" width="1200"/>  
 
 ### Locale page
 
@@ -18,7 +18,7 @@ We choose administrative level 1 for the United Provinces which consists of 3 lo
 - UnitedProvinces.Hills
 - UnitedProvinces.Beaches
 
-<img src="/assets/SIRMB-locale.png" alt="model-parameters" width="1200"/>  
+<img src="https://epipolicy.github.io/assets/SIRMB-locale.png" alt="model-parameters" width="1200"/>  
 
 ### Group page
 
@@ -27,7 +27,7 @@ We create 3 groups using [GPWv4 data](https://sedac.ciesin.columbia.edu/data/col
 - Adults (age 20-49)
 - Seniors (age 50+)
 
-<img src="/assets/SIRMB-group.png" alt="model-parameters" width="1200"/>  
+<img src="https://epipolicy.github.io/assets/SIRMB-group.png" alt="model-parameters" width="1200"/>  
 
 ### Facility page
 
@@ -37,13 +37,13 @@ We create 4 facilities using [Synthpop data](https://github.com/InstituteforDise
 - Workplace
 - Community
 
-<img src="/assets/SIRMB-facility.png" alt="model-parameters" width="1200"/>  
+<img src="https://epipolicy.github.io/assets/SIRMB-facility.png" alt="model-parameters" width="1200"/>  
 
 ### Mobility page
 
 The mobility matrix is premade with customizable values.
 
-<img src="/assets/SIRMB-mobility.png" alt="model-parameters" width="1200"/>
+<img src="https://epipolicy.github.io/assets/SIRMB-mobility.png" alt="model-parameters" width="1200"/>
 
 ### Intervention page
 

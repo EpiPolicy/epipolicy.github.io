@@ -1,8 +1,8 @@
-The config file for this tutorial is available [here](/assets/HSIRD.json).
+The config file for this tutorial is available [here](https://epipolicy.github.io/assets/HSIRD.json).
 
 In this tutorial, we build an SIR model including hospitalization where hospitals have capacity limits. Specifically, the ODE (ordinary differential equation) system that describes our model is:
 
-<img src="/assets/HSIRD-equations.png" alt="model-parameters" width="400"/>  
+<img src="https://epipolicy.github.io/assets/HSIRD-equations.png" alt="model-parameters" width="400"/>  
 
 ### Model page
 
@@ -10,7 +10,7 @@ In this tutorial, we build an SIR model including hospitalization where hospital
 - A person who is not admitted to hospital will spend 33 days to recover on average
 - A person who is admitted to hospital (after 8 days on average) will spend 20 days to recover. [Dennis asks whether this is a total or 20 more days]
 
-<img src="/assets/HSIRD.png" alt="model-parameters" width="1200"/>  
+<img src="https://epipolicy.github.io/assets/HSIRD.png" alt="model-parameters" width="1200"/>  
 
 ### Intervention page
 
@@ -56,11 +56,11 @@ def cost(cp):
 
 In the schedule page, we create an increase in hospital capacity (from 100000 to 400000) starting in March 2021
 
-<img src="/assets/HSIRD-schedule.png" alt="model-parameters" width="1200"/>  
+<img src="https://epipolicy.github.io/assets/HSIRD-schedule.png" alt="model-parameters" width="1200"/>  
 
 
 ### Compare page
 
 Below is the comparison of the increasing hospital scenario and a non-increasing scenario (hospital capacity stays at 100000):
 
-<img src="/assets/HSIRD-compare.png" alt="model-parameters" width="1200"/>  
+<img src="https://epipolicy.github.io/assets/HSIRD-compare.png" alt="model-parameters" width="1200"/>  
