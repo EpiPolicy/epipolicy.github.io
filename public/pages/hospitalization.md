@@ -2,7 +2,13 @@ The config file for this tutorial is available [here](/assets/HSIRD.json).
 
 In this tutorial, we build an SIR model including hospitalization where hospitals have capacity limits. Specifically, the ODE (ordinary differential equation) system that describes our model is:
 
-<img src="/assets/HSIRD-equations.png" alt="model-parameters" width="400"/>  
+<texb>
+\begin{array}{lcl} \frac{dS}{dt} & = & - \beta \frac{SI}{N} \\
+\frac{dI}{dt} & = & \beta \frac{SI}{N} - i_h I - r_i d_i I - r_i (1-d_i) I \\
+\frac{dR}{dt} &= & r_i (1-d_i) I + r_h (1-d_h) H \\
+\frac{dH}{dt} &=& i_h I - r_h d_h H - r_h (1-d_h) H \\
+\frac{dD}{dt} &=& r_i d_i I +  r_h d_h H \end{array}
+</texb>
 
 ### Model page
 
@@ -15,12 +21,12 @@ In this tutorial, we build an SIR model including hospitalization where hospital
 ### Intervention page
 
 #### Effect of hospital capacity
-<latex> </latex> We must adjust the hospitalization rate <latex>i_h</latex> to ensure that the number of people hospitalized is not above the capacity. We observe that the number of transition from <latex>I</latex> to <latex>H</latex> is approximately <latex>i_h I</latex>. The new rate can be computed as <latex>\frac{\text{left-over capacity}}{I} = \frac{\text{current capacity} - H}{I}</latex>
+We must adjust the hospitalization rate <tex>i_h</tex> to ensure that the number of people hospitalized is not above the capacity. We observe that the number of transition from <tex>I</tex> to <tex>H</tex> is approximately <tex>i_h I</tex>. The new rate can be computed as <tex>\frac{\text{left-over capacity}}{I} = \frac{\text{current capacity} - H}{I}</tex>
 
-<latex> </latex> **EpiPolicy** provides <latex>sim.apply(P_1, m)</latex> that applies a multiplicative factor <latex>m</latex> to the default value of the paramater <latex>P_1</latex>. Hence we compute <latex>m</latex> as <latex>\frac{\text{new }i_h}{\text{default }i_h}</latex>
+**EpiPolicy** provides <tex>sim.apply(P_1, m)</tex> that applies a multiplicative factor <tex>m</tex> to the default value of the paramater <tex>P_1</tex>. Hence we compute <tex>m</tex> as <tex>\frac{\text{new }i_h}{\text{default }i_h}</tex>
 
 Tip:
-- If <latex>X</latex> is a [Pandas data frame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), then ```X['Value'].mean()``` will be the average of column 'Value'
+- If <tex>X</tex> is a [Pandas data frame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), then ```X['Value'].mean()``` will be the average of column 'Value'
 - Use "value-mode":'default' to select the default value
 - Use "value-mode":'current' to select the current value (if no mode is selected, then the current value will be returned)
 

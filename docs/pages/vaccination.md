@@ -6,16 +6,16 @@ In this tutorial, we  implement a two-dose vaccination scheme with SIRS model. S
 
 ### Model page
 
-- Anyone in the one-dose compartment <latex>V_1</latex> is 50% less likely to be infected while anyone in the two-dose compartment <latex>V_2</latex> is immune to the disease.
-- The transition rate <latex>v_1</latex> from <latex>S</latex> to <latex>V_1</latex> is <latex>0</latex> because we want to model the vaccination by direct transition rather than the transition rate.
-- The transition rate <latex>v_2</latex> from <latex>V_1</latex> to <latex>V_2</latex> is <latex>0.0476 \approx \frac{1}{21}</latex> implying that the duration between the first dose and the second dose is 21 days on average.
+- Anyone in the one-dose compartment <tex>V_1</tex> is 50% less likely to be infected while anyone in the two-dose compartment <tex>V_2</tex> is immune to the disease.
+- The transition rate <tex>v_1</tex> from <tex>S</tex> to <tex>V_1</tex> is <tex>0</tex> because we want to model the vaccination by direct transition rather than the transition rate.
+- The transition rate <tex>v_2</tex> from <tex>V_1</tex> to <tex>V_2</tex> is <tex>0.0476 \approx \frac{1}{21}</tex> implying that the duration between the first dose and the second dose is 21 days on average.
 
 <img src="/assets/SIRV12.png" alt="model-parameters" width="1200"/>  
 
 ### Intervention page
 
 #### Effect of vaccination
-<latex> </latex> **EpiPolicy** provides <latex>sim.move(C_1, C_2, x)</latex> to directly move <latex>x</latex> number of compartment <latex>C_1</latex> to <latex>C_2</latex>
+<tex> </tex> **EpiPolicy** provides <tex>sim.move(C_1, C_2, x)</tex> to directly move <tex>x</tex> number of compartment <tex>C_1</tex> to <tex>C_2</tex>
 
 ```python
 def effect(cp, locales):
@@ -24,7 +24,7 @@ def effect(cp, locales):
 
 #### Cost of vaccination
 
-<latex> </latex> **EpiPolicy** provides <latex>sim.add(I_1, c)</latex> to add <latex>c</latex> cost to the intervention <latex>I_1</latex>
+<tex> </tex> **EpiPolicy** provides <tex>sim.add(I_1, c)</tex> to add <tex>c</tex> cost to the intervention <tex>I_1</tex>
 
 ```python
 def cost(cp, locales):
@@ -36,7 +36,7 @@ def cost(cp, locales):
 
 #### Cost of infectious
 
-<latex> </latex> **EpiPolicy** provides <latex>sim.select(C_1)</latex> to return a [Pandas data frame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) that represents the selected compartment <latex>C_1</latex>
+<tex> </tex> **EpiPolicy** provides <tex>sim.select(C_1)</tex> to return a [Pandas data frame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) that represents the selected compartment <tex>C_1</tex>
 
 For example, a user who selects all compartments in Abu Dhabi would receive the following Pandas data frame:
 
