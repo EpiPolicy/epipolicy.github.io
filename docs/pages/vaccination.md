@@ -1,13 +1,13 @@
 The config file for this tutorial is available [here](https://epipolicy.github.io/assets/SIRV12.json).
 
-In this tutorial, we will try to implement a two-dose vaccination scheme with SIRS model. Specifically, the ODE system that describes our model is:
+In this tutorial, we  implement a two-dose vaccination scheme with SIRS model. Specifically, the ODE (ordinary differential equation) system that describes our model is:
 
 <img src="https://epipolicy.github.io/assets/SIRV12-equations.png" alt="model-parameters" width="300"/>  
 
 ### Model page
 
-- The one-dose compartment <latex>V_1</latex> is 50% less likely to be infected while the two-dose compartment <latex>V_2</latex> is immune to the disease.
-- The transition rate <latex>v_1</latex> from <latex>S</latex> to <latex>V_1</latex> is <latex>0</latex> since we want to model the vaccination by direct transition rather than the transition rate.
+- Anyone in the one-dose compartment <latex>V_1</latex> is 50% less likely to be infected while anyone in the two-dose compartment <latex>V_2</latex> is immune to the disease.
+- The transition rate <latex>v_1</latex> from <latex>S</latex> to <latex>V_1</latex> is <latex>0</latex> because we want to model the vaccination by direct transition rather than the transition rate.
 - The transition rate <latex>v_2</latex> from <latex>V_1</latex> to <latex>V_2</latex> is <latex>0.0476 \approx \frac{1}{21}</latex> implying that the duration between the first dose and the second dose is 21 days on average.
 
 <img src="https://epipolicy.github.io/assets/SIRV12.png" alt="model-parameters" width="1200"/>  
