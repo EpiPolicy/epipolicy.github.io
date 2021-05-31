@@ -1,6 +1,7 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 import './pagedisplay.scss';
+import 'highlight.js/scss/github.scss';
 import $ from 'jquery';
 
 // Bootstrap initialization

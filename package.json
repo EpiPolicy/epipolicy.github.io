@@ -13,6 +13,7 @@
     "crypto-js": "^4.0.0",
     "d3": "^6.6.2",
     "font-awesome": "4.7.0",
+    "highlight.js": "^11.0.0",
     "http-proxy-middleware": "^1.1.1",
     "jquery": "^3.6.0",
     "lodash": "^4.17.21",

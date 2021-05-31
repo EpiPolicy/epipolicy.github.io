@@ -3,8 +3,24 @@ import pages_config from "../pages.json";
 import axios from 'axios';
 import marked from 'marked';
 import CryptoJS from 'crypto-js';
+import highlight from 'highlight.js';
 
 let PASSWORD_CONTROL_STRING = 'salimmo sù, el primo e io secondo,\ntanto ch’i’ vidi de le cose belle\nche porta ’l ciel, per un pertugio tondo.\nE quindi uscimmo a riveder le stelle.';
+
+marked.setOptions({
+  renderer: new marked.Renderer(),
+  highlight: function(code, lang) {
+    const language = highlight.getLanguage(lang) ? lang : 'plaintext';
+    return highlight.highlight(code, { language }).value;
+  },
+  pedantic: false,
+  gfm: true,
+  breaks: false,
+  sanitize: false,
+  smartLists: true,
+  smartypants: false,
+  xhtml: false
+});
 
 class Model {
   pages = pages_config;
