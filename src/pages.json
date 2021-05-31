@@ -37,6 +37,11 @@
     "name": "Tutorials",
     "children": [
       {
+        "name": "The SIR Model",
+        "url": "sir_model",
+        "markdown-file": "sir_model.md"
+      },
+      {
         "name": "Vaccination",
         "url": "vaccination",
         "markdown-file": "vaccination.md"
