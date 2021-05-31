@@ -3,6 +3,7 @@ import { observer } from 'mobx-react';
 import './pagedisplay.scss';
 import 'highlight.js/scss/github.scss';
 import $ from 'jquery';
+import hljs from 'highlight.js';
 
 // Bootstrap initialization
 window.$ = $;
@@ -39,14 +40,12 @@ class PageDisplay extends React.Component {
     $('[data-toggle="tooltip"]').tooltip();
   }
 
-  componendDidMount() {
-    this.mathJax();
-    this.bootstrapToolTips();
-  }
-
   componentDidUpdate() {
     this.mathJax();
     this.bootstrapToolTips();
+    // document.querySelectorAll('pre code').forEach((el) => {
+    //   hljs.highlightElement(el);
+    // });
   }
 
 }

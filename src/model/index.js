@@ -3,15 +3,15 @@ import pages_config from "../pages.json";
 import axios from 'axios';
 import marked from 'marked';
 import CryptoJS from 'crypto-js';
-import highlight from 'highlight.js';
+import hljs from 'highlight.js';
 
 let PASSWORD_CONTROL_STRING = 'salimmo sù, el primo e io secondo,\ntanto ch’i’ vidi de le cose belle\nche porta ’l ciel, per un pertugio tondo.\nE quindi uscimmo a riveder le stelle.';
 
 marked.setOptions({
   renderer: new marked.Renderer(),
   highlight: function(code, lang) {
-    const language = highlight.getLanguage(lang) ? lang : 'plaintext';
-    return highlight.highlight(code, { language }).value;
+    const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+    return hljs.highlight(code, { language }).value;
   },
   pedantic: false,
   gfm: true,
@@ -35,7 +35,16 @@ class Model {
     text = text.replace(/<tex>(.+?)<\/tex>/g, 
       (match, p1) => '<span class="tex">$' + p1 + '$</span>');
     return text;
+
+
   }
+
+  markdownToHTML(md) {
+    md = marked(md);
+    md = this.latexReplace(md);
+    md = '<div class="page-body">\n' + md + '\n</div>';
+    return md;
+  } 
 
   loadMarkdownFilePage(pageInfo) {
     let urlRoot = pageInfo.protected ? 'private-pages/' : 'pages/';
@@ -55,7 +64,7 @@ class Model {
             this.setActivePageContent(this.generateErrorPage('Login needed in order to decrypt this file'));
           }
         }
-        this.setActivePageContent(this.latexReplace(marked(data)));
+        this.setActivePageContent(this.markdownToHTML(data));
       })
       .catch(err => {
         this.setActivePageContent(this.generateErrorPage(err));

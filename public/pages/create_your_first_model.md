@@ -1,14 +1,10 @@
 ## Introduction
 
-<hr>
-
 This tutorial provides a mathematical and theoretical background for deterministic compartmental model, with instructions on how to create a simple SIR model and run it on **Epipolicy**.
 
 A deterministic compartmental model solves a system of differential equations representing the progression of epidemic in continuous time. The model is _deterministic_ because their solutions are fixed for the same input parameters and initial conditions. The model is _compartmental_ because they partition the population into compartments that represent discrete disease states.
 
 ## The SIR Model
-
-<hr>
 
 The SIR model is one of the most simplest compartmental model that almost all other models are based on. It consists of three compartments:
 - **S**: The number of **s**usceptible individuals. When a susceptible individual and an infectious individual comes into contact, the susceptible individual has a chance to contract the disease in which he/she transitions to the infectious compartment.
@@ -17,9 +13,9 @@ The SIR model is one of the most simplest compartmental model that almost all ot
 
 Since these numbers vary over time, we make them as a function of <tex>t</tex> (time): <tex>S(t), I(t), R(t)</tex>. Each member of the population typically goes from susceptible to infectious to recovered. This can be shown as a flow diagram in which the boxes represent compartments and the arrows represent transitions between compartments.
 
-<p align="center">
+<figure class="text-center">
   <img src="assets/1-flow-chart.png" width="600"/>
-</p>
+</figure>
 
 ### The SIR Model without vital dynamics
 
@@ -41,8 +37,6 @@ Between <tex>S</tex> and <tex>I</tex>, the transition rate is assumed to be <tex
 Between <tex>I</tex> and <tex>R</tex>, the transition rate is assumed to be <tex>\gamma I</tex>. This is equivalent to assuming that the probability of an infectious individual recovering in at any time interval <tex>dt</tex> is <tex>\gamma dt</tex>. If an individual is infectious for an average time period <tex>D</tex> or the recovery period is <tex>D</tex>, then <tex>\gamma = \frac{1}{D}</tex>. This is equivalent to the assumption that the length of time spent by an individual in the infectious compartment is a random variable with an exponential distribution with mean <tex>\frac{1}{\gamma}=D</tex>. Further mathematical details can be found [here](https://server.math.umanitoba.ca/~jarino/courses/math3820/math3820_slides_residence_time.4p.pdf)
 
 ## Create the model
-
-<hr>
 
 ### Predefined-model
 
@@ -66,8 +60,4 @@ Firstly, name your model:
 
 Then list your compartment's name, description, equation and its appropriate tags.
 
-<hr>
-
 ## Summary
-
-<hr>
