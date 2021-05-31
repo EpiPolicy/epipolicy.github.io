@@ -48,8 +48,8 @@ Between <tex>I</tex> and <tex>R</tex>, the transition rate is assumed to be <tex
 
 **Epipolicy** conveniently provides pre-defined model that users can derive their model from. Users can choose which pre-defined model they want to work on via _Model_ page. However, in this tutorial, we will create the model from scratch.
 
-<div class="tutorial-video-container">
-    <video class="tutorial-video" width="800px" autoplay="autoplay" muted loop>
+<div class="tutorial-video-container" style="width:800px">
+    <video class="tutorial-video" width="800px" autoplay muted loop>
         <source src="assets/1-predefined.m4v" type="video/mp4">
     </video>
 </div><br/>
@@ -58,19 +58,13 @@ Between <tex>I</tex> and <tex>R</tex>, the transition rate is assumed to be <tex
 
 Firstly, name your model:
 
-<div class="tutorial-video-container">
+<div class="tutorial-video-container" style="width:800px">
     <video class="tutorial-video" width="800px" autoplay muted loop>
         <source src="assets/1-name.m4v" type="video/mp4">
     </video>
 </div><br/>
 
 Then list your compartment's name, description, equation and its appropriate tags.
-
-<div class="tutorial-video-container">
-    <video class="tutorial-video" width="800px" autoplay muted loop>
-        <source src="assets/1-compartment.m4v" type="video/mp4">
-    </video>
-</div><br/>
 
 <hr>
 
