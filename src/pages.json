@@ -37,7 +37,7 @@
     "name": "Tutorials",
     "children": [
       {
-        "name": "1. Create your first model",
+        "name": "Create your first model",
         "url": "create_your_first_model",
         "markdown-file": "create_your_first_model.md"
       },
