@@ -1,6 +1,6 @@
 This case study is based on a paper titled [The effect of opening schools on the course of Covid-19: a mathematical study](https://arxiv.org/abs/2104.04136v1) by Gandolfi et al.
 
-There are two models discussed in the paper, SIR and SPIAR, based on two sub-populations. For this case study, we will focus on the SPIAR model, described in section 4.15. 
+There are two models discussed in the paper, SIR and SPIAR, based on two sub-populations. For this case study, we will focus on the SPIAR model, described in section 4.15.
 
 ### Describing the Model and Running a Simple Simulation
 
@@ -38,7 +38,7 @@ Now, in the Effect function, we can specify the effect of this intervention by u
 
 ```python
 def effect(cp, locales):
-	sim.apply({"parameter":"b12", "locale":locales},cp["b12"])	
+	sim.apply({"parameter":"b12", "locale":locales},cp["b12"])
 	sim.apply({"parameter":"b21", "locale":locales},cp["b21"])
 	sim.apply({"parameter":"b22", "locale":locales},cp["b22"])
 ```
@@ -71,7 +71,7 @@ def effect(cp, locales):
 
 ### Schedule
 
-After defining the interventions, we can specify when and for how long to implement them in the _Schedule_ page. 
+After defining the interventions, we can specify when and for how long to implement them in the _Schedule_ page.
 
 <figure>
     <img src="/assets/alberto-2-schedule.png" alt="schedule"/>
@@ -86,8 +86,8 @@ Next, we define the schedule of each intervention individually.
     * Jan 1, 2022 - Jan 3, 2022, β11 = 8
     * Jan 4, 2022 - Jan 20, 2022, β11 = 2
     * Jan 21, 2022, Feb 10, 2022, β11 = 3
-    
-    
+
+
 After the schedule is defined, you can proceed to the _Initialize_ page and start the simulation.
 
 <figure>

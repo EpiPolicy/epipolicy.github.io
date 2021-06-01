@@ -88,7 +88,7 @@ Tips:
 **Epipolicy** provides the concept of locales that models human mobility in an epidemic scenario. We can think of locale as a "blob" of population with its own system of differential equations. In this tutorial, our simple model will have exactly 1 "blob" since we choose to partition our imaginary country "United Provinces" at administrative level 0.
 
 Tips:
-- The JSON editor contains the details of each locale in [JSON format](https://www.json.org/json-en.html). We can edit the value to our needs. In this example, we want our blob to have 1000 population.
+- The JSON editor contains the details of each locale in [JSON format](https://www.json.org/json-en.html). You can edit the value to your needs. In this example, we want our blob to have 1000 population.
 
 <div class="tutorial-video-container" style="width:800px">
     <video class="tutorial-video" width="800px" autoplay muted loop controls>
@@ -98,6 +98,52 @@ Tips:
 
 ### Initial conditions
 
+Every compartmental model will need its initial conditions to simulate. These are the initial susceptible and infectious population of the scenario. In this example, we initially have 10 infectious individuals and 990 susceptible individuals.
+
+Tips:
+- Before creating your initial condition, you **should** checkout the _Schedule_ page to set your simulation duration
+- You can omit to put in the initial susceptible population since **Epipolicy** can figure out from the infectious individuals.
+
+<div class="tutorial-video-container" style="width:800px">
+    <video class="tutorial-video" width="800px" autoplay muted loop controls>
+        <source src="assets/1-initialize.m4v" type="video/mp4">
+    </video>
+</div><br/>
+
+### View results
+
+After running the scenario from the _Initialize_ page, you can view the result in the _Results_ page:
+
+- The heat map shows the intensity of the infection throughout the scenario.
+- The lower left graph gives you details about the progression of the compartments as well as the groups of compartments with the same tag.
+- The R-graph shows three types of reproductive numbers: the basic reproductive number [[1](https://web.stanford.edu/~jhj1/teachingdocs/Jones-on-R0.pdf)], the instantaneous reproductive number and the case reproductive number [[2](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7325187/)][[3](https://academic.oup.com/aje/article/178/9/1505/89262)]
+
+<div class="tutorial-video-container" style="width:800px">
+    <video class="tutorial-video" width="800px" autoplay muted loop controls>
+        <source src="assets/1-results.m4v" type="video/mp4">
+    </video>
+</div><br/>
+
 ## Your turn
 
+<hr>
+
+Try to create the SIR Model with vital dynamics. The system of differential equations that describes it:
+
+<texb>
+\begin{array}{lcl} \frac{dS}{dt} & = & \nu N - \beta \frac{SI}{N} - \mu S\\
+\frac{dI}{dt} & = & \beta \frac{SI}{N} - \gamma I - \mu I \\
+\frac{dR}{dt} &= & \gamma I - \mu R
+\end{array}
+</texb>
+
+where <tex>\nu</tex> is the birth rate and <tex>\mu</tex> is the death rate.
+
 ## Summary
+
+<hr>
+
+In this tutorial:
+- We provides a brief understanding of how the deterministic compartmental model works with emphasize on the importance of susceptible and infectious compartments as well as the transmission rate.
+- We illustrates how to create a simple SIR model from scratch and run it using **Epipolicy**.
+- However, for more complicated models, different concepts will come into play such as facility, group, or mobility. If you would like to find out, checkout our next tutorial on "group".
