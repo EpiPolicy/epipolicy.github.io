@@ -14,7 +14,7 @@ The SIR model is one of the most simplest compartmental model that almost all ot
 Since these numbers vary over time, we make them as a function of <tex>t</tex> (time): <tex>S(t), I(t), R(t)</tex>. Each member of the population typically goes from susceptible to infectious to recovered. This can be shown as a flow diagram in which the boxes represent compartments and the arrows represent transitions between compartments.
 
 <figure class="text-center">
-  <img src="assets/1-flow-chart.png" width="600"/>
+  <img src="assets/create_your_first_model/flow-chart.png" width="600"/>
 </figure>
 
 ### The SIR Model without vital dynamics
@@ -42,9 +42,9 @@ Between <tex>I</tex> and <tex>R</tex>, the transition rate is assumed to be <tex
 
 **Epipolicy** conveniently provides pre-defined model that users can derive their model from. Users can choose which pre-defined model they want to work on via _Model_ page. However, in this tutorial, we will create the model from scratch.
 
-<div class="tutorial-video-container" style="width:800px">
-    <video class="tutorial-video" width="800px" autoplay muted loop>
-        <source src="assets/1-predefined.m4v" type="video/mp4">
+<div class="tutorial-video-container">
+    <video class="tutorial-video" autoplay muted loop>
+        <source src="assets/create_your_first_model/model-predefined.m4v" type="video/mp4">
     </video>
 </div>
 
@@ -52,9 +52,9 @@ Between <tex>I</tex> and <tex>R</tex>, the transition rate is assumed to be <tex
 
 Firstly, name your model:
 
-<div class="tutorial-video-container" style="width:800px">
-    <video class="tutorial-video" width="800px" autoplay muted loop>
-        <source src="assets/1-name.m4v" type="video/mp4">
+<div class="tutorial-video-container">
+    <video class="tutorial-video" autoplay muted loop>
+        <source src="assets/create_your_first_model/model-name.m4v" type="video/mp4">
     </video>
 </div>
 
@@ -65,11 +65,11 @@ Tips:
 - The "death" tag is to identify compartment that is not included in <tex>N</tex> since <tex>N</tex> is the total alive population.
 - Users can create their custom tags and therefore, can refer to a set of compartments using its tag.
 
-<div class="tutorial-video-container" style="width:800px">
-    <video class="tutorial-video" width="800px" autoplay muted loop controls>
-        <source src="assets/1-compartment.m4v" type="video/mp4">
+<div class="tutorial-video-container">
+    <video class="tutorial-video" autoplay muted loop controls>
+        <source src="assets/create_your_first_model/model-compartment.m4v" type="video/mp4">
     </video>
-</div><br/>
+</div>
 
 Finally, list name, description and base value of each parameter in the model and its appropriate tags.
 
@@ -77,11 +77,11 @@ Tips:
 - It is **important** that we identify the "transmission" tag for <tex>\beta</tex> which is the transmission rate.
 - Users can create their custom tags and therefore, can refer to a set of parameters using its tag.
 
-<div class="tutorial-video-container" style="width:800px">
-    <video class="tutorial-video" width="800px" autoplay muted loop controls>
-        <source src="assets/1-parameter.m4v" type="video/mp4">
+<div class="tutorial-video-container">
+    <video class="tutorial-video" autoplay muted loop controls>
+        <source src="assets/create_your_first_model/model-parameter.m4v" type="video/mp4">
     </video>
-</div><br/>
+</div>
 
 ### Set population
 
@@ -90,11 +90,11 @@ Tips:
 Tips:
 - The JSON editor contains the details of each locale in [JSON format](https://www.json.org/json-en.html). You can edit the value to your needs. In this example, we want our blob to have 1000 population.
 
-<div class="tutorial-video-container" style="width:800px">
-    <video class="tutorial-video" width="800px" autoplay muted loop controls>
-        <source src="assets/1-population.m4v" type="video/mp4">
+<div class="tutorial-video-container">
+    <video class="tutorial-video" autoplay muted loop controls>
+        <source src="assets/create_your_first_model/locales.m4v" type="video/mp4">
     </video>
-</div><br/>
+</div>
 
 ### Initial conditions
 
@@ -104,11 +104,11 @@ Tips:
 - Before creating your initial condition, you **should** checkout the _Schedule_ page to set your simulation duration
 - You can omit to put in the initial susceptible population since **Epipolicy** can figure out from the infectious individuals.
 
-<div class="tutorial-video-container" style="width:800px">
-    <video class="tutorial-video" width="800px" autoplay muted loop controls>
-        <source src="assets/1-initialize.m4v" type="video/mp4">
+<div class="tutorial-video-container">
+    <video class="tutorial-video" autoplay muted loop controls>
+        <source src="assets/create_your_first_model/initialize.m4v" type="video/mp4">
     </video>
-</div><br/>
+</div>
 
 ### View results
 
@@ -118,15 +118,13 @@ After running the scenario from the _Initialize_ page, you can view the result i
 - The lower left graph gives you details about the progression of the compartments as well as the groups of compartments with the same tag.
 - The R-graph shows three types of reproductive numbers: the basic reproductive number [[1](https://web.stanford.edu/~jhj1/teachingdocs/Jones-on-R0.pdf)], the instantaneous reproductive number and the case reproductive number [[2](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7325187/)][[3](https://academic.oup.com/aje/article/178/9/1505/89262)]
 
-<div class="tutorial-video-container" style="width:800px">
-    <video class="tutorial-video" width="800px" autoplay muted loop controls>
-        <source src="assets/1-results.m4v" type="video/mp4">
+<div class="tutorial-video-container">
+    <video class="tutorial-video" autoplay muted loop controls>
+        <source src="assets/create_your_first_model/results.m4v" type="video/mp4">
     </video>
-</div><br/>
+</div>
 
 ## Your turn
-
-<hr>
 
 Try to create the SIR Model with vital dynamics. The system of differential equations that describes it:
 
@@ -140,8 +138,6 @@ Try to create the SIR Model with vital dynamics. The system of differential equa
 where <tex>\nu</tex> is the birth rate and <tex>\mu</tex> is the death rate.
 
 ## Summary
-
-<hr>
 
 In this tutorial:
 - We provides a brief understanding of how the deterministic compartmental model works with emphasize on the importance of susceptible and infectious compartments as well as the transmission rate.
