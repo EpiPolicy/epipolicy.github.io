@@ -44,7 +44,7 @@ Between <tex>I</tex> and <tex>R</tex>, the transition rate is assumed to be <tex
 
 <div class="tutorial-video-container">
     <video class="tutorial-video" autoplay muted loop>
-        <source src="assets/create_your_first_model/model-predefined.m4v" type="video/mp4">
+        <source src="assets/create_your_first_model/model-predefined.mp4" type="video/mp4">
     </video>
 </div>
 
@@ -54,7 +54,7 @@ Firstly, name your model:
 
 <div class="tutorial-video-container">
     <video class="tutorial-video" autoplay muted loop>
-        <source src="assets/create_your_first_model/model-name.m4v" type="video/mp4">
+        <source src="assets/create_your_first_model/model-name.mp4" type="video/mp4">
     </video>
 </div>
 
@@ -67,7 +67,7 @@ Tips:
 
 <div class="tutorial-video-container">
     <video class="tutorial-video" autoplay muted loop controls>
-        <source src="assets/create_your_first_model/model-compartment.m4v" type="video/mp4">
+        <source src="assets/create_your_first_model/model-compartment.mp4" type="video/mp4">
     </video>
 </div>
 
@@ -79,7 +79,7 @@ Tips:
 
 <div class="tutorial-video-container">
     <video class="tutorial-video" autoplay muted loop controls>
-        <source src="assets/create_your_first_model/model-parameter.m4v" type="video/mp4">
+        <source src="assets/create_your_first_model/model-parameter.mp4" type="video/mp4">
     </video>
 </div>
 
@@ -92,7 +92,7 @@ Tips:
 
 <div class="tutorial-video-container">
     <video class="tutorial-video" autoplay muted loop controls>
-        <source src="assets/create_your_first_model/locales.m4v" type="video/mp4">
+        <source src="assets/create_your_first_model/locales.mp4" type="video/mp4">
     </video>
 </div>
 
@@ -106,7 +106,7 @@ Tips:
 
 <div class="tutorial-video-container">
     <video class="tutorial-video" autoplay muted loop controls>
-        <source src="assets/create_your_first_model/initialize.m4v" type="video/mp4">
+        <source src="assets/create_your_first_model/initialize.mp4" type="video/mp4">
     </video>
 </div>
 
@@ -120,7 +120,7 @@ After running the scenario from the _Initialize_ page, you can view the result i
 
 <div class="tutorial-video-container">
     <video class="tutorial-video" autoplay muted loop controls>
-        <source src="assets/create_your_first_model/results.m4v" type="video/mp4">
+        <source src="assets/create_your_first_model/results.mp4" type="video/mp4">
     </video>
 </div>
 
