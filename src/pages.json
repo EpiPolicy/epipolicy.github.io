@@ -42,6 +42,11 @@
         "markdown-file": "create_your_first_model.md"
       },
       {
+        "name": "Intro to Epipolicy's group",
+        "url": "intro_to_group",
+        "markdown-file": "intro_to_group.md"
+      },
+      {
         "name": "Vaccination",
         "url": "vaccination",
         "markdown-file": "vaccination.md"

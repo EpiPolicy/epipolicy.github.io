@@ -4,7 +4,7 @@ This tutorial provides a mathematical and theoretical background for determinist
 
 A deterministic compartmental model solves a system of differential equations representing the progression of epidemic in continuous time. The model is _deterministic_ because their solutions are fixed for the same input parameters and initial conditions. The model is _compartmental_ because they partition the population into compartments that represent discrete disease states.
 
-## The SIR Model
+## The SIR model
 
 The SIR model is one of the most simplest compartmental model that almost all other models are based on. It consists of three compartments:
 - **S**: The number of **s**usceptible individuals. When a susceptible individual and an infectious individual comes into contact, the susceptible individual has a chance to contract the disease in which he/she transitions to the infectious compartment.
@@ -17,9 +17,9 @@ Since these numbers vary over time, we make them as a function of <tex>t</tex> (
   <img src="assets/create_your_first_model/flow-chart.png" width="600"/>
 </figure>
 
-### The SIR Model without vital dynamics
+### The SIR model without vital dynamics
 
-The dynamics of an epidemic such as the flu are usually much faster than the vital dynamics of birth and death. Hence birth and death are often omitted in simple compartmental model. The SIR Model without the so-called vital dynamics can be expressed by a system of ordinary differential equations:
+The dynamics of an epidemic such as the flu are usually much faster than the vital dynamics of birth and death. Hence birth and death are often omitted in simple compartmental model. The SIR model without the so-called vital dynamics can be expressed by a system of ordinary differential equations:
 
 <texb>
 \begin{array}{lcl} \frac{dS}{dt} & = & - \beta \frac{SI}{N} \\
@@ -126,7 +126,7 @@ After running the scenario from the _Initialize_ page, you can view the result i
 
 ## Your turn
 
-Try to create the SIR Model with vital dynamics. The system of differential equations that describes it:
+Try to create the SIR model with vital dynamics. The system of differential equations that describes it:
 
 <texb>
 \begin{array}{lcl} \frac{dS}{dt} & = & \nu N - \beta \frac{SI}{N} - \mu S\\
@@ -142,4 +142,4 @@ where <tex>\nu</tex> is the birth rate and <tex>\mu</tex> is the death rate.
 In this tutorial:
 - We provides a brief understanding of how the deterministic compartmental model works with emphasize on the importance of susceptible and infectious compartments as well as the transmission rate.
 - We illustrates how to create a simple SIR model from scratch and run it using **Epipolicy**.
-- However, for more complicated models, different concepts will come into play such as facility, group, or mobility. If you would like to find out, checkout our next tutorial on "group".
+- However, for more complicated models, different concepts will come into play such as group, facility, or mobility. If you would like to find out, checkout our [next tutorial](/#intro_to_group) on groups.
