@@ -44,7 +44,7 @@ Between <tex>I</tex> and <tex>R</tex>, the transition rate is assumed to be <tex
 
 <div class="tutorial-video-container" style="width:800px">
     <video class="tutorial-video" width="800px" autoplay muted loop>
-        <source src="assets/1-predefined.m4v" type="video/mp4">
+        <source src="assets/1-predefined.mp4" type="video/mp4">
     </video>
 </div>
 
@@ -54,7 +54,7 @@ Firstly, name your model:
 
 <div class="tutorial-video-container" style="width:800px">
     <video class="tutorial-video" width="800px" autoplay muted loop>
-        <source src="assets/1-name.m4v" type="video/mp4">
+        <source src="assets/1-name.mp4" type="video/mp4">
     </video>
 </div>
 
@@ -67,7 +67,7 @@ Tips:
 
 <div class="tutorial-video-container" style="width:800px">
     <video class="tutorial-video" width="800px" autoplay muted loop controls>
-        <source src="assets/1-compartment.m4v" type="video/mp4">
+        <source src="assets/1-compartment.mp4" type="video/mp4">
     </video>
 </div><br/>
 
@@ -79,7 +79,7 @@ Tips:
 
 <div class="tutorial-video-container" style="width:800px">
     <video class="tutorial-video" width="800px" autoplay muted loop controls>
-        <source src="assets/1-parameter.m4v" type="video/mp4">
+        <source src="assets/1-parameter.mp4" type="video/mp4">
     </video>
 </div><br/>
 
@@ -92,7 +92,7 @@ Tips:
 
 <div class="tutorial-video-container" style="width:800px">
     <video class="tutorial-video" width="800px" autoplay muted loop controls>
-        <source src="assets/1-population.m4v" type="video/mp4">
+        <source src="assets/1-population.mp4" type="video/mp4">
     </video>
 </div><br/>
 
@@ -106,7 +106,7 @@ Tips:
 
 <div class="tutorial-video-container" style="width:800px">
     <video class="tutorial-video" width="800px" autoplay muted loop controls>
-        <source src="assets/1-initialize.m4v" type="video/mp4">
+        <source src="assets/1-initialize.mp4" type="video/mp4">
     </video>
 </div><br/>
 
@@ -120,7 +120,7 @@ After running the scenario from the _Initialize_ page, you can view the result i
 
 <div class="tutorial-video-container" style="width:800px">
     <video class="tutorial-video" width="800px" autoplay muted loop controls>
-        <source src="assets/1-results.m4v" type="video/mp4">
+        <source src="assets/1-results.mp4" type="video/mp4">
     </video>
 </div><br/>
 
