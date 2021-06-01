@@ -104,8 +104,15 @@ p, pre {
   margin-bottom: $lg-margin;
 }
 
-pre code {
-  font-size: 0.8 * $font-size-base;
+pre {
+  padding: $md-margin;
+  border: 1px solid darken($code-background, 10%);
+  border-radius: $sm-margin;
+  background-color: $code-background;
+  code, .hljs {
+    font-size: 0.8 * $font-size-base;
+    background-color: $code-background;
+  }
 }
 
 .tooltip-link {
