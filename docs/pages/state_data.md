@@ -9,7 +9,7 @@ State matrix <tex>S</tex> has <tex>c \times l \times g</tex> entries where <tex>
 
 #### Requirements:
 
-- <latex-line-left>S[c_1, l_1, g_1] \geq 0</latex-line-left>
+- <tex>S[c_1, l_1, g_1] \geq 0</tex>
 
 ### 2. Locale matrix
 

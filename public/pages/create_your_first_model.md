@@ -1,14 +1,10 @@
 ## Introduction
 
-<hr>
-
 This tutorial provides a mathematical and theoretical background for deterministic compartmental model, with instructions on how to create a simple SIR model and run it on **Epipolicy**.
 
 A deterministic compartmental model solves a system of differential equations representing the progression of epidemic in continuous time. The model is _deterministic_ because their solutions are fixed for the same input parameters and initial conditions. The model is _compartmental_ because they partition the population into compartments that represent discrete disease states.
 
 ## The SIR Model
-
-<hr>
 
 The SIR model is one of the most simplest compartmental model that almost all other models are based on. It consists of three compartments:
 - **S**: The number of **s**usceptible individuals. When a susceptible individual and an infectious individual comes into contact, the susceptible individual has a chance to contract the disease in which he/she transitions to the infectious compartment.
@@ -17,9 +13,9 @@ The SIR model is one of the most simplest compartmental model that almost all ot
 
 Since these numbers vary over time, we make them as a function of <tex>t</tex> (time): <tex>S(t), I(t), R(t)</tex>. Each member of the population typically goes from susceptible to infectious to recovered. This can be shown as a flow diagram in which the boxes represent compartments and the arrows represent transitions between compartments.
 
-<p align="center">
+<figure class="text-center">
   <img src="assets/1-flow-chart.png" width="600"/>
-</p>
+</figure>
 
 ### The SIR Model without vital dynamics
 
@@ -42,8 +38,6 @@ Between <tex>I</tex> and <tex>R</tex>, the transition rate is assumed to be <tex
 
 ## Create the model
 
-<hr>
-
 ### Predefined-model
 
 **Epipolicy** conveniently provides pre-defined model that users can derive their model from. Users can choose which pre-defined model they want to work on via _Model_ page. However, in this tutorial, we will create the model from scratch.
@@ -52,7 +46,7 @@ Between <tex>I</tex> and <tex>R</tex>, the transition rate is assumed to be <tex
     <video class="tutorial-video" width="800px" autoplay muted loop>
         <source src="assets/1-predefined.m4v" type="video/mp4">
     </video>
-</div><br/>
+</div>
 
 ### Start from scratch
 
@@ -62,7 +56,7 @@ Firstly, name your model:
     <video class="tutorial-video" width="800px" autoplay muted loop>
         <source src="assets/1-name.m4v" type="video/mp4">
     </video>
-</div><br/>
+</div>
 
 Then list name, description and equation of each compartment and its appropriate tags.
 
@@ -106,8 +100,4 @@ Tips:
 
 ## Your turn
 
-<hr>
-
 ## Summary
-
-<hr>

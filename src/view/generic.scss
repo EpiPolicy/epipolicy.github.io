@@ -61,22 +61,44 @@ html {
   }
 }
 
+
+// HEADERS
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
-
-h1, h2, h3 {
-  margin-bottom: 0.5rem;
+// H1 IS USED FOR WEBSITE and PAGE TITLE (i.e. EpiPolicy)
+h1 {
+  margin: 0 0 $xl-margin 0;
 }
+// H2 IS USED FOR SECTIONS
+h2 {
+  margin: $xl-margin 0 $lg-margin 0; 
+}
+// H3 IS USED FOR SUB-SECTIONS
 h4 {
-  margin-bottom: 0.1rem;
+  margin: $lg-margin 0 $md-margin 0;
 }
+// H3 IS USED FOR SUB-SUB-SECTIONS
+h3 {
+  margin: $lg-margin 0 $sm-margin 0;
+}
+// H5 and H6 NOT USED
 h5, h6 {
-  margin-bottom: 0;
+  margin: 0;
+  background-color: red;
 }
+
 
 a {
   color: $action-color;
+}
+
+p, pre {
+  margin-bottom: $lg-margin;
+}
+
+pre code {
+  font-size: 0.8 * $font-size-base;
 }
 
 .tooltip-link {
@@ -98,4 +120,12 @@ a {
 .tutorial-video {
   border: 1px solid #ddd;
   width: 100%;
+}
+
+figure {
+  margin-bottom: $lg-margin;
+}
+
+ol, ul, dl {
+  margin-bottom: $lg-margin;
 }

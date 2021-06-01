@@ -4,12 +4,11 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: $lg-margin;
+  padding: $xl-margin $lg-margin $lg-margin $lg-margin;
   overflow: hidden;
 
   .title {
     cursor: pointer;
-    margin-bottom: $lg-margin;
   }
 
   .title-logo {
@@ -22,10 +21,11 @@
 
   .menu-item {
     color: $action-color;
-    font-size: $font-size-base;
+    font-size: 0.9 * $font-size-base;
     cursor: pointer;
+    margin-bottom: $xs-margin;
     &.active {
-      font-weight: bold;
+      font-weight: 400;
     }
     &:hover {
       color: $action-color-highlighted;
@@ -33,11 +33,13 @@
   }
 
   .menu-parent-item {
+    margin-bottom: $sm-margin;
     color: gray;
   }
 
   .menu-children {
     margin-left: $md-margin;
+    margin-bottom: $lg-margin;
   }
 
   .login-box {

@@ -6,13 +6,15 @@ There are two models discussed in the paper, SIR and SPIAR, based on two sub-pop
 
 The first step is to define your model in the _Model_ page in EpiPolicy. Following the model described in the paper (shown below), create a new row in the _Compartments_ table for each compartment in the model. You can provide a name for the compartment as well as a description. Then, proceed to describe the equations for each compartment. Note that you have to mark susceptible and infectious compartments by providing relevant tags in the _tags_ column. In the model under-consideration, compartment *S* represents the susceptible population and compartments *P*, *I*, and *A* represent the infectious populations. As you define your model, a visual summary will be automatically generated for you at the end of the _Model_ page.
 
-<img src="https://epipolicy.github.io/assets/alberto-2-spiar-eq.png" alt="model-equations"/>  
-<br><br>
+<figure>
+    <img src="/assets/alberto-2-spiar-eq.png" alt="model-equations"/>  
+</figure>
 
 Once the equations have been defined, you can now define the parameters used in the model in the _Parameters_ table. We will use the parameters described in Table 1 and Figure 8 in the paper (shown below). For each parameter, create a new row and provide its name, description and value. The values defined here are considered the base values for the parameters and can be modified in later pages. Note that you have to mark the transmission parameters by providing relevant tags in the _tags_ column. In the model under-consideration, the parameters β11, β12, β21, and β22 are transmission parameters.
 
-<img src="https://epipolicy.github.io/assets/alberto-2-spiar-params.png" alt="model-parameters"/>  
-<br><br>
+<figure>
+    <img src="/assets/alberto-2-spiar-params.png" alt="model-parameters"/>  
+</figure>
 
 There are three scenarios described in the paper:
 1. Outbreak
@@ -71,8 +73,9 @@ def effect(cp, locales):
 
 After defining the interventions, we can specify when and for how long to implement them in the _Schedule_ page. 
 
-<img src="https://epipolicy.github.io/assets/alberto-2-schedule.png" alt="schedule"/>  
-<br>
+<figure>
+    <img src="/assets/alberto-2-schedule.png" alt="schedule"/>
+</figure>
 
 First, we specify a duration of 40 days from Jan 1, 2022 till Feb 10, 2022 (in EpiPolicy, the unit of time is 1 day).
 Next, we define the schedule of each intervention individually.
@@ -87,7 +90,8 @@ Next, we define the schedule of each intervention individually.
     
 After the schedule is defined, you can proceed to the _Initialize_ page and start the simulation.
 
-<img src="https://epipolicy.github.io/assets/alberto-2-res.png" alt="schedule"/>  
-<br>
+<figure>
+    <img src="/assets/alberto-2-res.png" alt="schedule"/>  
+</figure>
 
-The JSON file for reference is available [here](https://epipolicy.github.io/assets/alberto-2-case-study.json).
+The JSON file for reference is available [here](/assets/alberto-2-case-study.json).
