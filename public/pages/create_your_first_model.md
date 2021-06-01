@@ -64,7 +64,47 @@ Firstly, name your model:
     </video>
 </div><br/>
 
-Then list your compartment's name, description, equation and its appropriate tags.
+Then list name, description and equation of each compartment and its appropriate tags.
+
+Tips:
+- It is **important** that we identify the "susceptible" tag for <tex>S</tex> and the "infectious" tag for <tex>I</tex>.
+- The "death" tag is to identify compartment that is not included in <tex>N</tex> since <tex>N</tex> is the total alive population.
+- Users can create their custom tags and therefore, can refer to a set of compartments using its tag.
+
+<div class="tutorial-video-container" style="width:800px">
+    <video class="tutorial-video" width="800px" autoplay muted loop controls>
+        <source src="assets/1-compartment.m4v" type="video/mp4">
+    </video>
+</div><br/>
+
+Finally, list name, description and base value of each parameter in the model and its appropriate tags.
+
+Tips:
+- It is **important** that we identify the "transmission" tag for <tex>\beta</tex> which is the transmission rate.
+- Users can create their custom tags and therefore, can refer to a set of parameters using its tag.
+
+<div class="tutorial-video-container" style="width:800px">
+    <video class="tutorial-video" width="800px" autoplay muted loop controls>
+        <source src="assets/1-parameter.m4v" type="video/mp4">
+    </video>
+</div><br/>
+
+### Set population
+
+**Epipolicy** provides the concept of locales that models human mobility in an epidemic scenario. We can think of locale as a "blob" of population with its own system of differential equations. In this tutorial, our simple model will have exactly 1 "blob" since we choose to partition our imaginary country "United Provinces" at administrative level 0.
+
+Tips:
+- The JSON editor contains the details of each locale in [JSON format](https://www.json.org/json-en.html). We can edit the value to our needs. In this example, we want our blob to have 1000 population.
+
+<div class="tutorial-video-container" style="width:800px">
+    <video class="tutorial-video" width="800px" autoplay muted loop controls>
+        <source src="assets/1-population.m4v" type="video/mp4">
+    </video>
+</div><br/>
+
+### Initial conditions
+
+## Your turn
 
 <hr>
 
