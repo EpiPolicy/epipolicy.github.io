@@ -1,0 +1,9 @@
+@import "../variables";
+
+#page-navbar {
+    background-color: red;
+    width: 10 * $lg-margin;
+    position: fixed;
+    top: $xl-margin;
+    right: $xl-margin;
+}

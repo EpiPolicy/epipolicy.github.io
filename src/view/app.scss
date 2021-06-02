@@ -155,6 +155,10 @@ ol, ul, dl {
       background-color: $sidebar-background;
       overflow: hidden;
       width: $sidebar-width;
+
+      &.hide-sidebar {
+        display: none;
+      }
       
       #sidebar {
         position: fixed;
@@ -171,15 +175,6 @@ ol, ul, dl {
       overflow-y: scroll;
       background-color: $background-color;
       margin: 0 0 0 $sidebar-width;
-
-      #page-content {
-        margin: 0;
-      }
-
-      .page-body {
-        max-width: 46rem!important;
-      }
-
     }
 
   }

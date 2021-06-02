@@ -8,7 +8,9 @@ class App extends React.Component {
 
   render() {
     return <div id="app">
-      <div id="sidebar-container">
+      <div id="sidebar-container" 
+           className={this.props.model.activePage['hide-sidebar'] ? 'hide-sidebar' : ''}
+      >
         <Sidebar model={this.props.model} />
       </div>
       <div id="main-panel-container">
