@@ -31,7 +31,7 @@ Now that you have the results of the Outbreak scenario, you can proceed to simul
 
 In order to generate a complete Outbreak-Lockdown-Vaccination scenario, you can specify these scenarios as interventions in the _Interventions_ page and define a schedule of implementation in the _Schedule_ page. For this case study, we will use the Outbreak scenario as the baseline by using the parameter values for this scenario as base values in the _Model_ page. We will express the other scenarios as well as school closures in the form of interventions in the _Interventions_ page.
 
-##### Lockdown Intervention
+#### Lockdown Intervention
 In the _Interventions_ page, create a new row for this intervention and provide a name and description. As this intervention modifies the parameters β12, β21, and β22, we can specify these in the Control Parameters table. Considering the Outbreak parameters as baseline, we can see that the lockdown intervention reduces β22 by 75% and β12 and β21 by 60%. Thus, we specify the default value of β22 as 0.25 in the Control Parameters table and that of β12 and β21 as 0.4.
 
 Now, in the Effect function, we can specify the effect of this intervention by using the Apply API, as follows.
@@ -43,7 +43,7 @@ def effect(cp, locales):
 	sim.apply({"parameter":"b22", "locale":locales},cp["b22"])
 ```
 
-##### School Closures Intervention
+#### School Closures Intervention
 
 In the _Interventions_ page, create a new row for this intervention and provide a name and description. As this intervention modifies the parameters β11, we can specify it in the Control Parameters table. As β11 is defined separately from other parameters, we can opt to simply replace the existing value with the new one. This can be done simply be dividing the new value of β11 by the existing value of β11 and then using that fraction as the argument to the Apply API. The existing value of β11 can be accessed via the Select API. This intervention can be specified as follows:
 
@@ -55,7 +55,7 @@ def effect(cp, locales):
     sim.apply({"parameter": "b11", "locale": locales}, cp["b11"]/b11)
 ```
 
-##### Vaccination Intervention
+#### Vaccination Intervention
 For the vaccination intervention, we need to modify the vaccination parameter (_v_) in the model. This is because of the fact that EpiPolicy modifies the existing parameters with the help of multiplicative factors, but as the default value of the vaccination parameter is 0, no multiplicative factor can modify it. Thus, we either have to modify the default value to a non-zero number or modify the vaccination parameter in the model. For this case study, we will modify the vaccination parameter in our model. To do this, go back to the _Model_ page. In the Compartments table, modify the equations of compartments S2 and R2 by replacing _v_ with _1-v_ and also change the base value of _v_ in the Parameters table to 1. Now, we can easily use a multiplicative factor to modify the value of _v_.
 
 In the _Interventions_ page, create a new row for this intervention and provide a name and description. As this intervention modifies the parameters _v_ and β22, we can specify these in the Control Parameters table. Considering the Outbreak parameters as baseline, we can see that the vaccine intervention reduces β22 by 25%. Accordingly, we specify the default value of β22 as 0.75. As the new base value of _v_ is 1, we can simply define the default value of _v_ in the control parameters table as 0.2.
