@@ -17,6 +17,7 @@ class PageDisplay extends React.Component {
   constructor(props) {
     super(props);
     this.model = props.model;
+    this.pageDisplayRef = React.createRef();
   }
 
   render() {
@@ -24,7 +25,9 @@ class PageDisplay extends React.Component {
       return null;
     }
     return (
-      <div id="page-display" className={this.model.activePage['no-padding'] ? 'no-padding' : ''}>
+      <div id="page-display"
+           ref={this.pageDisplayRef}
+           className={this.model.activePage['no-padding'] ? 'no-padding' : ''}>
         {this.model.activePage['hide-title'] ? null : <h1>{this.model.activePage.name}</h1>}
         <div 
           id="page-content" 
@@ -61,13 +64,8 @@ class PageDisplay extends React.Component {
     });
     this.model.setActivePageHeaders(headers);
 
-    if (this.model.activePage.hashlink) {
-      let header = document.getElementById(this.model.activePage.hashlink);
-      if (header) {
-        header.scrollIntoView();
-      }
-    }
-    
+    let header = document.getElementById(this.props.model.activePageVisibleHeader);
+    if (header) header.scrollIntoView({behavior: 'smooth'});
   }
 
 }

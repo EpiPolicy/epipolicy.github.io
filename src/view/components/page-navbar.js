@@ -7,12 +7,6 @@ class PageNavbar extends React.Component {
   constructor(props) {
     super(props);
     this.model = props.model;
-    this.state = {
-      headers: []
-    }
-  }
-
-  componentDidMount() {
   }
 
   render() {
@@ -21,7 +15,13 @@ class PageNavbar extends React.Component {
         <nav id="page-navbar" className="navbar navbar-light bg-light flex-column align-items-stretch p-3">
           <a className="navbar-brand" href="#">Page Content</a>
           <nav className="nav nav-pills flex-column">
-            {this.props.model.activePageHeaders.map(h => <a key={h.id} className="nav-link" href={'#' + h.id}>{h.caption}</a>)}
+            {this.props.model.activePageHeaders.map(h => 
+              <a key={h.id} 
+                 className={"nav-link" + (this.props.model.activePageVisibleHeader === h.id ? ' active' : '')} 
+                 href={'#' + h.id}>
+                {h.caption}
+              </a>
+            )}
           </nav>
         </nav>
       </div>
