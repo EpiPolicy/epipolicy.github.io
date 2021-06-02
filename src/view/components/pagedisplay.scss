@@ -1,6 +1,7 @@
 @import "../variables";
 
 #page-display {
+  position: relative;
   padding: $xl-margin;
   margin: 0;
 
@@ -24,6 +25,8 @@
   }
 
   #page-content {
+    max-width: 46rem!important;
+    
     .tex {
       display: inline-block;
     }
@@ -32,10 +35,11 @@
         text-align: left;
       }
     }
-  }
 
-  img {
-    max-width: 100%;
+    img {
+      max-width: 100%;
+    }
+
   }
 
 }

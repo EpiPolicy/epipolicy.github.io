@@ -3,35 +3,8 @@
     "name": "Homepage",
     "url": "",
     "hide-title": true,
-    "no-padding": true,
+    "hide-sidebar": true,
     "html-file": "home.html"
-  },
-  {
-    "name": "Introduction",
-    "children": [
-      {
-        "name": "Overview",
-        "url": "",
-        "hide-title": true,
-        "no-padding": true,
-        "html-file": "home.html"
-      },
-      {
-        "name": "State Data",
-        "url": "state_data",
-        "markdown-file": "state_data.md"
-      },
-      {
-        "name": "Regex Syntax",
-        "url": "regex_syntax",
-        "markdown-file": "regex_syntax.md"
-      },
-      {
-        "name": "PyEpiPolicy",
-        "url": "pyepipolicy",
-        "html-file": "pyepipolicy.html"
-      }
-    ]
   },
   {
     "name": "Concepts",
@@ -75,6 +48,21 @@
         "name": "Mask and border closure",
         "url": "mask_border",
         "markdown-file": "mask_border.md"
+      },
+      {
+        "name": "State Data",
+        "url": "state-data",
+        "markdown-file": "state_data.md"
+      },
+      {
+        "name": "Regex Syntax",
+        "url": "regex-syntax",
+        "markdown-file": "regex_syntax.md"
+      },
+      {
+        "name": "PyEpiPolicy",
+        "url": "pyepipolicy",
+        "html-file": "pyepipolicy.html"
       }
     ]
   },

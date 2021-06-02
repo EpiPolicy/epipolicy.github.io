@@ -25,6 +25,7 @@ marked.setOptions({
 class Model {
   pages = pages_config;
   activePageContent = null;
+  activePageHeaders = [];
   loginInfo = null;
 
   generateErrorPage(errMsg) {
@@ -35,14 +36,11 @@ class Model {
     text = text.replace(/<tex>(.+?)<\/tex>/g, 
       (match, p1) => '<span class="tex">$' + p1 + '$</span>');
     return text;
-
-
   }
 
   markdownToHTML(md) {
     md = marked(md);
     md = this.latexReplace(md);
-    md = '<div class="page-body">\n' + md + '\n</div>';
     return md;
   } 
 
@@ -95,8 +93,12 @@ class Model {
     this.activePageContent = content;
   }
 
+  setActivePageHeaders(headers) {
+    this.activePageHeaders = headers;
+  }
+
   checkPagesActivation() {
-    const path = window.location.hash.slice(1);
+    const path = window.location.pathname.slice(1);
     let checkPagesFn = pages => {
       for (let page of pages) {  
         checkFn(page);
@@ -166,8 +168,10 @@ class Model {
       logIn: action,
       logOut: action,
       activePageContent: observable,
+      activePageHeaders: observable,
       loadActivePage: action,
       setActivePageContent: action,
+      setActivePageHeaders: action,
       activePage: computed
     });
 

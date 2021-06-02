@@ -4,6 +4,7 @@ import './pagedisplay.scss';
 import 'highlight.js/scss/github.scss';
 import $ from 'jquery';
 import hljs from 'highlight.js';
+import PageNavbar from './page-navbar';
 
 // Bootstrap initialization
 window.$ = $;
@@ -24,10 +25,14 @@ class PageDisplay extends React.Component {
     return (
       <div id="page-display" className={this.model.activePage['no-padding'] ? 'no-padding' : ''}>
         {this.model.activePage['hide-title'] ? null : <h1>{this.model.activePage.name}</h1>}
-        <div
-          id="page-content"
+        <div 
+          id="page-content" 
+          data-bs-spy="scroll" 
+          data-bs-target="#page-navbar" 
+          data-bs-offset="0" 
           dangerouslySetInnerHTML={{__html: this.model.activePageContent}}>
         </div>
+        <PageNavbar model={this.model} />
       </div>
     );
   }
@@ -43,9 +48,16 @@ class PageDisplay extends React.Component {
   componentDidUpdate() {
     this.mathJax();
     this.bootstrapToolTips();
-    document.querySelectorAll('pre code').forEach((el) => {
+    
+    document.querySelectorAll('#page-content pre code').forEach(el => {
       hljs.highlightElement(el);
     });
+    
+    let headers = [];
+    document.querySelectorAll('#page-content h2, #page-content h3').forEach(header => {
+      headers.push({id: header.id, caption: header.innerText});
+    });
+    this.model.setActivePageHeaders(headers);
   }
 
 }
