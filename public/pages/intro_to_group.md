@@ -14,9 +14,9 @@ A group is a class of individuals that show distinctive characteristics toward t
 \end{array}
 </texb>
 
-where, in addition to the SIR model in [Create your first model](/#create_your_first_model), <tex>p_d</tex> is the probability of death.
+where, in addition to the SIR model in [Create your first model](/create_your_first_model), <tex>p_d</tex> is the probability of death.
 
-You can find the mathematical justification for the splitting of the transition rate <tex>\gamma I </tex> into <tex>\gamma p_d I</tex> and <tex>\gamma (1-p_d) I </tex> to model the probability of death via [here](#probability_rate).
+You can find the mathematical justification for the splitting of the transition rate <tex>\gamma I </tex> into <tex>\gamma p_d I</tex> and <tex>\gamma (1-p_d) I </tex> to model the probability of death via [here](/probability_rate).
 
 ## Create the model
 
@@ -94,4 +94,4 @@ Hopefully you would get something like this!
 In this tutorial:
 - We introduce the concept of groups in **Epipolicy** with emphasize on the customization of the parameter values that it provides. This allows users to focus on a particular demographic group that is vulnerable to the disease.
 - We make use of the _Compare_ page to highlight the impact that a group can have on a scenario.
-- We show the export functionality that would allow you to import the model for future usage/bookmarking. In the [next tutorial](/#intro_to_facility), we will show you how to import an existing model and explore the intricate concept of **facility** in **Epipolicy**.
+- We show the export functionality that would allow you to import the model for future usage/bookmarking. In the [next tutorial](/intro_to_facility), we will show you how to import an existing model and explore the intricate concept of **facility** in **Epipolicy**.

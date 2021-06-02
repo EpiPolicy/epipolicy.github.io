@@ -141,4 +141,4 @@ where <tex>\nu</tex> is the birth rate and <tex>\mu</tex> is the death rate.
 In this tutorial:
 - We provides a brief understanding of how the deterministic compartmental model works with emphasize on the importance of susceptible and infectious compartments as well as the transmission rate.
 - We illustrates how to create a simple SIR model from scratch and run it using **Epipolicy**.
-- However, for more complicated models, different concepts will come into play such as group, facility, or mobility. If you would like to find out, checkout our [next tutorial](/#intro_to_group) on **group**.
+- However, for more complicated models, different concepts will come into play such as group, facility, or mobility. If you would like to find out, checkout our [next tutorial](/intro_to_group) on **group**.
