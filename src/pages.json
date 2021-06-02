@@ -7,12 +7,32 @@
     "html-file": "home.html"
   },
   {
+    "name": "Concepts",
+    "children": [
+      {
+        "name": "Splitting probability in compartmental model",
+        "url": "probability_rate",
+        "markdown-file": "probability_rate.md"
+      }
+    ]
+  },
+  {
     "name": "Tutorials",
     "children": [
       {
         "name": "Create your first model",
         "url": "create_your_first_model",
         "markdown-file": "create_your_first_model.md"
+      },
+      {
+        "name": "Intro to Epipolicy's group",
+        "url": "intro_to_group",
+        "markdown-file": "intro_to_group.md"
+      },
+      {
+        "name": "Intro to Epipolicy's facility",
+        "url": "intro_to_facility",
+        "markdown-file": "intro_to_facility.md"
       },
       {
         "name": "Vaccination",
