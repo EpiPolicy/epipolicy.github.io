@@ -62,7 +62,6 @@ Then list name, description and equation of each compartment and its appropriate
 
 Tips:
 - It is **important** that we identify the "susceptible" tag for <tex>S</tex> and the "infectious" tag for <tex>I</tex>.
-- The "death" tag is to identify compartment that is not included in <tex>N</tex> since <tex>N</tex> is the total alive population.
 - Users can create their custom tags and therefore, can refer to a set of compartments using its tag.
 
 <div class="tutorial-video-container">
@@ -126,7 +125,7 @@ After running the scenario from the _Initialize_ page, you can view the result i
 
 ## Your turn
 
-Try to create the SIR model with vital dynamics. The system of differential equations that describes it:
+Try to create and run the SIR model with vital dynamics using **Epipolicy**. The system of differential equations that describes it:
 
 <texb>
 \begin{array}{lcl} \frac{dS}{dt} & = & \nu N - \beta \frac{SI}{N} - \mu S\\
@@ -142,4 +141,4 @@ where <tex>\nu</tex> is the birth rate and <tex>\mu</tex> is the death rate.
 In this tutorial:
 - We provides a brief understanding of how the deterministic compartmental model works with emphasize on the importance of susceptible and infectious compartments as well as the transmission rate.
 - We illustrates how to create a simple SIR model from scratch and run it using **Epipolicy**.
-- However, for more complicated models, different concepts will come into play such as group, facility, or mobility. If you would like to find out, checkout our [next tutorial](/#intro_to_group) on groups.
+- However, for more complicated models, different concepts will come into play such as group, facility, or mobility. If you would like to find out, checkout our [next tutorial](/#intro_to_group) on **group**.

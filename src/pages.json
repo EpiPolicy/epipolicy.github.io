@@ -18,18 +18,28 @@
       },
       {
         "name": "State Data",
-        "url": "state-data",
+        "url": "state_data",
         "markdown-file": "state_data.md"
       },
       {
         "name": "Regex Syntax",
-        "url": "regex-syntax",
+        "url": "regex_syntax",
         "markdown-file": "regex_syntax.md"
       },
       {
         "name": "PyEpiPolicy",
         "url": "pyepipolicy",
         "html-file": "pyepipolicy.html"
+      }
+    ]
+  },
+  {
+    "name": "Concepts",
+    "children": [
+      {
+        "name": "Splitting probability in compartmental model",
+        "url": "probability_rate",
+        "markdown-file": "probability_rate.md"
       }
     ]
   },
@@ -45,6 +55,11 @@
         "name": "Intro to Epipolicy's group",
         "url": "intro_to_group",
         "markdown-file": "intro_to_group.md"
+      },
+      {
+        "name": "Intro to Epipolicy's facility",
+        "url": "intro_to_facility",
+        "markdown-file": "intro_to_facility.md"
       },
       {
         "name": "Vaccination",
