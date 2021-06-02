@@ -3,7 +3,7 @@
     "name": "Homepage",
     "url": "",
     "hide-title": true,
-    "hide-sidebar": true,
+    "hide-sidebar": false,
     "html-file": "home.html"
   },
   {
