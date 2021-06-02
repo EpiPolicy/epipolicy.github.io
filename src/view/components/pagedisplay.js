@@ -9,7 +9,8 @@ import PageNavbar from './page-navbar';
 // Bootstrap initialization
 window.$ = $;
 window.jQuery = $;
-require('bootstrap');
+let bootstrap = require('bootstrap');
+window.bootstrap = bootstrap;
 
 class PageDisplay extends React.Component {
 
@@ -55,9 +56,18 @@ class PageDisplay extends React.Component {
     
     let headers = [];
     document.querySelectorAll('#page-content h2, #page-content h3').forEach(header => {
+      // TODO h3, h4... as children
       headers.push({id: header.id, caption: header.innerText});
     });
     this.model.setActivePageHeaders(headers);
+
+    if (this.model.activePage.hashlink) {
+      let header = document.getElementById(this.model.activePage.hashlink);
+      if (header) {
+        header.scrollIntoView();
+      }
+    }
+    
   }
 
 }

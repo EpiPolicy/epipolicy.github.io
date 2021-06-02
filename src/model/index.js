@@ -99,6 +99,8 @@ class Model {
 
   checkPagesActivation() {
     const path = window.location.pathname.slice(1);
+    const hash = window.location.hash ? window.location.hash.slice(1) : undefined;
+
     let checkPagesFn = pages => {
       for (let page of pages) {  
         checkFn(page);
@@ -108,7 +110,16 @@ class Model {
       if (page.children) {
         checkPagesFn(page.children);
       }
-      page.active = path === page.url;
+      
+      if (path === page.url) {
+        page.active = true;
+        page.hashlink = hash;
+      } else {
+        page.active = false;
+        page.hashlink = undefined;
+      }
+
+      
     }
     checkPagesFn(this.pages);
     this.setActivePageContent(null);
