@@ -29,14 +29,8 @@ class PageDisplay extends React.Component {
            ref={this.pageDisplayRef}
            className={this.model.activePage['no-padding'] ? 'no-padding' : ''}>
         {this.model.activePage['hide-title'] ? null : <h1>{this.model.activePage.name}</h1>}
-        <div 
-          id="page-content" 
-          data-bs-spy="scroll" 
-          data-bs-target="#page-navbar" 
-          data-bs-offset="0" 
-          dangerouslySetInnerHTML={{__html: this.model.activePageContent}}>
-        </div>
-        <PageNavbar model={this.model} />
+        <div id="page-content" dangerouslySetInnerHTML={{__html: this.model.activePageContent}}></div>
+        {!this.model.activePage['hide-page-navbar'] && <PageNavbar model={this.model} />}
       </div>
     );
   }
@@ -65,6 +59,8 @@ class PageDisplay extends React.Component {
 
     let header = document.getElementById(this.props.model.activePageVisibleHeader);
     if (header) header.scrollIntoView({behavior: 'smooth'});
+
+    // this.props.onPageContentChanged();
   }
 
 }

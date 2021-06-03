@@ -16,14 +16,17 @@ class App extends React.Component {
     let activePageVisibleHeaderRect = null;
     this.mainPanelContainerRef.current.querySelectorAll('h2, h3, h4, h5, h6').forEach(h => {
       var rect = h.getBoundingClientRect();
-      if ((rect.top >= 0) && (rect.bottom <= window.innerHeight)) {
-        if (activePageVisibleHeaderRect == null || activePageVisibleHeaderRect.top > rect.top) {
+      if (rect.bottom <= window.innerHeight 
+        && (activePageVisibleHeaderRect == null || activePageVisibleHeaderRect.top < rect.top)) {
           activePageVisibleHeader = h.id;
           activePageVisibleHeaderRect = rect;
-        }
       }
     });
     this.props.model.setActivePageVisibleHeader(activePageVisibleHeader);
+  }
+
+  componentDidMount() {
+    this.updateVisibleHeader();
   }
 
   render() {
@@ -36,7 +39,7 @@ class App extends React.Component {
       <div id="main-panel-container" 
            ref={this.mainPanelContainerRef}
            onScroll={e => this.updateVisibleHeader()}>
-        <PageDisplay model={this.props.model}/>
+        <PageDisplay model={this.props.model} onPageContentChanged={() => this.updateVisibleHeader()}/>
       </div>
     </div>;
   }
