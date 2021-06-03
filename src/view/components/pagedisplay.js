@@ -58,9 +58,8 @@ class PageDisplay extends React.Component {
     });
     
     let headers = [];
-    document.querySelectorAll('#page-content h2, #page-content h3').forEach(header => {
-      // TODO h3, h4... as children
-      headers.push({id: header.id, caption: header.innerText});
+    document.querySelectorAll('h2, h3, h4, h5').forEach(header => {
+      headers.push({id: header.id, caption: header.innerText, tagname: header.tagName});
     });
     this.model.setActivePageHeaders(headers);
 

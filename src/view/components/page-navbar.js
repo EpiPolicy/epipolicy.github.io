@@ -17,7 +17,11 @@ class PageNavbar extends React.Component {
           <nav className="nav nav-pills flex-column">
             {this.props.model.activePageHeaders.map(h => 
               <a key={h.id} 
-                 className={"nav-link" + (this.props.model.activePageVisibleHeader === h.id ? ' active' : '')} 
+                 className={
+                   "nav-link" + 
+                   (this.props.model.activePageVisibleHeader === h.id ? ' active' : '') + 
+                   ' ' + h.tagname
+                  } 
                  href={'#' + h.id}>
                 {h.caption}
               </a>
