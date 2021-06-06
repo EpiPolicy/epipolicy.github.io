@@ -13,11 +13,16 @@
         "name": "Splitting probability in compartmental model",
         "url": "probability_rate",
         "markdown-file": "probability_rate.md"
+      },
+      {
+        "name": "Temporal difference learning",
+        "url": "td",
+        "markdown-file": "td.md"
       }
     ]
   },
   {
-    "name": "Tutorials",
+    "name": "Basic tutorials",
     "children": [
       {
         "name": "Create your first model",
@@ -33,7 +38,12 @@
         "name": "Intro to Epipolicy's facility",
         "url": "intro_to_facility",
         "markdown-file": "intro_to_facility.md"
-      },
+      }
+    ]
+  },
+  {
+    "name": "Advanced tutorials",
+    "children": [
       {
         "name": "Vaccination",
         "url": "vaccination",
@@ -58,11 +68,6 @@
         "name": "Regex Syntax",
         "url": "regex-syntax",
         "markdown-file": "regex_syntax.md"
-      },
-      {
-        "name": "PyEpiPolicy",
-        "url": "pyepipolicy",
-        "html-file": "pyepipolicy.html"
       }
     ]
   },
