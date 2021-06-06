@@ -6,4 +6,30 @@
     position: fixed;
     top: $xl-margin;
     right: $xl-margin;
+    border-radius: $sm-margin;
+
+    .navbar-brand {
+        font-size: 90%;
+    }
+
+    .nav-link {
+        font-size: 80%;
+        padding: $sm-margin;
+    }
+
+    .nav-link.H3 {
+        margin-left: $lg-margin;
+    }
+
+    .nav-link.H4 {
+        margin-left: 1.5 * $lg-margin;
+    }
+
+    .nav-link.H5 {
+        margin-left: 2 * $lg-margin;
+    }
+
+    .nav-link.H6 {
+        margin-left: 2.5 * $lg-margin;
+    }
 }

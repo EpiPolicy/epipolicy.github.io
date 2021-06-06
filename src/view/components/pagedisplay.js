@@ -9,13 +9,15 @@ import PageNavbar from './page-navbar';
 // Bootstrap initialization
 window.$ = $;
 window.jQuery = $;
-require('bootstrap');
+let bootstrap = require('bootstrap');
+window.bootstrap = bootstrap;
 
 class PageDisplay extends React.Component {
 
   constructor(props) {
     super(props);
     this.model = props.model;
+    this.pageDisplayRef = React.createRef();
   }
 
   render() {
@@ -23,16 +25,12 @@ class PageDisplay extends React.Component {
       return null;
     }
     return (
-      <div id="page-display" className={this.model.activePage['no-padding'] ? 'no-padding' : ''}>
+      <div id="page-display"
+           ref={this.pageDisplayRef}
+           className={this.model.activePage['no-padding'] ? 'no-padding' : ''}>
         {this.model.activePage['hide-title'] ? null : <h1>{this.model.activePage.name}</h1>}
-        <div 
-          id="page-content" 
-          data-bs-spy="scroll" 
-          data-bs-target="#page-navbar" 
-          data-bs-offset="0" 
-          dangerouslySetInnerHTML={{__html: this.model.activePageContent}}>
-        </div>
-        <PageNavbar model={this.model} />
+        <div id="page-content" dangerouslySetInnerHTML={{__html: this.model.activePageContent}}></div>
+        {!this.model.activePage['hide-page-navbar'] && <PageNavbar model={this.model} />}
       </div>
     );
   }
@@ -54,10 +52,15 @@ class PageDisplay extends React.Component {
     });
     
     let headers = [];
-    document.querySelectorAll('#page-content h2, #page-content h3').forEach(header => {
-      headers.push({id: header.id, caption: header.innerText});
+    document.querySelectorAll('h2, h3, h4, h5').forEach(header => {
+      headers.push({id: header.id, caption: header.innerText, tagname: header.tagName});
     });
     this.model.setActivePageHeaders(headers);
+
+    let header = document.getElementById(this.props.model.activePageVisibleHeader);
+    if (header) header.scrollIntoView({behavior: 'smooth'});
+
+    // this.props.onPageContentChanged();
   }
 
 }
