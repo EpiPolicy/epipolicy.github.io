@@ -16,7 +16,7 @@ A group is a class of individuals that show distinctive characteristics toward t
 
 where, in addition to the SIR model in [Create your first model](/create_your_first_model), <tex>p_d</tex> is the probability of death.
 
-You can find the mathematical justification for the splitting of the transition rate <tex>\gamma I </tex> into <tex>\gamma p_d I</tex> and <tex>\gamma (1-p_d) I </tex> to model the probability of death via [here](/probability_rate).
+You can find the mathematical justification for the splitting of the transition rate <tex>\gamma I </tex> into <tex>\gamma p_d I</tex> and <tex>\gamma (1-p_d) I </tex> to model the probability of death via [Splitting probability in compartmental model](/probability_rate).
 
 ## Create the model
 
