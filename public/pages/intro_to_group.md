@@ -35,7 +35,7 @@ Tips:
 
 ### Set population
 
-As in [Create your first model](/#create_your_first_model), we stick with the imaginary country "United Provinces" at administrative level 0 with 1000 population.
+As in [Create your first model](/create_your_first_model#set-population), we stick with the imaginary country "United Provinces" at administrative level 0 with 1000 population.
 
 ### Set groups
 
