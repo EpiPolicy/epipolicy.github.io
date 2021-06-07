@@ -14,11 +14,6 @@
         "name": "Splitting probability in compartmental model",
         "url": "probability_rate",
         "markdown-file": "probability_rate.md"
-      },
-      {
-        "name": "Temporal difference learning",
-        "url": "td",
-        "markdown-file": "td.md"
       }
     ]
   },
@@ -39,6 +34,11 @@
         "name": "Intro to Epipolicy's facility",
         "url": "intro_to_facility",
         "markdown-file": "intro_to_facility.md"
+      },
+      {
+        "name": "Intro to Epipolicy's mobility",
+        "url": "intro_to_mobility",
+        "markdown-file": "intro_to_mobility.md"
       }
     ]
   },
@@ -128,7 +128,13 @@
     "name": "Decision",
     "url": "decision",
     "protected": true,
-    "markdown-file": "decision.md"
+    "markdown-file": "decision.pmd"
+  },
+  {
+    "name": "Temporal difference learning",
+    "url": "td",
+    "protected": true,
+    "markdown-file": "td.pmd"
   },
   {
     "name": "Private Doc",
