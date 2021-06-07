@@ -14,7 +14,7 @@ A group is a class of individuals that show distinctive characteristics toward t
 \end{array}
 </texb>
 
-where, in addition to the SIR model in [Create your first model](/create_your_first_model), <tex>p_d</tex> is the probability of death.
+where, in addition to the SIR model in [Create your first scenario](/create_your_first_scenario), <tex>p_d</tex> is the probability of death.
 
 You can find the mathematical justification for the splitting of the transition rate <tex>\gamma I </tex> into <tex>\gamma p_d I</tex> and <tex>\gamma (1-p_d) I </tex> to model the probability of death via [Splitting probability in compartmental model](/probability_rate).
 
@@ -35,7 +35,7 @@ Tips:
 
 ### Set population
 
-As in [Create your first model](/create_your_first_model#set-population), we stick with the imaginary country "United Provinces" at administrative level 0 with 1000 population.
+As in [Create your first scenario](/create_your_first_scenario#set-population), we stick with the imaginary country "United Provinces" at administrative level 0 with 1000 population.
 
 ### Set groups
 

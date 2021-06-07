@@ -68,4 +68,4 @@ Hopefully you would get something like this!
 In this tutorial:
 - We introduce the concept of facilities in **Epipolicy** with emphasize on the time spent by each group in each facility as well as the time interacting between any two groups in a facility.
 - We make use of the _Compare_ page to highlight the impact of reducing time interacting with infectious group can have on a scenario.
-- We show the import functionality that would allow you to load a pre-defined model. In the [next tutorial](/intro_to_mobility), how human mobility plays an important role in **Epipolicy**.
+- We show the import functionality that would allow you to load a pre-defined model. In the [next tutorial](/intro_to_static_mobility), how human mobility plays an important role in **Epipolicy**.
