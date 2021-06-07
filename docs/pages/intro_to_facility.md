@@ -10,11 +10,11 @@ A facility is a place in a locale where different groups such as seniors, adults
   <figcaption> of which they spend 90% interacting with other children</figcaption>
 </figure>
 
-## Create the model
+## Create the scenario
 
-### Import an existing model
+### Import an existing scenario
 
-Firstly, we extract the exported [zip file](/assets/intro_to_facility/My_SIRD_model.zip) from previous [tutorial](/intro_to_group). Then we import the JSON file within.
+Firstly, we extract the exported [zip file](/assets/intro_to_facility/My_SIRD_model.zip) from previous [tutorial](/intro_to_group#export-your-model). Then we import the JSON file within.
 
 <div class="tutorial-video-container">
     <video class="tutorial-video" autoplay muted loop controls>
@@ -68,4 +68,4 @@ Hopefully you would get something like this!
 In this tutorial:
 - We introduce the concept of facilities in **Epipolicy** with emphasize on the time spent by each group in each facility as well as the time interacting between any two groups in a facility.
 - We make use of the _Compare_ page to highlight the impact of reducing time interacting with infectious group can have on a scenario.
-- We show the import functionality that would allow you to load a pre-defined model. In the [next tutorial](/intro_to_mobility), how human mobility plays an important role in **Epipolicy**.
+- We show the import functionality that would allow you to load an existing scenario. In the [next tutorial](/intro_to_static_mobility), how human mobility plays an important role in **Epipolicy**.
