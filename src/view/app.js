@@ -12,17 +12,39 @@ class App extends React.Component {
   }
 
   updateVisibleHeader() {
-    let activePageVisibleHeader = null;
-    let activePageVisibleHeaderRect = null;
-    this.mainPanelContainerRef.current.querySelectorAll('h2, h3, h4, h5, h6').forEach(h => {
-      var rect = h.getBoundingClientRect();
-      if (rect.bottom <= window.innerHeight 
-        && (activePageVisibleHeaderRect == null || activePageVisibleHeaderRect.top < rect.top)) {
-          activePageVisibleHeader = h.id;
-          activePageVisibleHeaderRect = rect;
+    let mostVisibleHeader = null;
+    let visibleHeaders = [];
+    let lastVisibleHeader = null;
+    if (this.mainPanelContainerRef.current.scrollTop === 0) {
+      mostVisibleHeader = this.mainPanelContainerRef.current.querySelector('h2, h3, h4, h5, h6');
+    } else {
+
+      this.mainPanelContainerRef.current.querySelectorAll('h2, h3, h4, h5, h6').forEach(h => {
+        let rect = h.getBoundingClientRect();
+        if (rect.bottom <= window.innerHeight && rect.top > 0) {
+          if (visibleHeaders.length > 0) {
+            visibleHeaders[visibleHeaders.length - 1].height -= window.innerHeight - rect.top;
+          }
+          visibleHeaders.push({id: h.id, height: window.innerHeight - rect.bottom});
+        }
+        if (lastVisibleHeader === null || rect.bottom < window.innerHeight) {
+          lastVisibleHeader = h;
+        }
+      });
+
+      for (let h of visibleHeaders) {
+        if (mostVisibleHeader == null || mostVisibleHeader.height < h.height) {
+            mostVisibleHeader = h;
+        }
       }
-    });
-    this.props.model.setActivePageVisibleHeader(activePageVisibleHeader);
+
+      if (mostVisibleHeader === null) {
+        mostVisibleHeader = lastVisibleHeader;
+      }
+
+    }
+
+    this.props.model.setActivePageVisibleHeader(mostVisibleHeader ? mostVisibleHeader.id : null);
   }
 
   componentDidMount() {

@@ -13,13 +13,16 @@ class PageNavbar extends React.Component {
     return (
       <div id="page-navbar-container">
         <nav id="page-navbar" className="navbar navbar-light bg-light flex-column align-items-stretch p-3">
-          <div className="navbar-brand">Page Content</div>
           <nav className="nav nav-pills flex-column">
-            {this.props.model.activePageHeaders.map(h => 
+            {this.props.model.activePageHeaders.map((h, i) => 
               <a key={h.id} 
                  className={
                    "nav-link" + 
-                   (this.props.model.activePageVisibleHeader === h.id ? ' active' : '') + 
+                   (
+                     (!this.props.model.activePageVisibleHeader && i === 0) 
+                     || (this.props.model.activePageVisibleHeader === h.id)
+                      ? ' active' : ''
+                   ) + 
                    ' ' + h.tagname
                   } 
                  href={'#' + h.id}>

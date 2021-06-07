@@ -94,8 +94,8 @@ class Model {
     this.activePageContent = content;
   }
 
-  setActivePageHeaders(headerIDs) {
-    this.activePageHeaders = headerIDs;
+  setActivePageHeaders(headers) {
+    this.activePageHeaders = headers;
   }
 
   setActivePageVisibleHeader(headerID) {
@@ -107,7 +107,7 @@ class Model {
 
     const hash = window.location.hash ? window.location.hash.slice(1) : undefined;
     if (hash) {
-      this.activePageVisibleHeader = hash;
+      this.setActivePageVisibleHeader(hash);
     }
 
     let checkPagesFn = pages => {

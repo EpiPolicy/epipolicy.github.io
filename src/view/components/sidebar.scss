@@ -24,7 +24,7 @@
     color: $action-color;
     font-size: 0.9 * $font-size-base;
     cursor: pointer;
-    margin-bottom: $xs-margin;
+    padding: $sm-margin 0 $sm-margin 0;
     &.active {
       font-weight: 400;
     }
