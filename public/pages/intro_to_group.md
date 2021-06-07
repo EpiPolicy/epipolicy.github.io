@@ -18,7 +18,7 @@ where, in addition to the SIR model in [Create your first scenario](/create_your
 
 You can find the mathematical justification for the splitting of the transition rate <tex>\gamma I </tex> into <tex>\gamma p_d I</tex> and <tex>\gamma (1-p_d) I </tex> to model the probability of death via [Splitting probability in compartmental model](/probability_rate).
 
-## Create the model
+## Create the scenario
 
 ### Modify a pre-defined model
 
@@ -63,7 +63,7 @@ Tips:
     </video>
 </div>
 
-### Export your model
+### Export your scenario
 
 Before exporting, confirm the changes that you've made in the current page by clicking on a different page. In the example, we click on the _Model_ page. The zip file consists a JSON file that contains everything necessary for you to import this model in the future.
 
@@ -94,4 +94,4 @@ Hopefully you would get something like this!
 In this tutorial:
 - We introduce the concept of groups in **Epipolicy** with emphasize on the customization of the parameter values that it provides. This allows users to focus on a particular demographic group that is vulnerable to the disease.
 - We make use of the _Compare_ page to highlight the impact that a group can have on a scenario.
-- We show the export functionality that would allow you to import the model for future usage/bookmarking. In the [next tutorial](/intro_to_facility), we will show you how to import an existing model and explore the intricate concept of **facility** in **Epipolicy**.
+- We show the export functionality that would allow you to import the scenario for future usage/bookmarking. In the [next tutorial](/intro_to_facility), we will show you how to import an existing scenario and explore the intricate concept of **facility** in **Epipolicy**.

@@ -39,6 +39,11 @@
         "name": "Intro to Epipolicy's static mobility",
         "url": "intro_to_static_mobility",
         "markdown-file": "intro_to_static_mobility.md"
+      },
+      {
+        "name": "Intro to Epipolicy's dynamic mobility",
+        "url": "intro_to_dynamic_mobility",
+        "markdown-file": "intro_to_dynamic_mobility.md"
       }
     ]
   },
