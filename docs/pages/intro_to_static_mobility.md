@@ -29,7 +29,7 @@ Tips:
 - In many big countries such as the United States, level-0 locale is the country itself, level-1 locale is a state, level-2 locale is a county. For example, to refer to the New York county: UnitedStates.NewYork.NewYork
 
 <div class="tutorial-video-container">
-    <video class="tutorial-video" autoplay muted loop>
+    <video class="tutorial-video" autoplay muted loop controls>
         <source src="assets/intro_to_static_mobility/locales.mp4" type="video/mp4">
     </video>
 </div>
@@ -43,7 +43,7 @@ Tips:
 - In the example, <tex>30\\%</tex> of the population of _UnitedProvinces.Hills_ travels outside the locale. Of these  <tex>30\\%</tex>, <tex>60\\%</tex> of them travel to _UnitedProvinces.Beaches_. Hence the population in _UnitedProvinces.Hills_ spends <tex>0.3 \times 0.6 = 0.18=18\\%</tex> their time in _UnitedProvinces.Beaches_.
 
 <div class="tutorial-video-container">
-    <video class="tutorial-video" autoplay muted loop>
+    <video class="tutorial-video" autoplay muted loop controls>
         <source src="assets/intro_to_static_mobility/mobility.mp4" type="video/mp4">
     </video>
 </div>
