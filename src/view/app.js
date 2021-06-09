@@ -59,6 +59,7 @@ class App extends React.Component {
         <Sidebar model={this.props.model} />
       </div>
       <div id="main-panel-container" 
+           className={this.props.model.activePage['hide-sidebar'] ? 'hide-sidebar' : ''}
            ref={this.mainPanelContainerRef}
            onScroll={e => this.updateVisibleHeader()}>
         <PageDisplay model={this.props.model} onPageContentChanged={() => this.updateVisibleHeader()}/>

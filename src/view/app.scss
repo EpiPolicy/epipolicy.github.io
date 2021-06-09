@@ -95,9 +95,20 @@ h5, h6 {
   background-color: red;
 }
 
+h1.title {
+  .title-logo {
+    height: 1.5 * $font-size-base;
+  }
+}
 
 a {
   color: $action-color;
+  text-decoration: none;
+  
+  &:hover {
+    color: $action-color-highlighted;
+    text-decoration: none;
+  }
 }
 
 p, pre {
@@ -122,6 +133,7 @@ pre {
 
 .tutorial-video-container {
   width: 100%;
+  margin-bottom: $lg-margin;
 }
 .tutorial-video {
   border: 1px solid #ddd;
@@ -136,12 +148,19 @@ ol, ul, dl {
   margin-bottom: $lg-margin;
 }
 
+.card-deck {
+  display: flex;
+  flex-direction: row;
+
+  .card {
+    flex-grow: 0.5;
+    margin: 0 $lg-margin $lg-margin 0;
+  }
+}
+
 .card {
   .card-title {
-    margin: 0 0 $md-margin 0;
-  }
-  .card-subtitle {
-    
+    margin: 0;
   }
 }
 
@@ -194,12 +213,22 @@ ol, ul, dl {
         }
 
         #page-content {
+          margin: 0;
           max-width: $page-content-width!important;
         }
       }
-    }
 
-    
+      &.hide-sidebar {
+        margin: 0;
+
+        #page-display {
+          #page-content {
+            margin: auto;
+          }
+        }
+      }
+
+    }
 
   }
 
