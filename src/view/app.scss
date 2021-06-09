@@ -162,6 +162,13 @@ ol, ul, dl {
   .card-title {
     margin: 0;
   }
+
+  &.link-card {
+    width: 15rem;
+    background-color: #daedf8;
+  }
+
+
 }
 
 #root {
