@@ -136,6 +136,15 @@ ol, ul, dl {
   margin-bottom: $lg-margin;
 }
 
+.card {
+  .card-title {
+    margin: 0 0 $md-margin 0;
+  }
+  .card-subtitle {
+    
+  }
+}
+
 #root {
   height: 100%;
   padding-right: 0;
@@ -175,7 +184,22 @@ ol, ul, dl {
       overflow-y: scroll;
       background-color: $background-color;
       margin: 0 0 0 $sidebar-width;
+
+      #page-display {
+
+        @media (max-width: $page-content-width + 2 * $sidebar-width) {
+          #page-navbar-container {
+            display: none;
+          }
+        }
+
+        #page-content {
+          max-width: $page-content-width!important;
+        }
+      }
     }
+
+    
 
   }
 

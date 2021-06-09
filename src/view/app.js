@@ -21,13 +21,13 @@ class App extends React.Component {
 
       this.mainPanelContainerRef.current.querySelectorAll('h2, h3, h4, h5, h6').forEach(h => {
         let rect = h.getBoundingClientRect();
-        if (rect.bottom <= window.innerHeight && rect.top > 0) {
+        if (rect.bottom <= window.innerHeight && rect.bottom > 0) {
           if (visibleHeaders.length > 0) {
             visibleHeaders[visibleHeaders.length - 1].height -= window.innerHeight - rect.top;
           }
           visibleHeaders.push({id: h.id, height: window.innerHeight - rect.bottom});
         }
-        if (lastVisibleHeader === null || rect.bottom < window.innerHeight) {
+        if (lastVisibleHeader === null || rect.top < window.innerHeight) {
           lastVisibleHeader = h;
         }
       });
