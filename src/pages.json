@@ -14,11 +14,6 @@
         "name": "Splitting probability in compartmental model",
         "url": "probability_rate",
         "markdown-file": "probability_rate.md"
-      },
-      {
-        "name": "Temporal difference learning",
-        "url": "td",
-        "markdown-file": "td.md"
       }
     ]
   },
@@ -26,9 +21,9 @@
     "name": "Basic tutorials",
     "children": [
       {
-        "name": "Create your first model",
-        "url": "create_your_first_model",
-        "markdown-file": "create_your_first_model.md"
+        "name": "Create your first scenario",
+        "url": "create_your_first_scenario",
+        "markdown-file": "create_your_first_scenario.md"
       },
       {
         "name": "Intro to Epipolicy's group",
@@ -39,6 +34,16 @@
         "name": "Intro to Epipolicy's facility",
         "url": "intro_to_facility",
         "markdown-file": "intro_to_facility.md"
+      },
+      {
+        "name": "Intro to Epipolicy's static mobility",
+        "url": "intro_to_static_mobility",
+        "markdown-file": "intro_to_static_mobility.md"
+      },
+      {
+        "name": "Intro to Epipolicy's dynamic mobility",
+        "url": "intro_to_dynamic_mobility",
+        "markdown-file": "intro_to_dynamic_mobility.md"
       }
     ]
   },
@@ -128,7 +133,13 @@
     "name": "Decision",
     "url": "decision",
     "protected": true,
-    "markdown-file": "decision.md"
+    "markdown-file": "decision.pmd"
+  },
+  {
+    "name": "Temporal difference learning",
+    "url": "td",
+    "protected": true,
+    "markdown-file": "td.pmd"
   },
   {
     "name": "Private Doc",
