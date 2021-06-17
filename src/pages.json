@@ -88,12 +88,27 @@
     ]
   },
   {
-    "name": "Features",
+    "name": "Advanced Features",
     "children": [
       {
         "name": "References",
         "url": "references",
         "markdown-file": "references.md"
+      },
+      {
+        "name": "JSON Editor",
+        "url": "jsoneditor",
+        "markdown-file": "jsoneditor.md"
+      },
+      {
+        "name": "Import/Export",
+        "url": "importexport",
+        "markdown-file": "importexport.md"
+      },
+      {
+        "name": "Locale Autocomplete",
+        "url": "localeautocomplete",
+        "markdown-file": "localeautocomplete.md"
       }
     ]
   },
@@ -131,11 +146,6 @@
         "name": "Compare",
         "url": "compare",
         "markdown-file": "compare.md"
-      },
-      {
-        "name": "References",
-        "url": "references",
-        "markdown-file": "references.md"
       }
     ]
   },
