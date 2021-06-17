@@ -88,6 +88,16 @@
     ]
   },
   {
+    "name": "Features",
+    "children": [
+      {
+        "name": "References",
+        "url": "references",
+        "markdown-file": "references.md"
+      }
+    ]
+  },
+  {
     "name": "Docs",
     "url": "docs",
     "hidden": true,
