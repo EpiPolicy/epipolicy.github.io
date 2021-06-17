@@ -5,7 +5,7 @@
   flex-direction: column;
   height: 100%;
   padding: $xl-margin $lg-margin $lg-margin $lg-margin;
-  overflow: hidden;
+  overflow: auto;
 
   .title {
     cursor: pointer;
