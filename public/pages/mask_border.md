@@ -1,4 +1,4 @@
-The config file for this tutorial is available [here](/assets/SIRMB.json).
+The config file for this tutorial is available [here](/assets/mask_border/SIRMB.json).
 
 In this tutorial, we will try to implement mask and border closure with an SIRS model considering that:
 - Mask-wearing  applies only to public places such as school, workplace, community
@@ -10,7 +10,7 @@ In this tutorial, we will try to implement mask and border closure with an SIRS 
 - Immunity-loss period is 33 days on average
 
 <figure>
-    <img src="/assets/SIRMB.png" alt="model-parameters"/>  
+    <img src="/assets/mask_border/SIRMB.png" alt="model-parameters"/>  
 </figure>
 
 ### Locale page
@@ -21,7 +21,7 @@ We choose administrative level 1 for the United Provinces which consists of 3 lo
 - UnitedProvinces.Beaches
 
 <figure>
-    <img src="/assets/SIRMB-locale.png" alt="model-parameters"/>  
+    <img src="/assets/mask_border/SIRMB-locale.png" alt="model-parameters"/>  
 </figure>
 
 ### Group page
@@ -32,7 +32,7 @@ We create 3 groups using [GPWv4 data](https://sedac.ciesin.columbia.edu/data/col
 - Seniors (age 50+)
 
 <figure>
-    <img src="/assets/SIRMB-group.png" alt="model-parameters" />  
+    <img src="/assets/mask_border/SIRMB-group.png" alt="model-parameters" />  
 </figure>
 
 ### Facility page
@@ -44,7 +44,7 @@ We create 4 facilities using [Synthpop data](https://github.com/InstituteforDise
 - Community
 
 <figure>
-    <img src="/assets/SIRMB-facility.png" alt="model-parameters"/>  
+    <img src="/assets/mask_border/SIRMB-facility.png" alt="model-parameters"/>  
 </figure>
 
 ### Mobility page
@@ -52,7 +52,7 @@ We create 4 facilities using [Synthpop data](https://github.com/InstituteforDise
 The mobility matrix is premade with customizable values.
 
 <figure>
-    <img src="/assets/SIRMB-mobility.png" alt="model-parameters"/>
+    <img src="/assets/mask_border/SIRMB-mobility.png" alt="model-parameters"/>
 </figure>
 
 ### Intervention page
