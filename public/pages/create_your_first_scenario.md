@@ -87,7 +87,7 @@ Tips:
 **Epipolicy** provides the concept of locales that models human mobility in an epidemic scenario. We can think of a locale as a "blob" of population with its own system of differential equations. In this introductory tutorial, our simple model will have exactly 1 "blob" since we choose to partition our imaginary country "United Provinces" at administrative level 0.
 
 Tips:
-- The JSON editor contains the details of each locale in [JSON format](https://www.json.org/json-en.html). You can edit the value to your needs. In this example, we want our blob to have population 1000.
+- The [JSON editor](jsoneditor) contains the details of each locale in [JSON format](https://www.json.org/json-en.html). You can edit the value to your needs. In this example, we want our blob to have population 1000.
 
 <div class="tutorial-video-container">
     <video class="tutorial-video" autoplay muted loop controls>

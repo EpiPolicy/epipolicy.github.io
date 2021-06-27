@@ -14,7 +14,7 @@ A facility is a place in a locale where different groups such as seniors, adults
 
 ### Import an existing scenario
 
-First, we extract the exported [zip file](/assets/intro_to_facility/My_SIRD_model.zip) from the previous [tutorial](/intro_to_group#export-your-model). Then we import the JSON file within.
+First, we extract the exported [zip file](/assets/intro_to_facility/My_SIRD_model.zip) from the previous [tutorial](/intro_to_group#export-your-model). Then we [import](importexport) the JSON file within.
 
 <div class="tutorial-video-container">
     <video class="tutorial-video" autoplay muted loop controls>

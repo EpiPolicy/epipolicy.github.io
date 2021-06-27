@@ -54,7 +54,7 @@ In this exercise, we explore the _Results_ page. Here are the steps:
 1. Set your simulation duration from Jan 01, 2021 to Dec 01, 2021
 2. Set your initial conditions so that there are initially 10 infectious population in _UnitedProvinces.Beaches_
 3. Run and observe the results
-4. Don't remember to export your scenario for the [next tutorial](/intro_to_dynamic_mobility)!
+4. Don't forget to [export](importexport) your scenario for the [next tutorial](/intro_to_dynamic_mobility)!
 
 Tips:
 - You can click the _UnitedProvinces.Pastures_ on the heat map to see its statistics. Here it shows that there is no infection since _UnitedProvinces.Pastures_ is closed during the outbreak!

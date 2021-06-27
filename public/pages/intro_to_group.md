@@ -65,7 +65,7 @@ Tips:
 
 ### Export your scenario
 
-Before exporting, confirm the changes that you've made in the current page by clicking on a different page. In the example, we click on the _Model_ page. The zip file consists of a JSON file that contains everything necessary for you to import this model in the future.
+Before [exporting](importexport), confirm the changes that you've made in the current page by clicking on a different page. In the example, we click on the _Model_ page. The zip file consists of a JSON file that contains everything necessary for you to [import](importexport) this model in the future.
 
 <div class="tutorial-video-container">
     <video class="tutorial-video" autoplay muted loop controls>
