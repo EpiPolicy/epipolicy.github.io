@@ -68,6 +68,17 @@ In the schedule page, we create an increase in hospital capacity (from 100000 to
     <img src="/assets/hospitalization/HSIRD-schedule.png" alt="model-parameters" width="1200"/>  
 </figure>
 
+
+
+### Initialize page
+
+In the initialize page, we create a simulation starting with 100 infectious people.
+
+<figure>
+    <img src="/assets/hospitalization/initialize.png" alt="initialize"/>  
+</figure>
+
+
 ### Compare page
 
 Below is the comparison of the increasing hospital scenario and a non-increasing scenario (hospital capacity stays at 100000):
