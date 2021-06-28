@@ -4,7 +4,7 @@ There are two models discussed in the paper, SIR and SPIAR, based on two sub-pop
 
 ### Describing the Model and Running a Simple Simulation
 
-The first step is to define your model in the _Model_ page in EpiPolicy. Following the model described in the paper (shown below), create a new row in the _Compartments_ table for each compartment in the model. You can provide a name for the compartment as well as a description. Then, proceed to describe the equations for each compartment. Note that you have to mark susceptible and infectious compartments by providing relevant tags in the _tags_ column. In the model under-consideration, compartment *S* represents the susceptible population and compartments *P*, *I*, and *A* represent the infectious populations. As you define your model, a visual summary will be automatically generated for you at the end of the _Model_ page.
+The first step is to [define your model](create_your_first_scenario) in the _Model_ page in EpiPolicy. Following the model described in the paper (shown below), create a new row in the _Compartments_ table for each compartment in the model. You can provide a name for the compartment as well as a description. Then, proceed to describe the equations for each compartment. Note that you have to mark susceptible and infectious compartments by providing relevant tags in the _tags_ column. In the model under-consideration, compartment *S* represents the susceptible population and compartments *P*, *I*, and *A* represent the infectious populations. As you define your model, a visual summary will be automatically generated for you at the end of the _Model_ page.
 
 <figure>
     <img src="/assets/alberto-2-spiar-eq.png" alt="model-equations"/>  
@@ -89,6 +89,7 @@ Next, we define the schedule of each intervention individually.
 
 
 After the schedule is defined, you can proceed to the _Initialize_ page and start the simulation.
+The results of the simulation are shown below.
 
 <figure>
     <img src="/assets/alberto-2-res.png" alt="schedule"/>  
