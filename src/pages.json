@@ -11,6 +11,11 @@
     "name": "Concepts",
     "children": [
       {
+        "name": "Compartmental Models",
+        "url": "compartmental_models",
+        "markdown-file": "compartmental_models.md"
+      },
+      {
         "name": "Splitting probability in compartmental model",
         "url": "probability_rate",
         "markdown-file": "probability_rate.md"
