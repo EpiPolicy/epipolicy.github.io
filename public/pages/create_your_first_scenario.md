@@ -1,8 +1,8 @@
 ## Introduction
 
-This tutorial provides the mathematical and theoretical background for deterministic compartmental models, with instructions on how to create a simple SIR model and run it on **Epipolicy**.
+<!-- This tutorial provides the mathematical and theoretical background for deterministic compartmental models, with instructions on how to create a simple SIR model and run it on **Epipolicy**. -->
 
-A deterministic compartmental model solves a system of ordinary differential equations (ODEs) representing the progression of an epidemic in continuous time. The model is _deterministic_ because its solutions are fixed for a given set of input parameters and initial conditions. The model is _compartmental_ because it partitions the population into compartments that represent discrete disease states.
+This tutorial provides instructions on how to create a simple SIR model and run it on **Epipolicy**.
 
 ## The SIR model
 
