@@ -2,45 +2,13 @@
 
 <!-- This tutorial provides the mathematical and theoretical background for deterministic compartmental models, with instructions on how to create a simple SIR model and run it on **Epipolicy**. -->
 
-This tutorial provides instructions on how to create a simple SIR model and run it on **Epipolicy**.
-
-## The SIR model
-
-The SIR model is one of the  simplest compartmental models upon almost all other models are built. It consists of three compartments:
-- **S**: The number of **s**usceptible individuals. When a susceptible individual and an infectious individual comes into contact, the susceptible individual has a chance to contract the disease in which case he/she transitions to the infectious compartment.
-- **I**: The number of **i**nfectious individuals. These are individuals who have been infected and are capable of infecting other susceptible individuals.
-- **R**: The number of **r**ecovered individuals. These are individuals who have recovered from the disease and are immune to  infection.
-
-Since these numbers vary over time, we denote them as functions of <tex>t</tex> (time): <tex>S(t), I(t), R(t)</tex>. Each member of the population either remains in susceptible or  goes from susceptible to infectious to recovered. This can be shown as a flow diagram in which the boxes represent compartments and the arrows represent transitions between compartments.
-
-<figure class="text-center">
-  <img src="assets/create_your_first_model/flow-chart.png" width="600"/>
-</figure>
-
-### The SIR model without vital dynamics
-
-The dynamics of an epidemic such as the flu are usually much faster than the vital dynamics of birth and death. Hence birth and death are often omitted in this simple compartmental model. The SIR model without the so-called vital dynamics can be expressed by a system of ordinary differential equations:
-
-<texb>
-\begin{array}{lcl} \frac{dS}{dt} & = & - \beta \frac{SI}{N} \\
-\frac{dI}{dt} & = & \beta \frac{SI}{N} - \gamma I \\
-\frac{dR}{dt} &= & \gamma I
-\end{array}
-</texb>
-
-where <tex>S</tex> is the number of susceptible people, <tex>I</tex> is the number of infectious people, <tex>R</tex> is the number of recovered people and <tex>N</tex> is the sum of these three (or the total alive population).
-
-### Transition rates
-
-Between <tex>S</tex> and <tex>I</tex>, the transition rate is assumed to be <tex>\frac{dS}{dt} = -\beta \frac{SI}{N}</tex>. <tex>\beta</tex> (usually called the transmission rate) is the product of <tex>\tau</tex> and <tex>c</tex> where <tex>\tau</tex> is the probability of transmission per contact, <tex>c</tex> is the number of contacts per person per unit time. A susceptible individual on average has <tex>c</tex> contacts per day. The standard compartmental model assumes a homogeneous mixing in the population. This means that the probability that an infectious individual will come into contact is <tex>\frac{I}{N}</tex>. Hence the number of contacts between such susceptible individual and the set of all infectious individuals is <tex>c \frac{I}{N}</tex>. Hence the probability that such individual will contract the disease is <tex>\lambda = \tau c \frac{I}{N}=\beta \frac{I}{N}</tex> (which is called the force of infection). Thus the total number of susceptible individuals that will contract the disease per unit time is: <tex>\lambda S = \beta \frac{SI}{N}</tex>
-
-Between <tex>I</tex> and <tex>R</tex>, the transition rate is assumed to be <tex>\gamma I</tex>. This is equivalent to assuming that the probability that an infectious individual recovers in at any time interval <tex>dt</tex> is <tex>\gamma dt</tex>. If an individual is infectious for an average time period <tex>D</tex> or the recovery period is <tex>D</tex>, then <tex>\gamma = \frac{1}{D}</tex>. This is equivalent to the assumption that the length of time spent by an individual in the infectious compartment is a random variable with an exponential distribution with mean <tex>\frac{1}{\gamma}=D</tex>. Further mathematical details can be found [here](https://server.math.umanitoba.ca/~jarino/courses/math3820/math3820_slides_residence_time.4p.pdf)
+This tutorial provides instructions on how to create a [simple epidemic model](sir_model) in **Epipolicy**.
 
 ## Create the scenario
 
 ### Predefined-model
 
-**Epipolicy**  provides pre-defined models from which users can derive their models. Users can choose which pre-defined model they want to work on via _Model_ page. However, in this tutorial, we will create the model from scratch.
+**Epipolicy** provides pre-defined models which can be used as-is or modified as needed. Users can select (or create) the model they want to work on in the _Model_ page.
 
 <div class="tutorial-video-container">
     <video class="tutorial-video" autoplay muted loop>
@@ -50,37 +18,30 @@ Between <tex>I</tex> and <tex>R</tex>, the transition rate is assumed to be <tex
 
 ### Start from scratch
 
-Firstly, name your model:
+In this tutorial, we will create a model from scratch by following the following steps:
 
-<div class="tutorial-video-container">
-    <video class="tutorial-video" autoplay muted loop>
-        <source src="assets/create_your_first_model/model-name.mp4" type="video/mp4">
-    </video>
-</div>
-
-Then list the name, description and equation of each compartment and its appropriate tags.
-
-Tips:
-- It is **important** that we identify the "susceptible" tag for <tex>S</tex> and the "infectious" tag for <tex>I</tex>.
-- Users can create their custom tags and therefore, can refer to a set of compartments using  tags.
-
-<div class="tutorial-video-container">
-    <video class="tutorial-video" autoplay muted loop controls>
-        <source src="assets/create_your_first_model/model-compartment.mp4" type="video/mp4">
-    </video>
-</div>
-
-Finally, list the name, description and base value of each parameter in the model and its appropriate tags.
-
-Tips:
-- It is **important** that we identify the "transmission" tag for <tex>\beta</tex> which is the transmission rate.
-- Users can create their custom tags and therefore, can refer to a set of parameters using its tag.
-
-<div class="tutorial-video-container">
-    <video class="tutorial-video" autoplay muted loop controls>
-        <source src="assets/create_your_first_model/model-parameter.mp4" type="video/mp4">
-    </video>
-</div>
+- Move to the _Model_ page by clicking on the *Model* button in the navigation toolbar on the left side of your screen. 
+- Click on *Define your own model* button in the _Model_ page.
+- Provide a name for your model in the *Model Name* text field.
+    <div class="tutorial-video-container">
+        <video class="tutorial-video" autoplay muted loop>
+            <source src="assets/create_your_first_model/model-name.mp4" type="video/mp4">
+        </video>
+    </div>
+- Provide the name, description and equation of each compartment and its appropriate [tags](tags) in the *Compartments* table.
+    It is **important** that we identify the "susceptible" tag for <tex>S</tex> and the "infectious" tag for <tex>I</tex>.
+    <div class="tutorial-video-container">
+        <video class="tutorial-video" autoplay muted loop controls>
+            <source src="assets/create_your_first_model/model-compartment.mp4" type="video/mp4">
+        </video>
+    </div>
+- Provide the name, description and base value of each parameter in the model and its appropriate [tags](tags) in the *Parameters* table. 
+    It is **important** that we identify the "transmission" tag for <tex>\beta</tex> which is the transmission rate.
+    <div class="tutorial-video-container">
+        <video class="tutorial-video" autoplay muted loop controls>
+            <source src="assets/create_your_first_model/model-parameter.mp4" type="video/mp4">
+        </video>
+    </div>
 
 ### Set population
 
@@ -109,7 +70,7 @@ Tips:
     </video>
 </div>
 
-### View results
+## View results
 
 After running the scenario from the _Initialize_ page, you can view the result in the _Results_ page:
 
