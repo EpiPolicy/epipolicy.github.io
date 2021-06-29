@@ -8,7 +8,7 @@ The [SIR model](http://www.stat.columbia.edu/~regina/research/notes123.pdf) is o
 
 Since the number of individuals in each compartment vary over time, we denote them as functions of <tex>t</tex> (time): 
 
-    S(t), I(t), R(t)
+<tex>S(t), I(t), R(t)</tex>
 
 The transitions among the <tex>S</tex>, <tex>I</tex>, <tex>R</tex> compartments are usually depicted in the form of a flow diagram, as shown below:
 

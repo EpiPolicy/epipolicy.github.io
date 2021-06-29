@@ -4,9 +4,9 @@
 
 This tutorial provides instructions on how to create a [simple epidemic model](sir_model) in **Epipolicy**.
 
-## Create the scenario
+## Create the Scenario
 
-### Predefined-model
+### Pre-defined Models
 
 **Epipolicy** provides pre-defined models which can be used as-is or modified as needed. Users can select (or create) the model they want to work on in the _Model_ page.
 
@@ -29,26 +29,29 @@ In this tutorial, we will create a model from scratch by following the following
         </video>
     </div>
 - Provide the name, description and equation of each compartment and its appropriate [tags](tags) in the *Compartments* table.
-    It is **important** that we identify the "susceptible" tag for <tex>S</tex> and the "infectious" tag for <tex>I</tex>.
+    It is **important** that we specify the "susceptible" tag for <tex>S</tex> and the "infectious" tag for <tex>I</tex>.
     <div class="tutorial-video-container">
         <video class="tutorial-video" autoplay muted loop controls>
             <source src="assets/create_your_first_model/model-compartment.mp4" type="video/mp4">
         </video>
     </div>
 - Provide the name, description and base value of each parameter in the model and its appropriate [tags](tags) in the *Parameters* table. 
-    It is **important** that we identify the "transmission" tag for <tex>\beta</tex> which is the transmission rate.
+    It is **important** that we specify the "transmission" tag for <tex>\beta</tex> which is the transmission rate.
     <div class="tutorial-video-container">
         <video class="tutorial-video" autoplay muted loop controls>
             <source src="assets/create_your_first_model/model-parameter.mp4" type="video/mp4">
         </video>
     </div>
 
-### Set population
+### Describe the Population
 
-**Epipolicy** provides the concept of locales that models human mobility in an epidemic scenario. We can think of a locale as a "blob" of population with its own system of differential equations. In this introductory tutorial, our simple model will have exactly 1 "blob" since we choose to partition our imaginary country "United Provinces" at administrative level 0.
+In the _Locales_ page, users can describe the features of the population that they want to simulate the epidemic in. This entails listing the locales that the population resides in, population distribution in the locales as well as the administritative level and area of each locale. 
+For example, if users want to simulate an epidemic in the United States at the country level, they would define a single locale. 
+If they want to simulate the epidemic at the state level in the United States, they would define 51 locales: 1 country-level locale and 50 state-level locales. Users can specify any number of locales (such as cities, provinces, towns, etc) by specifying the locales data in [JSON notation](https://www.json.org/json-en.html) via the built-in [JSON editor](jsoneditor).
 
-Tips:
-- The [JSON editor](jsoneditor) contains the details of each locale in [JSON format](https://www.json.org/json-en.html). You can edit the value to your needs. In this example, we want our blob to have population 1000.
+By default, **EpiPolicy** provides locale data of all countries upto administrative level 2 (Country, State, City), which can be used as-is or modified as needed.
+
+For this introductory tutorial, we will select an imaginary country "United Provinces", which is available in **EpiPolicy** by default.
 
 <div class="tutorial-video-container">
     <video class="tutorial-video" autoplay muted loop controls>
@@ -56,13 +59,23 @@ Tips:
     </video>
 </div>
 
-### Initial conditions
+### Set the Simulation Duration
 
-Every compartmental model will require  initial conditions to begin the simulation. These are the initial susceptible and infectious population of the scenario. In this example, we initially have 10 infectious individuals and 990 susceptible individuals.
+You can set the duration of your simulation, i.e. the start and end dates, in the _Schedule_ page.
 
-Tips:
-- Before creating your initial conditions, you **should** check out the _Schedule_ page to set your simulation duration
-- You can omit putting in the initial susceptible population since **Epipolicy** can figure that out given the number of infectious individuals.
+<figure>
+    <img src="/assets/schedule-dates.jpeg" alt="schedule-dates"/>  
+</figure>
+
+### Set the Initial Conditions
+
+Compartmental models require information about the initial state of the population prior to starting the simulation. 
+This includes the initial susceptible and infectious population of the scenario. 
+In this tutorial, we set the initial conditions as 10 infectious individuals and 990 susceptible individuals at the beginning of the simulation.
+
+_Tip:_ You can omit putting in the initial susceptible population as **Epipolicy** can infer that using the number of intial infectious individuals and the total population described in the _Locales_ page.
+
+Once you have described the intial conditions, you can start the simulation by pressing the _Start_ button.
 
 <div class="tutorial-video-container">
     <video class="tutorial-video" autoplay muted loop controls>
@@ -70,13 +83,17 @@ Tips:
     </video>
 </div>
 
-## View results
+## View Results
 
-After running the scenario from the _Initialize_ page, you can view the result in the _Results_ page:
+After your simulation has finished running, the results will become available in the _Results_ page:
 
-- The heat map shows the intensity of the infection throughout the scenario.
-- The lower left graph gives you details about the progression of the compartments as well as the groups of compartments with the same tag.
-- The R-graph shows three types of reproductive numbers: the basic reproductive number [[1](https://web.stanford.edu/~jhj1/teachingdocs/Jones-on-R0.pdf)], the instantaneous reproductive number and the case reproductive number [[2](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7325187/)][[3](https://academic.oup.com/aje/article/178/9/1505/89262)]
+- The indicators at the top-left of the results section show total infections, deaths, and cost.
+- The heat map shows the intensity of the infection throughout the simulation.
+- The bottom-left graph shows details about the progression of population compartments as well as compartment tags.
+- The R-graph shows three types of reproductive numbers: 
+    - [Basic reproductive number](https://web.stanford.edu/~jhj1/teachingdocs/Jones-on-R0.pdf)
+    - [Instantaneous reproductive number](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7325187/)
+    - [Case reproductive number](https://academic.oup.com/aje/article/178/9/1505/89262)
 
 <div class="tutorial-video-container">
     <video class="tutorial-video" autoplay muted loop controls>
@@ -84,9 +101,10 @@ After running the scenario from the _Initialize_ page, you can view the result i
     </video>
 </div>
 
-## Your turn
+## Your Turn
 
-Try to create and run the SIR model with vital dynamics using **Epipolicy**. The system of differential equations that describes it:
+Try to create and run an <tex>SIR</tex> model with vital dynamics. 
+The system of differential equations that describes it is as follows:
 
 <texb>
 \begin{array}{lcl} \frac{dS}{dt} & = & \nu N - \beta \frac{SI}{N} - \mu S\\
@@ -95,11 +113,11 @@ Try to create and run the SIR model with vital dynamics using **Epipolicy**. The
 \end{array}
 </texb>
 
-where <tex>\nu</tex> is the birth rate and <tex>\mu</tex> is the death rate.
+where 
+- <tex>\nu</tex> is the birth rate
+- <tex>\mu</tex> is the death rate.
 
 ## Summary
 
 In this tutorial:
-- We provide a brief explanation of how the deterministic compartmental model works with an emphasis on the importance of the susceptible and infectious compartments as well as the transmission rate.
-- We illustrates how to create a simple SIR model from scratch and run it using **Epipolicy**.
-- However, for more complicated models, different concepts will come into play such as group, facility, or mobility. Please check out our [next tutorial](/intro_to_group) on **group**.
+- We illustrate how to create a simple SIR model from scratch and run it using **Epipolicy**. For more complicated models, different concepts will come into play (such as groups, facilities, and population mobility), described in next tutorials.
