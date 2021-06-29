@@ -1,6 +1,6 @@
 ## Introduction
 
-Let's consider the following compartmental model:
+Let's consider the following [compartmental model](compartmental_models):
 
 <texb>
 \begin{array}{lcl}
@@ -111,4 +111,4 @@ With the same reasoning, the same conclusion can be drawn for the transition bet
 
 ## Summary
 
-- In this article, we have shown that splitting the transition rate, <tex>\gamma I</tex>, with which the infectious population leaves the <tex>I</tex> compartment and transitions into either the <tex>D</tex> compartment (<tex>\gamma p I</tex>) or the <tex>R</tex> compartment (<tex>\gamma (1-p) I</tex>), is equivalent of saying that an individual spends  <tex>\frac{1}{\gamma}</tex> days in <tex>I</tex> on average and then has <tex>p</tex> chance of entering <tex>D</tex> and <tex>1-p</tex> chance of entering <tex>R</tex>.
+- In this article, we have shown that splitting the transition rate, <tex>\gamma I</tex>, with which the infectious population leaves the <tex>I</tex> compartment and transitions into either the <tex>D</tex> compartment (<tex>\gamma p I</tex>) or the <tex>R</tex> compartment (<tex>\gamma (1-p) I</tex>), is equivalent to saying that an individual spends  <tex>\frac{1}{\gamma}</tex> days in <tex>I</tex> on average and then has <tex>p</tex> chance of entering <tex>D</tex> and <tex>1-p</tex> chance of entering <tex>R</tex>.
