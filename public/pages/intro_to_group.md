@@ -108,14 +108,13 @@ Before [exporting](importexport), confirm the changes that you've made in the cu
 Now that we have defined our groups and group-specific parameters, let's intialize and run the simulation. 
 You can consult previous tutorials for details on the following steps:
 1. In the _Schedule_ page, set the simulation duration from Jan 01, 2021 to Dec 01, 2021
-2. Set the initial conditions so that there are initially 10 infectious individuals in the group "Others"
+2. In the _Initialize_ page, set the initial conditions so that there are initially 10 infectious individuals in the group "Others"
 3. Repeat step 2 for the following two scenarios:
    - One with 10% seniors in the population
    - One with 50% seniors in the population
-4. Go to the _Compare_ page to compare these two scenarios
+4. Go to the _Compare_ page to inspect these two scenarios
 
 Hopefully you will get something like this:
-
 <figure class="text-center">
   <img src="assets/intro_to_group/compare.png"/>
 </figure>
