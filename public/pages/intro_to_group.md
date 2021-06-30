@@ -1,10 +1,19 @@
+## Pre-Requisites
+
+Before starting this tutorial, you should read the following articles:
+- [How to create and run a simple epidemic model in EpiPolicy](create_your_first_scenario)
+- [Splitting probabilities in compartmental models](/probability_rate)
+
 ## Introduction
 
-In this tutorial module, we explore the concept of a group in **Epipolicy** with instructions on how to create a simple SIR model in which different groups behave differently.  
+In this tutorial, we will explore the concept of sub-population groups. A sub-population group is defined as a class of individuals in a population that you are interested in simulating the spread of disease in, either because the individuals in the group possess distinctive characteristics with regard to the disease or you simply want to build targeted policies for those individuals. 
 
-A group is a class of individuals that show distinctive characteristics with regard to the disease. For example, for COVID-19, adults have a lower mortality rate compared to seniors  [[1](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7335648/)]. In order to reflect these differences, we partition the population into groups and modify the parameters accordingly.
+Example: For COVID-19, adults have a lower mortality rate compared to seniors [[1](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7335648/)].
+In order to reflect these differences, we can partition the population into two distinct _groups_: Adults and Seniors. Then, we can set the model parameters for each group separately to incorporate the differences in mortality rate. Similarly, if you want to build intervention strategies such as school or workplace closures, you may want to create groups such as Students and Workers.
 
 ## The SIRD model
+
+In this tutorial, we will use the SIRD model.
 
 <texb>
 \begin{array}{lcl} \frac{dS}{dt} & = & - \beta \frac{SI}{N} \\
@@ -14,18 +23,24 @@ A group is a class of individuals that show distinctive characteristics with reg
 \end{array}
 </texb>
 
-where, in addition to the SIR model in [Create your first scenario](/create_your_first_scenario), <tex>p_d</tex> is the probability of death.
+where
+- <tex>S</tex> is the number of susceptible people
+- <tex>I</tex> is the number of infectious people
+- <tex>R</tex> is the number of recovered people
+- <tex>D</tex> is the number of deceased people
+- <tex>N</tex> is the total population
+- <tex>\beta</tex> is the infection transmission rate
+- <tex>\gamma</tex> is the rate at which individuals stop being infectious
+- <tex>p_d</tex> is the probability of death
 
-You can find the mathematical justification for the splitting of the transition rate <tex>\gamma I </tex> into <tex>\gamma p_d I</tex> and <tex>\gamma (1-p_d) I </tex> to model the probability of death via [Splitting probability in compartmental model](/probability_rate).
+## Create the Scenario
 
-## Create the scenario
+### Modify the Pre-defined SIR Model
 
-### Modify a pre-defined model
+In the _Model_ page, load the <tex>SIR</tex> model from pre-loaded models toolbar. Then, add another compartment, <tex>D</tex>, in the _Compartments_ table to create the <tex>SIRD</tex> model, using the equations defined above. 
+In addition to the [tags](tags) defined for the other compartments, we need to specify the "death" tag to mark <tex>D</tex>, i.e. the compartment that is not included in <tex>N</tex>, since <tex>N</tex> is the total _alive_ population.
 
-In this tutorial module, we show how to derive our SIRD model from a pre-defined SIR model in **Epipolicy**.
-
-Tips:
-- The "death" tag is to identify a compartment that is not included in <tex>N</tex> since <tex>N</tex> is the total alive population.
+Similarly, add <tex>p_d</tex> in the _Parameters_ table
 
 <div class="tutorial-video-container">
     <video class="tutorial-video" autoplay muted loop controls>
@@ -33,16 +48,31 @@ Tips:
     </video>
 </div>
 
-### Set population
+### Describe the Population
 
-As in [Create your first scenario](/create_your_first_scenario#set-population), we stick with the imaginary country "United Provinces" at administrative level 0 with 1000 population.
+In the _Locales_ page, load the data for "United Provinces" at administrative level 0.
 
-### Set groups
+<div class="tutorial-video-container">
+    <video class="tutorial-video" autoplay muted loop controls>
+        <source src="assets/create_your_first_model/locales.mp4" type="video/mp4">
+    </video>
+</div>
 
-**Epipolicy** provides a pre-computed [dataset](https://sedac.ciesin.columbia.edu/data/collection/gpw-v4) to partition your population into demographic groups characterized by their ages and genders. Here we create one group called "Seniors" and **Epipolicy** automatically allocate the rest of the population to another group called "Others"
+### Define Groups
 
-Tips:
-- You can override the pre-computed proportion of your groups. In this example, we set 10% of our population to be seniors.
+In the _Groups_ page, we create a new group called "Seniors" by following the following steps. 
+- Select [GPWv4](https://sedac.ciesin.columbia.edu/data/collection/gpw-v4) from the toolbar.
+- Type the desired name in the _Group Name_ text box.
+- Check the Male and Female check boxes.
+- Define the age range (50-84) via the _Age range to include_ slider.
+- Click the _Add_ button.
+
+**Epipolicy** will automatically create a group distribution for the locales described in _Locales_ page, using the characteristics defined above via the [GPWv4 dataset](https://sedac.ciesin.columbia.edu/data/collection/gpw-v4).
+
+By default, EpiPolicy creates a group called "Others" for the population segments that don't fall into the group characteristics described by the user.
+
+You can also override the pre-computed proportion of your groups. 
+In this example, we set 10% of our population to be seniors.
 
 <div class="tutorial-video-container">
     <video class="tutorial-video" autoplay muted loop controls>
@@ -50,12 +80,12 @@ Tips:
     </video>
 </div>
 
-### Set parameters
+### Set Group-specific Parameters
 
-Groups in **Epipolicy** have their own values for each parameter (which initially be defaulted to the base value). In this example, we  increase the mortality rate of seniors by a factor of 10  (1% to 10%).
+In the _Parameters_ page, you can define a specific value for each model parameter for each individual group, which will override the base values provided in the _Model_ page. You can do this by simply specifying the new value in the _Value_ text field in the _Parameters_ table. For convenience, **Epipolicy** provides a filter functionality for users to easily filter the _Parameters_ table by providing the name of the desired parameter or group.
 
-Tips:
-- **Epipolicy** provides a search functionality to quickly find the parameter in which you are interested.
+In this example, we set the mortality rate (<tex>p_d</tex>) of Seniors to <tex>0.1</tex>.
+
 
 <div class="tutorial-video-container">
     <video class="tutorial-video" autoplay muted loop controls>
@@ -63,7 +93,7 @@ Tips:
     </video>
 </div>
 
-### Export your scenario
+<!-- ### Export your scenario
 
 Before [exporting](importexport), confirm the changes that you've made in the current page by clicking on a different page. In the example, we click on the _Model_ page. The zip file consists of a JSON file that contains everything necessary for you to [import](importexport) this model in the future.
 
@@ -71,19 +101,20 @@ Before [exporting](importexport), confirm the changes that you've made in the cu
     <video class="tutorial-video" autoplay muted loop controls>
         <source src="assets/intro_to_group/export.mp4" type="video/mp4">
     </video>
-</div>
+</div> -->
 
-## Your turn
+## Run the Simulation and Compare Results
 
-In this exercise, we explore the _Compare_ page in **Epipolicy**. Here are the steps:
-1. Set your simulation duration from Jan 01, 2021 to Dec 01, 2021
-2. Set your initial conditions so that there are initially 10 infectious individuals in the group "Others"
-3. Run two scenarios:
-    * One with 10% seniors in the population
-    * One with 50% seniors in the population
-4. Go to the _Compare_ page in compare these two scenarios
+Now that we have defined our groups and group-specific parameters, let's intialize and run the simulation. 
+You can consult previous tutorials for details on the following steps:
+1. In the _Schedule_ page, set the simulation duration from Jan 01, 2021 to Dec 01, 2021
+2. Set the initial conditions so that there are initially 10 infectious individuals in the group "Others"
+3. Repeat step 2 for the following two scenarios:
+   - One with 10% seniors in the population
+   - One with 50% seniors in the population
+4. Go to the _Compare_ page to compare these two scenarios
 
-Hopefully you will get something like this!
+Hopefully you will get something like this:
 
 <figure class="text-center">
   <img src="assets/intro_to_group/compare.png"/>
@@ -92,6 +123,7 @@ Hopefully you will get something like this!
 ## Summary
 
 In this tutorial:
-- We introduce the concept of groups in **Epipolicy** with the possibility of customizing the parameter values per group. 
+
+- We introduce the concept of groups in **Epipolicy** with the possibility of customizing the parameter values per group.
 - We make use of the _Compare_ page to highlight the impact that different group dynamics can have on a scenario.
-- We show the export functionality that would allow you to import the scenario for future usage/bookmarking. In the [next tutorial](/intro_to_facility), we will show you how to import an existing scenario and explore the  concept of **facility** in **Epipolicy**.
+<!-- - We show the export functionality that would allow you to import the scenario for future usage/bookmarking. In the [next tutorial](/intro_to_facility), we will show you how to import an existing scenario and explore the concept of **facility** in **Epipolicy**. -->
