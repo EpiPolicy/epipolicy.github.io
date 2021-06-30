@@ -63,9 +63,11 @@ For this introductory tutorial, we will select an imaginary country "United Prov
 
 You can set the duration of your simulation, i.e. the start and end dates, in the _Schedule_ page.
 
-<figure>
-    <img src="/assets/schedule-dates.jpeg" alt="schedule-dates"/>  
-</figure>
+<div class="tutorial-video-container">
+    <video class="tutorial-video" autoplay muted loop controls>
+        <source src="assets/create_your_first_model/schedule.mp4" type="video/mp4">
+    </video>
+</div>
 
 ### Set the Initial Conditions
 
