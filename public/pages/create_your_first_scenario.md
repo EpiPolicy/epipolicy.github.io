@@ -1,8 +1,13 @@
+## Pre-Requisites
+
+Before starting this tutorial, you should read the following articles:
+- [A Simple Epidemic Model](sir_model)
+
 ## Introduction
 
 <!-- This tutorial provides the mathematical and theoretical background for deterministic compartmental models, with instructions on how to create a simple SIR model and run it on **Epipolicy**. -->
 
-This tutorial provides instructions on how to create a [simple epidemic model](sir_model) in **Epipolicy**.
+This tutorial provides instructions on how to create and run a simple <tex>SIR</tex> model in **Epipolicy**.
 
 ## Create the Scenario
 
@@ -16,7 +21,7 @@ This tutorial provides instructions on how to create a [simple epidemic model](s
     </video>
 </div>
 
-### Start from scratch
+### Start from Scratch
 
 In this tutorial, we will create a model from scratch by following the following steps:
 

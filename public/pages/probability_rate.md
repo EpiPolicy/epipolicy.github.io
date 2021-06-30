@@ -1,6 +1,11 @@
+## Pre-Requisites
+
+Before reading this article, you should read the following articles:
+- [Compartmental Models](compartmental_models)
+
 ## Introduction
 
-Let's consider the following [compartmental model](compartmental_models):
+Let's consider the following compartmental model:
 
 <texb>
 \begin{array}{lcl}
@@ -38,7 +43,7 @@ Thus, an intuitive way to construct differential equations for the new model is:
 ## Proof
 
 Let <tex>T</tex> be a random variable that represents the time after which an infectious individual leaves the _infectious_ compartment, <tex>I</tex>. 
-As the [time of sojourn](compartmental_models) of <tex>I</tex> is exponentially distributed with mean <tex>\frac{1}{\gamma}</tex>, <tex>T \sim Exp(\gamma)</tex>, the survival function of the infectious state can be written as: <tex>P(t)=e^{-\gamma t}</tex>
+As the time of sojourn of <tex>I</tex> is exponentially distributed with mean <tex>\frac{1}{\gamma}</tex>, <tex>T \sim Exp(\gamma)</tex>, the survival function of the infectious state can be written as: <tex>P(t)=e^{-\gamma t}</tex>
 
 Let <tex>I(t)</tex> be the infectious population at time <tex>t \geq 0</tex>. Then, <tex>I(t)=I_0P(t)</tex> gives the proportion of <tex>I_0</tex>, the initial infectious population, that is still infectious at time <tex>t</tex>.
 

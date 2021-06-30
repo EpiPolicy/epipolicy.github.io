@@ -1,7 +1,11 @@
+## Pre-Requisites
+
+Before reading this article, you should read the following articles:
+- [Compartmental Models](compartmental_models)
 
 ## Introduction
 
-The [SIR model](http://www.stat.columbia.edu/~regina/research/notes123.pdf) is one of the  simplest [compartmental models](compartmental_models). It consists of three compartments:
+The [SIR model](http://www.stat.columbia.edu/~regina/research/notes123.pdf) is one of the  simplest compartmental models. It consists of three compartments:
 - **S**: This compartment represents the **s**usceptible segment of a population. When a susceptible individual comes in contact with an infectious individual, they have a chance to contract the disease, in which case they transition into the infectious compartment.
 - **I**: This compartment represents the  **i**nfectious segment of a population. These are individuals who have been infected and are capable of infecting other susceptible individuals.
 - **R**: This compartment represents the **r**ecovered segment of a population. These are individuals who have recovered from the disease and are immune to  infection.
