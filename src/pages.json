@@ -24,6 +24,16 @@
         "name": "A Simple Epidemic Model",
         "url": "sir_model",
         "markdown-file": "sir_model.md"
+      },
+      {
+        "name": "State Data",
+        "url": "state-data",
+        "markdown-file": "state_data.md"
+      },
+      {
+        "name": "Regex Syntax",
+        "url": "regex-syntax",
+        "markdown-file": "regex_syntax.md"
       }
     ]
   },
@@ -74,16 +84,6 @@
         "name": "Mask and border closure",
         "url": "mask_border",
         "markdown-file": "mask_border.md"
-      },
-      {
-        "name": "State Data",
-        "url": "state-data",
-        "markdown-file": "state_data.md"
-      },
-      {
-        "name": "Regex Syntax",
-        "url": "regex-syntax",
-        "markdown-file": "regex_syntax.md"
       }
     ]
   },
