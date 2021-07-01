@@ -1,3 +1,8 @@
+## Pre-Requisites
+
+Before starting this tutorial, you should read the following articles:
+- [How to create and run a simple epidemic model in EpiPolicy](create_your_first_scenario)
+
 ## Introduction
 
 <!-- In this tutorial, we will explore the concept of population mobility in **Epipolicy** with instructions on how to create and modify mobility values between locales in **EpiPolicy**. -->
