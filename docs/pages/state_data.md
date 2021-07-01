@@ -1,4 +1,11 @@
-A typical **Epipolicy** compartmental model will have <tex>c</tex> compartments, <tex>p</tex> parameters. These parameters include all the transition rates such as incubation rate, transmission rate as well as epidemiological parameters such as probability of death, probability of developing symptoms.
+## Pre-Requisites
+
+Before reading this article, you should read the following articles:
+- [Compartmental Models](compartmental_models)
+
+## Introduction
+
+A typical **Epipolicy** compartmental model has <tex>c</tex> compartments, <tex>p</tex> parameters. These parameters include all the transition rates such as incubation rate, transmission rate as well as epidemiological parameters such as probability of death, probability of developing symptoms.
 
 Furthermore, the model will have <tex>l</tex> locales, <tex>f</tex> facilities, <tex>g</tex> groups.
 
