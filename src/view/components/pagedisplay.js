@@ -59,8 +59,6 @@ class PageDisplay extends React.Component {
 
     let header = document.getElementById(this.props.model.activePageVisibleHeader);
     if (header) header.scrollIntoView({behavior: 'smooth'});
-
-    // this.props.onPageContentChanged();
   }
 
 }

@@ -4,12 +4,12 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: $xl-margin $lg-margin $lg-margin $lg-margin;
-  overflow: auto;
+  overflow: hidden;
 
   .title {
     cursor: pointer;
-    margin-bottom: $lg-margin;
+    padding: $lg-margin $lg-margin $lg-margin $lg-margin;
+    margin: 0;
   }
 
   .title-logo {
@@ -18,6 +18,14 @@
 
   .menu {
     flex-grow: 1;
+    overflow: auto;
+    padding: 0 $lg-margin $lg-margin $lg-margin;
+
+    &::-webkit-scrollbar {
+      width: $scrollbar-size / 2;
+      height: $scrollbar-size / 2; 
+      margin: $scrollbar-margin / 2;
+    }
   }
 
   .menu-item {
@@ -33,17 +41,44 @@
     }
   }
 
-  .menu-parent-item {
+  .menu-parent-item-container {
     margin-bottom: $sm-margin;
     color: gray;
+
+    .menu-parent-item {
+      display: inline-block;
+
+      &.clickable {
+        cursor: pointer;
+        
+        &:hover {
+          color: rgb(153, 153, 153);
+        }
+      }
+    }
+
+    .hide-show-menu-parent-item {
+      cursor: pointer;
+      float: right;
+
+      &:hover {
+        color: rgb(153, 153, 153);
+      }
+    }
+
   }
 
   .menu-children {
     margin-left: $md-margin;
     margin-bottom: $lg-margin;
+
+    &.menu-children-hide {
+      display: none;
+    }
   }
 
   .login-box {
+    padding: $lg-margin;
     width: 100%;
     cursor: pointer;
 

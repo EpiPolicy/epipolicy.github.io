@@ -16,16 +16,22 @@ Most of EpiPolicy's functionalities have been covered in Basic and Advanced Tuto
 
 ## Describing the Model and Running a Simple Simulation
 
-The first step is to define your model in the _Model_ page in EpiPolicy. Following the model described in the paper (shown below), create a new row in the _Compartments_ table for each compartment in the model. You can provide a name for the compartment as well as a description. Then, proceed to describe the equations for each compartment. Note that you have to mark susceptible and infectious compartments by providing relevant tags in the _tags_ column. In the model under-consideration, compartment *S* represents the susceptible population and compartments *P*, *I*, and *A* represent the infectious populations. As you define your model, a visual summary will be automatically generated for you at the end of the _Model_ page.
+The first step is to define your model in the _Model_ page in EpiPolicy. Following the model described in the paper, create a new row in the _Compartments_ table for each compartment in the model. Note that the equations will need to be modified to represent the population compartment (<tex>N</tex>). You can provide a name for the compartment as well as a description. Then, proceed to describe the equations for each compartment. Note that you have to mark susceptible and infectious compartments by providing relevant tags in the _tags_ column. In the model under-consideration, compartment *S* represents the susceptible population and compartments *P*, *I*, and *A* represent the infectious populations. As you define your model, a visual summary will be automatically generated for you at the end of the _Model_ page.
 
 <figure>
     <img src="/assets/alberto-2-spiar-eq.png" alt="model-equations"/>  
 </figure>
 
-Once the equations have been defined, you can now define the parameters used in the model in the _Parameters_ table. We will use the parameters described in Table 1 and Figure 8 in the paper (shown below). For each parameter, create a new row and provide its name, description and value. The values defined here are considered the base values for the parameters and can be modified in later pages. Note that you have to mark the transmission parameters by providing relevant tags in the _tags_ column. In the model under-consideration, the parameters β11, β12, β21, and β22 are transmission parameters.
+Once the equations have been defined, you can now define the parameters used in the model in the _Parameters_ table. We will use the parameters described in Table 1 and Figure 8 in the paper. 
 
 <figure>
     <img src="/assets/alberto-2-spiar-params.png" alt="model-parameters"/>  
+</figure>
+
+For each parameter, create a new row and provide its name, description and value. The values defined here are considered the base values for the parameters and can be modified in later pages. Note that you have to mark the transmission parameters by providing relevant tags in the _tags_ column. In the model under-consideration, the parameters β11, β12, β21, and β22 are transmission parameters.
+
+<figure>
+    <img src="/assets/alberto-2-figure-8-1.png" alt="model-parameters-b11"/>  
 </figure>
 
 ## Epidemic Scenarios
@@ -102,7 +108,13 @@ Next, we define the schedule of each intervention individually.
     * Jan 21, 2022, Feb 10, 2022, β11 = 3
 
 
-After the schedule is defined, you can proceed to the _Initialize_ page and set up the initial information (provided in the paper). After that, you can start the simulation.
+After the schedule is defined, you can proceed to the _Initialize_ page and set up the initial information as follows:
+
+<figure>
+    <img src="/assets/alberto-2-init-values.png" alt="schedule"/>
+</figure>
+
+After that, you can start the simulation.
 
 ## Results
 

@@ -1,4 +1,4 @@
-import { makeObservable, observable, computed, action } from 'mobx';
+import { makeObservable, observable, computed, action, toJS } from 'mobx';
 import pages_config from "../pages.json";
 import axios from 'axios';
 import marked from 'marked';
@@ -28,6 +28,7 @@ class Model {
   activePageHeaders = [];
   loginInfo = null;
   activePageVisibleHeader = null;
+  pageNavActiveHeader = null;
 
   generateErrorPage(errMsg) {
     return '<div className="error">' + errMsg +'</div>';
@@ -100,15 +101,28 @@ class Model {
 
   setActivePageVisibleHeader(headerID) {
     this.activePageVisibleHeader = headerID;
-  } 
+  }
+
+  setPageNavActiveHeader(headerID) {
+    this.pageNavActiveHeader = headerID;
+  }
+
+  toggleSidebar() {
+    this.activePage['hide-sidebar'] = !this.activePage['hide-sidebar'];
+  }
+
+  toggleParentItem(page) {
+    page.hide = !page.hide;
+  }
 
   checkPagesActivation() {
     const path = window.location.pathname.slice(1);
-
     const hash = window.location.hash ? window.location.hash.slice(1) : undefined;
+    
     if (hash) {
       this.setActivePageVisibleHeader(hash);
-    }
+      this.setPageNavActiveHeader(hash);
+    } 
 
     let checkPagesFn = pages => {
       for (let page of pages) {  
@@ -130,14 +144,16 @@ class Model {
     let getActivePageFromPagesFn = pages => {
       for (let page of pages) {
         let activePage = getActivePageFromPageFn(page);
-        if (activePage) return activePage;
+        if (activePage) {
+          return activePage;
+        }
       }
     }
     let getActivePageFromPageFn = page => {
+      if (page.active) return page;
       if (page.children) {
         return getActivePageFromPagesFn(page.children);
       }
-      if (page.active) return page;
     }
 
     let activePage = getActivePageFromPagesFn(this.pages);
@@ -185,6 +201,9 @@ class Model {
       setActivePageHeaders: action,
       setActivePageVisibleHeader: action,
       activePageVisibleHeader: observable,
+      pageNavActiveHeader: observable,
+      toggleSidebar: action,
+      toggleParentItem: action, 
       activePage: computed
     });
 

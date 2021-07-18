@@ -165,10 +165,9 @@ ol, ul, dl {
 
   &.link-card {
     width: 15rem;
-    background-color: #daedf8;
+    border: 1px solid #daedf8;
+    background-color: $card-background;
   }
-
-
 }
 
 #root {
@@ -183,25 +182,47 @@ ol, ul, dl {
     height: 100%;
     display: flex;
 
+    #menu-toggle {
+      position: absolute;
+      cursor: pointer;
+      z-index: 42;
+      top: $sm-margin;
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+      font-size: 1rem;
+      text-align: center;
+      padding: 0.25rem;
+      background-color: darken($sidebar-background, 5%);
+      color: darken($sidebar-background, 20%);
+
+      left: $sidebar-width - 1rem;
+      transition: left $sidebar-animation-time ease-in-out;
+
+      &:hover {
+        background-color: darken($sidebar-background, 10%);
+        color: darken($sidebar-background, 30%);
+      }
+    }
+
     #sidebar-container {
       position: fixed;
       height: 100%;
-      border-right: 1px solid #c3c3c3;
+      border-right: 1px solid darken($sidebar-background, 20%);
       background-color: $sidebar-background;
       overflow: hidden;
       width: $sidebar-width;
+      transition: width $sidebar-animation-time ease-in-out;
+      padding: 0;
 
-      &.hide-sidebar {
-        display: none;
-      }
-      
       #sidebar {
         position: fixed;
         width: $sidebar-width;
+        left: 0;
+        transition: left $sidebar-animation-time ease-in-out;
       }
-      padding: 0;
     }
-  
+
     #main-panel-container {
       padding: 0;
       width: 100%;
@@ -210,6 +231,7 @@ ol, ul, dl {
       overflow-y: scroll;
       background-color: $background-color;
       margin: 0 0 0 $sidebar-width;
+      transition: margin $sidebar-animation-time ease-in-out;
 
       #page-display {
 
@@ -221,20 +243,29 @@ ol, ul, dl {
 
         #page-content {
           margin: 0;
+          transition: margin $sidebar-animation-time ease-in-out;
           max-width: $page-content-width!important;
         }
       }
+    }
 
-      &.hide-sidebar {
-        margin: 0;
+    &.hide-sidebar {
+      #sidebar-container {
+        width: 0;
 
-        #page-display {
-          #page-content {
-            margin: auto;
-          }
+        #sidebar {
+          left: - $sidebar-width;
         }
       }
 
+      #menu-toggle {
+        left: $sm-margin;
+      }
+
+      #main-panel-container {
+        margin: 0 0 0 $lg-margin;
+      }
+      
     }
 
   }
