@@ -55,10 +55,15 @@ class Sidebar extends React.Component {
     }
     if (page.children) {
       return <div key={page.url || page.name}>
-          <div className={'menu-parent-item' + (page.url ? ' clickable' : '')} onClick={() => this.goTo(page)}>
-            {page.name}
+          <div className="menu-parent-item-container">
+            <div className={'menu-parent-item' + (page.url ? ' clickable' : '')} onClick={() => this.goTo(page)}>
+              {page.name}
+            </div>
+            <div className="hide-show-menu-parent-item" onClick={() => this.toggleParentItem(page)}>
+              <i class={'fa' + (page.hide ? ' fa-caret-left' : ' fa-caret-down')} />
+            </div>
           </div>
-          <div className="menu-children">
+          <div className={'menu-children' + (page.hide ? ' menu-children-hide' : '')}>
             {page.children.map(p => this.renderMenuItem(p))}
           </div>
       </div>
@@ -95,6 +100,10 @@ class Sidebar extends React.Component {
     document.title = page.name;
     window.history.pushState({url: '/' + page.url}, page.name, '/' + page.url);
     this.model.checkPagesActivation();
+  }
+
+  toggleParentItem(page) {
+    this.model.toggleParentItem(page);
   }
 
 

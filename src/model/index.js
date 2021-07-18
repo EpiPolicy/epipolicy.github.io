@@ -111,6 +111,10 @@ class Model {
     this.activePage['hide-sidebar'] = !this.activePage['hide-sidebar'];
   }
 
+  toggleParentItem(page) {
+    page.hide = !page.hide;
+  }
+
   checkPagesActivation() {
     const path = window.location.pathname.slice(1);
     const hash = window.location.hash ? window.location.hash.slice(1) : undefined;
@@ -199,6 +203,7 @@ class Model {
       activePageVisibleHeader: observable,
       pageNavActiveHeader: observable,
       toggleSidebar: action,
+      toggleParentItem: action, 
       activePage: computed
     });
 
