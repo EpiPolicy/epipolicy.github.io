@@ -3,6 +3,7 @@ import {observer} from 'mobx-react';
 import './app.scss';
 import Sidebar from './components/sidebar';
 import PageDisplay from './components/pagedisplay';
+import { isCompositeComponent } from 'react-dom/test-utils';
 
 class App extends React.Component {
 
@@ -49,14 +50,14 @@ class App extends React.Component {
   }
 
   render() {
-    return <div id="app">
-      <div id="sidebar-container" 
-           className={this.props.model.activePage['hide-sidebar'] ? 'hide-sidebar' : ''}
-      >
+    return <div id="app" className={this.props.model.activePage['hide-sidebar'] ? 'hide-sidebar' : ''}>
+      <div id="menu-toggle" onClick={() => this.props.model.toggleSidebar()}>
+          <i className="fa fa-bars" aria-hidden="true"></i>
+        </div>  
+      <div id="sidebar-container">
         <Sidebar model={this.props.model} />
       </div>
       <div id="main-panel-container" 
-           className={this.props.model.activePage['hide-sidebar'] ? 'hide-sidebar' : ''}
            ref={this.mainPanelContainerRef}
            onScroll={e => this.updateVisibleHeader()}>
         <PageDisplay model={this.props.model} onPageContentChanged={() => this.updateVisibleHeader()}/>

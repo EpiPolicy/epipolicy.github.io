@@ -1,4 +1,4 @@
-import { makeObservable, observable, computed, action } from 'mobx';
+import { makeObservable, observable, computed, action, toJS } from 'mobx';
 import pages_config from "../pages.json";
 import axios from 'axios';
 import marked from 'marked';
@@ -107,11 +107,14 @@ class Model {
     this.pageNavActiveHeader = headerID;
   }
 
+  toggleSidebar() {
+    this.activePage['hide-sidebar'] = !this.activePage['hide-sidebar'];
+  }
+
   checkPagesActivation() {
     const path = window.location.pathname.slice(1);
     const hash = window.location.hash ? window.location.hash.slice(1) : undefined;
     
-    console.log('checkPagesActivation', path, hash)
     if (hash) {
       this.setActivePageVisibleHeader(hash);
       this.setPageNavActiveHeader(hash);
@@ -137,7 +140,9 @@ class Model {
     let getActivePageFromPagesFn = pages => {
       for (let page of pages) {
         let activePage = getActivePageFromPageFn(page);
-        if (activePage) return activePage;
+        if (activePage) {
+          return activePage;
+        }
       }
     }
     let getActivePageFromPageFn = page => {
@@ -193,6 +198,7 @@ class Model {
       setActivePageVisibleHeader: action,
       activePageVisibleHeader: observable,
       pageNavActiveHeader: observable,
+      toggleSidebar: action,
       activePage: computed
     });
 
