@@ -41,7 +41,7 @@ There are three scenarios described in the paper:
 2. Lockdown
 3. Vaccination
 
-Let us first consider the Outbreak scenario. Choose the parameter values corresponding to the outbreak column in the parameters table. After defining the parameters, move to the _Schedule_ page and specify the duration of the simulation. After specifying the duration, you can then move on to the _Initialize_ page to specify the initial values of the susceptible and infectious compartments provided in the paper and start the simulation.
+Let us first consider the Outbreak scenario. Choose the parameter values corresponding to the outbreak column in the parameters table. For parameter β11, you can pick a value from Figure 8 depending on how you want to represent the transmission in schools. After defining the parameters, move to the _Schedule_ page and specify the duration of the simulation. After specifying the duration, you can then move on to the _Initialize_ page to specify the initial values of the susceptible and infectious compartments provided in the paper and start the simulation.
 
 The status of all simulations that are currently running can be viewed in the status table at the end of the _Initialize_ page. Once a simulation has finished running, it will no longer be available in the status table. The results of all simulations that have finished running can be viewed in the _Results_ page.
 
