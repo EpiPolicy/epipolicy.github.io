@@ -4,12 +4,12 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: $xl-margin $lg-margin $lg-margin $lg-margin;
-  overflow: auto;
+  overflow: hidden;
 
   .title {
     cursor: pointer;
-    margin-bottom: $lg-margin;
+    padding: $xl-margin $lg-margin $lg-margin $lg-margin;
+    margin: 0;
   }
 
   .title-logo {
@@ -18,6 +18,14 @@
 
   .menu {
     flex-grow: 1;
+    overflow: auto;
+    padding: 0 $lg-margin $lg-margin $lg-margin;
+
+    &::-webkit-scrollbar {
+      width: $scrollbar-size / 2;
+      height: $scrollbar-size / 2; 
+      margin: $scrollbar-margin / 2;
+    }
   }
 
   .menu-item {
@@ -44,6 +52,7 @@
   }
 
   .login-box {
+    padding: $lg-margin;
     width: 100%;
     cursor: pointer;
 
