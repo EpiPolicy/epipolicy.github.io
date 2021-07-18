@@ -10,6 +10,8 @@ class PageNavbar extends React.Component {
   }
 
   render() {
+    let selectedHeader = this.props.model.pageNavActiveHeader;
+
     return (
       <div id="page-navbar-container">
         <nav id="page-navbar" className="navbar navbar-light bg-light flex-column align-items-stretch p-3">
@@ -18,12 +20,9 @@ class PageNavbar extends React.Component {
               <a key={h.id} 
                  className={
                    "nav-link" + 
-                   (
-                     (!this.props.model.activePageVisibleHeader && i === 0) 
-                     || (this.props.model.activePageVisibleHeader === h.id)
-                      ? ' active' : ''
-                   ) + 
-                   ' ' + h.tagname
+                   ((!selectedHeader && i === 0) || (selectedHeader === h.id) ? ' active' : '') + 
+                   ' ' + 
+                   h.tagname
                   } 
                  href={'#' + h.id}>
                 {h.caption}

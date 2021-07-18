@@ -28,6 +28,7 @@ class Model {
   activePageHeaders = [];
   loginInfo = null;
   activePageVisibleHeader = null;
+  pageNavActiveHeader = null;
 
   generateErrorPage(errMsg) {
     return '<div className="error">' + errMsg +'</div>';
@@ -100,15 +101,21 @@ class Model {
 
   setActivePageVisibleHeader(headerID) {
     this.activePageVisibleHeader = headerID;
-  } 
+  }
+
+  setPageNavActiveHeader(headerID) {
+    this.pageNavActiveHeader = headerID;
+  }
 
   checkPagesActivation() {
     const path = window.location.pathname.slice(1);
-
     const hash = window.location.hash ? window.location.hash.slice(1) : undefined;
+    
+    console.log('checkPagesActivation', path, hash)
     if (hash) {
       this.setActivePageVisibleHeader(hash);
-    }
+      this.setPageNavActiveHeader(hash);
+    } 
 
     let checkPagesFn = pages => {
       for (let page of pages) {  
@@ -185,6 +192,7 @@ class Model {
       setActivePageHeaders: action,
       setActivePageVisibleHeader: action,
       activePageVisibleHeader: observable,
+      pageNavActiveHeader: observable,
       activePage: computed
     });
 

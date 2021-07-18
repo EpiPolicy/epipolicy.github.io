@@ -12,6 +12,7 @@ class App extends React.Component {
   }
 
   updateVisibleHeader() {
+    console.log('updateVisibleHeader')
     let mostVisibleHeader = null;
     let visibleHeaders = [];
     let lastVisibleHeader = null;
@@ -44,11 +45,7 @@ class App extends React.Component {
 
     }
 
-    this.props.model.setActivePageVisibleHeader(mostVisibleHeader ? mostVisibleHeader.id : null);
-  }
-
-  componentDidMount() {
-    this.updateVisibleHeader();
+    this.props.model.setPageNavActiveHeader(mostVisibleHeader ? mostVisibleHeader.id : null);
   }
 
   render() {
