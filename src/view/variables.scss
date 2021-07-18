@@ -15,14 +15,19 @@ $scrollbar-size: $md-margin;
 $sidebar-width: 13 * $font-size-base;
 $page-content-width: 46rem;
 
+$animation-time: 0.3s;
+$sidebar-animation-time: 0.5s;
+
 $panel-background: #f1f1f1;
 $code-background: #fbfbfb;
 $sidebar-background: #fcfcfc;
-$card-background: #fdfdfd;
-$sidebar-animation-time: 0.5s;
+$card-background: #285f86;
+$card-text-color: #f1f1f1;
+$card-border-color: #2381c4;
 $background-color: #fff;
 $action-color: #285f86;
 $action-color-highlighted: #3f7ca8;
+
 
 $h1-font-size: 1.75 * $font-size-base;
 $h2-font-size: 1.5 * $font-size-base;

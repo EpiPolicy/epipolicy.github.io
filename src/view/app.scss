@@ -164,9 +164,19 @@ ol, ul, dl {
   }
 
   &.link-card {
+    color: $card-text-color;
     width: 15rem;
-    border: 1px solid #daedf8;
+    border: 4px solid transparent;
     background-color: $card-background;
+    transition: border $animation-time ease-in-out; 
+
+    * {
+      color: $card-text-color;
+    }
+
+    &:hover {
+      border: 4px solid lighten($card-border-color, 10%);
+    }
   }
 }
 
