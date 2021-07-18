@@ -95,7 +95,7 @@ In this example, we set the mortality rate (<tex>p_d</tex>) of Seniors to <tex>0
 
 <!-- ### Export your scenario
 
-Before [exporting](importexport), confirm the changes that you've made in the current page by clicking on a different page. In the example, we click on the _Model_ page. The zip file consists of a JSON file that contains everything necessary for you to [import](importexport) this model in the future.
+Before [exporting](import_export), confirm the changes that you've made in the current page by clicking on a different page. In the example, we click on the _Model_ page. The zip file consists of a JSON file that contains everything necessary for you to [import](import_export) this model in the future.
 
 <div class="tutorial-video-container">
     <video class="tutorial-video" autoplay muted loop controls>

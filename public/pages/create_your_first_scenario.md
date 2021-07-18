@@ -52,7 +52,7 @@ In this tutorial, we will create a model from scratch by following the following
 
 In the _Locales_ page, users can describe the features of the population that they want to simulate the epidemic in. This entails listing the locales that the population resides in, population distribution in the locales as well as the administritative level and area of each locale. 
 For example, if users want to simulate an epidemic in the United States at the country level, they would define a single locale. 
-If they want to simulate the epidemic at the state level in the United States, they would define 51 locales: 1 country-level locale and 50 state-level locales. Users can specify any number of locales (such as cities, provinces, towns, etc) by specifying the locales data in [JSON notation](https://www.json.org/json-en.html) via the built-in [JSON editor](jsoneditor).
+If they want to simulate the epidemic at the state level in the United States, they would define 51 locales: 1 country-level locale and 50 state-level locales. Users can specify any number of locales (such as cities, provinces, towns, etc) by specifying the locales data in [JSON notation](https://www.json.org/json-en.html) via the built-in [JSON editor](json_editor).
 
 By default, **EpiPolicy** provides locale data of all countries upto administrative level 2 (Country, State, City), which can be used as-is or modified as needed.
 

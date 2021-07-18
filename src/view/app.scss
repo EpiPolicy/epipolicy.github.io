@@ -126,6 +126,17 @@ pre {
   }
 }
 
+.todo {
+  background-color: rgb(228, 205, 130);
+  padding: $lg-margin;
+  margin: $lg-margin;
+
+  &::before {
+    content: "TODO: ";
+    font-weight: bold;
+  }
+}
+
 .tooltip-link {
   color: $action-color;
   display: inline-block;
@@ -151,21 +162,21 @@ ol, ul, dl {
 .card-deck {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 
   .card {
-    flex-grow: 0.5;
+    flex-grow: 1;
     margin: 0 $lg-margin $lg-margin 0;
   }
 }
 
 .card {
   .card-title {
-    margin: 0;
+    margin: 0 0 $lg-margin 0;
   }
 
   &.link-card {
     color: $card-text-color;
-    width: 15rem;
     border: 4px solid transparent;
     background-color: $card-background;
     transition: border $animation-time ease-in-out; 

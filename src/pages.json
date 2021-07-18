@@ -29,18 +29,20 @@
       },
       {
         "name": "State Data",
-        "url": "state-data",
+        "url": "state_data",
         "markdown-file": "state_data.md"
       },
       {
         "name": "Regex Syntax",
-        "url": "regex-syntax",
+        "url": "regex_syntax",
         "markdown-file": "regex_syntax.md"
       }
     ]
   },
   {
     "name": "Basic Tutorials",
+    "url": "basic_tutorials",
+    "markdown-file": "basic_tutorials.md",
     "children": [
       {
         "name": "Create Your First Scenario",
@@ -71,6 +73,8 @@
   },
   {
     "name": "Advanced Tutorials",
+    "url": "advanced_tutorials",
+    "markdown-file": "advanced_tutorials.md",
     "children": [
       {
         "name": "Vaccination",
@@ -91,16 +95,20 @@
   },
   {
     "name": "Case Studies",
+    "url": "case_studies",
+    "markdown-file": "case_studies.md",
     "children": [
       {
         "name": "Effect of Opening Schools during COVID-19",
-        "url": "alberto-2",
+        "url": "effect_of_opening_schools_during_covid19",
         "markdown-file": "alberto_2.md"
       }
     ]
   },
   {
     "name": "Advanced Features",
+    "url": "advanced_features",
+    "markdown-file": "advanced_features.md",
     "children": [
       {
         "name": "Tags",
@@ -114,17 +122,17 @@
       },
       {
         "name": "JSON Editor",
-        "url": "jsoneditor",
+        "url": "json_editor",
         "markdown-file": "jsoneditor.md"
       },
       {
         "name": "Import/Export",
-        "url": "importexport",
+        "url": "import_export",
         "markdown-file": "importexport.md"
       },
       {
         "name": "Locale Autocomplete",
-        "url": "localeautocomplete",
+        "url": "locale_autocomplete",
         "markdown-file": "localeautocomplete.md"
       }
     ]
