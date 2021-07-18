@@ -9,6 +9,8 @@
   },
   {
     "name": "Concepts",
+    "url": "concepts",
+    "markdown-file": "concepts.md",
     "children": [
       {
         "name": "Compartmental Models",

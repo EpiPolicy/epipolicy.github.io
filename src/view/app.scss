@@ -165,7 +165,8 @@ ol, ul, dl {
 
   &.link-card {
     width: 15rem;
-    background-color: #daedf8;
+    border: 1px solid #daedf8;
+    background-color: $card-background;
   }
 }
 

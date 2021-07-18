@@ -54,18 +54,20 @@ class Sidebar extends React.Component {
       return null;
     }
     if (page.children) {
-      return <div key={page.name}>
-        <div className="menu-parent-item">{page.name}</div>
-        <div className="menu-children">
-          {page.children.map(p => this.renderMenuItem(p))}
-        </div>
+      return <div key={page.url || page.name}>
+          <div className={'menu-parent-item' + (page.url ? ' clickable' : '')} onClick={() => this.goTo(page)}>
+            {page.name}
+          </div>
+          <div className="menu-children">
+            {page.children.map(p => this.renderMenuItem(p))}
+          </div>
       </div>
     } else {
       if (!this.model.loginInfo && page.protected) {
         return null;
       }
       return <div 
-          key={page.url}
+          key={page.url || page.name}
           className={'menu-item' + (page.active ? ' active' : '')}
           onClick={() => this.goTo(page)}
         >
@@ -89,6 +91,7 @@ class Sidebar extends React.Component {
   }
 
   goTo(page) {
+    if (page.url === undefined) return;
     document.title = page.name;
     window.history.pushState({url: '/' + page.url}, page.name, '/' + page.url);
     this.model.checkPagesActivation();

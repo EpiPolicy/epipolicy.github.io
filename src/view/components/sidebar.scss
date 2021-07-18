@@ -44,6 +44,14 @@
   .menu-parent-item {
     margin-bottom: $sm-margin;
     color: gray;
+
+    &.clickable {
+      cursor: pointer;
+      
+      &:hover {
+        color: rgb(153, 153, 153);
+      }
+    }
   }
 
   .menu-children {

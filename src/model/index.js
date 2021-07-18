@@ -146,10 +146,10 @@ class Model {
       }
     }
     let getActivePageFromPageFn = page => {
+      if (page.active) return page;
       if (page.children) {
         return getActivePageFromPagesFn(page.children);
       }
-      if (page.active) return page;
     }
 
     let activePage = getActivePageFromPagesFn(this.pages);
