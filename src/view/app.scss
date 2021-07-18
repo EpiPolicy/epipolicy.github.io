@@ -175,6 +175,30 @@ ol, ul, dl {
     margin: 0 0 $lg-margin 0;
   }
 
+  > a {
+    height: 100%;
+  }
+
+  .card-text {
+    flex-grow: 1
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .card-footer {
+    padding: $lg-margin 0 0 0;
+    margin-top: $lg-margin;
+  }
+
+  .fa-long-arrow-right {
+    margin-left: $sm-margin;
+    transition: margin-left $animation-time ease-in-out; 
+  }
+
   &.link-card {
     color: $card-text-color;
     border: 4px solid transparent;
@@ -187,6 +211,10 @@ ol, ul, dl {
 
     &:hover {
       border: 4px solid lighten($card-border-color, 10%);
+
+      .fa-long-arrow-right {
+        margin-left: $lg-margin;
+      }
     }
   }
 }
