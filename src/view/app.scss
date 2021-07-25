@@ -80,6 +80,14 @@ h6 {
 // H1 IS USED FOR WEBSITE and PAGE TITLE (i.e. EpiPolicy)
 h1 {
   margin: 0 0 $xl-margin 0;
+  &.title {
+    .title-logo {
+      height: 1.5 * $font-size-base;
+    }
+  }
+  &.page-title {
+    margin: $xl-margin;
+  }
 }
 // H2 IS USED FOR SECTIONS
 h2 {
@@ -98,12 +106,6 @@ h5,
 h6 {
   margin: 0;
   background-color: red;
-}
-
-h1.title {
-  .title-logo {
-    height: 1.5 * $font-size-base;
-  }
 }
 
 a {
@@ -243,7 +245,7 @@ dl {
     #menu-toggle {
       position: absolute;
       cursor: pointer;
-      z-index: 42;
+      z-index: 43;
       top: $sm-margin;
       border-radius: 50%;
       width: 2rem;
@@ -265,6 +267,7 @@ dl {
 
     #sidebar-container {
       position: fixed;
+      z-index: 42;
       height: 100%;
       border-right: 1px solid darken($sidebar-background, 20%);
       background-color: $sidebar-background;
@@ -290,6 +293,10 @@ dl {
       background-color: $background-color;
       margin: 0 0 0 $sidebar-width;
       transition: margin $sidebar-animation-time ease-in-out;
+
+      @media (max-width: $page-content-width + $sidebar-width) {
+        margin: 0;
+      }
 
       #page-display {
         position: relative;
