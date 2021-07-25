@@ -1,9 +1,9 @@
-@import 'variables';
+@import "variables";
 
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 $fa-font-path: "~font-awesome/fonts";
-@import '~font-awesome/scss/font-awesome';
+@import "~font-awesome/scss/font-awesome";
 
 @import "variables";
 
@@ -68,9 +68,13 @@ html {
   }
 }
 
-
 // HEADERS
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: normal;
 }
 // H1 IS USED FOR WEBSITE and PAGE TITLE (i.e. EpiPolicy)
@@ -79,7 +83,7 @@ h1 {
 }
 // H2 IS USED FOR SECTIONS
 h2 {
-  margin: $xl-margin 0 $lg-margin 0; 
+  margin: $xl-margin 0 $lg-margin 0;
 }
 // H3 IS USED FOR SUB-SECTIONS
 h4 {
@@ -90,7 +94,8 @@ h3 {
   margin: $lg-margin 0 $sm-margin 0;
 }
 // H5 and H6 NOT USED
-h5, h6 {
+h5,
+h6 {
   margin: 0;
   background-color: red;
 }
@@ -104,14 +109,15 @@ h1.title {
 a {
   color: $action-color;
   text-decoration: none;
-  
+
   &:hover {
     color: $action-color-highlighted;
     text-decoration: none;
   }
 }
 
-p, pre {
+p,
+pre {
   margin-bottom: $lg-margin;
 }
 
@@ -120,7 +126,8 @@ pre {
   border: 1px solid darken($code-background, 10%);
   border-radius: $sm-margin;
   background-color: $code-background;
-  code, .hljs {
+  code,
+  .hljs {
     font-size: 0.8 * $font-size-base;
     background-color: $code-background;
   }
@@ -155,7 +162,9 @@ figure {
   margin-bottom: $lg-margin;
 }
 
-ol, ul, dl {
+ol,
+ul,
+dl {
   margin-bottom: $lg-margin;
 }
 
@@ -180,7 +189,7 @@ ol, ul, dl {
   }
 
   .card-text {
-    flex-grow: 1
+    flex-grow: 1;
   }
 
   .card-body {
@@ -196,14 +205,14 @@ ol, ul, dl {
 
   .fa-long-arrow-right {
     margin-left: $sm-margin;
-    transition: margin-left $animation-time ease-in-out; 
+    transition: margin-left $animation-time ease-in-out;
   }
 
   &.link-card {
     color: $card-text-color;
     border: 4px solid transparent;
     background-color: $card-background;
-    transition: border $animation-time ease-in-out; 
+    transition: border $animation-time ease-in-out;
 
     * {
       color: $card-text-color;
@@ -283,6 +292,40 @@ ol, ul, dl {
       transition: margin $sidebar-animation-time ease-in-out;
 
       #page-display {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        opacity: 1;
+        animation-name: fadeInOpacity;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+        animation-duration: 300ms;
+
+        @keyframes fadeInOpacity {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+
+        #page-content {
+          margin: $xl-margin;
+
+          .tex {
+            display: inline-block;
+          }
+          texb {
+            .MathJax {
+              text-align: left;
+            }
+          }
+
+          img {
+            max-width: 100%;
+          }
+        }
 
         @media (max-width: $page-content-width + 2 * $sidebar-width) {
           #page-navbar-container {
@@ -291,11 +334,33 @@ ol, ul, dl {
         }
 
         #page-content {
-          margin: 0;
           transition: margin $sidebar-animation-time ease-in-out;
-          max-width: $page-content-width!important;
+          max-width: $page-content-width !important;
         }
       }
+
+      #footer {
+        border-top: 1px solid darken($sidebar-background, 20%);
+
+        #logos {
+          margin: $xl-margin - $lg-margin;
+          max-width: $page-content-width !important;
+
+          .logo-container {
+            display: inline-block;
+            margin: $lg-margin;
+           
+            &:last-child {
+              margin-right: 0;
+            }
+
+            img {
+              max-height: 2 * $lg-margin;
+            }
+          }
+        }
+      }
+      
     }
 
     &.hide-sidebar {
@@ -303,7 +368,7 @@ ol, ul, dl {
         width: 0;
 
         #sidebar {
-          left: - $sidebar-width;
+          left: -$sidebar-width;
         }
       }
 
@@ -312,11 +377,9 @@ ol, ul, dl {
       }
 
       #main-panel-container {
-        margin: 0 0 0 $lg-margin;
+        margin: 0;
       }
-      
     }
 
   }
-
 }

@@ -56,9 +56,7 @@ class App extends React.Component {
       <div id="sidebar-container">
         <Sidebar model={this.props.model} />
       </div>
-      <div id="main-panel-container" 
-           ref={this.mainPanelContainerRef}
-           onScroll={e => this.updateVisibleHeader()}>
+      <div id="main-panel-container" ref={this.mainPanelContainerRef} onScroll={e => this.updateVisibleHeader()}>
         <PageDisplay model={this.props.model} onPageContentChanged={() => this.updateVisibleHeader()}/>
       </div>
     </div>;

@@ -1,6 +1,5 @@
 import React from 'react';
 import { observer } from 'mobx-react';
-import './pagedisplay.scss';
 import 'highlight.js/scss/github.scss';
 import $ from 'jquery';
 import hljs from 'highlight.js';
@@ -20,16 +19,34 @@ class PageDisplay extends React.Component {
     this.pageDisplayRef = React.createRef();
   }
 
+  renderFooter() {
+    return <div id="footer">
+      <div id="logos">
+        <div className="logo-container">
+          <img id="cities_logo" src="assets/logos/cities_logo.png" />
+        </div>
+        <div className="logo-container">
+        <img id="nyuad_logo" src="assets/logos/nyuad_logo.png" />
+        </div>
+        <div className="logo-container">
+          <img id="nyu_logo" src="assets/logos/nyu_logo.png" />
+        </div>
+        <div className="logo-container">
+          <img id="eha_logo" src="assets/logos/eha_logo.png" />
+        </div>
+      </div>
+    </div>;
+  }
+
   render() {
     if (!this.model.activePage || !this.model.activePageContent) {
       return null;
     }
     return (
-      <div id="page-display"
-           ref={this.pageDisplayRef}
-           className={this.model.activePage['no-padding'] ? 'no-padding' : ''}>
+      <div id="page-display" ref={this.pageDisplayRef}>
         {this.model.activePage['hide-title'] ? null : <h1>{this.model.activePage.name}</h1>}
         <div id="page-content" dangerouslySetInnerHTML={{__html: this.model.activePageContent}}></div>
+        {this.renderFooter()}
         {!this.model.activePage['hide-page-navbar'] && <PageNavbar model={this.model} />}
       </div>
     );
