@@ -1,4 +1,4 @@
-import { makeObservable, observable, computed, action, toJS } from 'mobx';
+import { makeObservable, observable, computed, action } from 'mobx';
 import pages_config from "../pages.json";
 import axios from 'axios';
 import marked from 'marked';

@@ -3,7 +3,6 @@ import {observer} from 'mobx-react';
 import './app.scss';
 import Sidebar from './components/sidebar';
 import PageDisplay from './components/pagedisplay';
-import { isCompositeComponent } from 'react-dom/test-utils';
 
 class App extends React.Component {
 
