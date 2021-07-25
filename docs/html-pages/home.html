@@ -2,16 +2,31 @@
     .link-card {
         max-width: 20rem;
     }
+    .youtube-video-container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 59.8%;
+        margin-bottom: 1.2rem;
+    }
+    .youtube-video-container > iframe {
+        border: 1px solid black;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 </style>
 
 <h1 class="title">
     <img alt="EpiPolicy" class="title-logo" src="logo512.png"> EpiPolicy
 </h1>
 
-<div class="tutorial-video-container">
-    <video class="tutorial-video" autoplay="autoplay" muted loop>
-        <source src="assets/results.m4v" type="video/mp4">
-    </video>
+<div class="youtube-video-container">
+    <iframe src="https://www.youtube.com/embed/JDYb4_coAf4" frameborder="0" 
+            allow="autoplay; encrypted-media; picture-in-picture" 
+            allowfullscreen></iframe>
 </div>
 
 <p>
@@ -100,3 +115,4 @@
     </div>
 
 </div>
+
