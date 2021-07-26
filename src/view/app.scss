@@ -55,15 +55,13 @@ html {
   }
 
   &.btn-xs {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.875rem;
-    line-height: 1.5;
-    padding: $btn-padding-y-sm / 4 $btn-padding-x-sm / 2;
+    font-size: 0.8rem;
+    line-height: 1.8;
+    padding: $btn-padding-y-sm / 4 $btn-padding-x-sm / 1.2;
   }
 
   &.btn-xxs {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     padding: $btn-padding-y-sm / 4 $btn-padding-x-sm / 2;
   }
 }
@@ -109,11 +107,14 @@ h6 {
 }
 
 a {
+  background-color: rgba(187,239,253,0.3);
+  border-bottom: 1px solid rgba(0,0,0,0.2);
   color: $action-color;
   text-decoration: none;
 
   &:hover {
-    color: $action-color-highlighted;
+    background-color: #d1ecff;
+    color: $action-color;
     text-decoration: none;
   }
 }
@@ -215,6 +216,16 @@ dl {
     border: 4px solid transparent;
     background-color: $card-background;
     transition: border $animation-time ease-in-out;
+
+    a {
+      border: none;
+      background-color: transparent;
+
+      &:hover {
+        border: none;
+        background-color: transparent;
+      }
+    }
 
     * {
       color: $card-text-color;
@@ -353,6 +364,17 @@ dl {
           margin: $xl-margin - $lg-margin;
           max-width: $page-content-width !important;
 
+          a {
+            border: none;
+            background-color: transparent;
+  
+            &:hover {
+              border: none;
+              background-color: transparent;
+            }
+          }
+  
+
           .logo-container {
             display: inline-block;
             margin: $lg-margin;
@@ -366,6 +388,16 @@ dl {
             }
           }
         }
+
+        #footer-remarks {
+          margin: $xl-margin $xl-margin ($xl-margin - $lg-margin) $xl-margin;
+          max-width: $page-content-width !important;
+
+          .btn {
+            margin-right: $lg-margin;
+          }
+        }
+
       }
       
     }

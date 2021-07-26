@@ -112,7 +112,7 @@ class Model {
   }
 
   toggleParentItem(page) {
-    page.hide = !page.hide;
+    page.collapse = !page.collapse;
   }
 
   checkPagesActivation() {
