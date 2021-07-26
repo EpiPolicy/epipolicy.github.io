@@ -1,7 +1,4 @@
 <style>
-    .link-card {
-        max-width: 20rem;
-    }
     .youtube-video-container {
         position: relative;
         width: 100%;
@@ -19,17 +16,17 @@
     }
 </style>
 
-<h1 class="title">
+<h1 class="title" style="display: none;">
     <img alt="EpiPolicy" class="title-logo" src="logo512.png"> EpiPolicy
 </h1>
 
-<div class="youtube-video-container">
-    <iframe src="https://www.youtube.com/embed/JDYb4_coAf4" frameborder="0" 
-            allow="autoplay; encrypted-media; picture-in-picture" 
-            allowfullscreen></iframe>
+<div class="tutorial-video-container bigger-bottom-margin">
+    <video class="tutorial-video" autoplay="autoplay" muted loop>
+        <source src="assets/results.m4v" type="video/mp4">
+    </video>
 </div>
 
-<p>
+<p class="bigger-bottom-margin">
     <strong>EpiPolicy</strong> is a population-based epidemic simulator and policy aid that allows users
     to customize its compartmental model to capture different epidemic scenarios for
     epidemics like COVID-19. Its user interface makes it easy to define various interventions
@@ -37,6 +34,12 @@
     EpiPolicy aids policy makers by simulating and constructing locale-specific intervention
     schedules that reduce disease burden, and minimize social and economic costs.
 </p>
+
+<div class="youtube-video-container bigger-bottom-margin">
+    <iframe src="https://www.youtube.com/embed/JDYb4_coAf4" frameborder="0" 
+            allow="autoplay; encrypted-media; picture-in-picture" 
+            allowfullscreen></iframe>
+</div>
 
 <div class="card-deck">
 

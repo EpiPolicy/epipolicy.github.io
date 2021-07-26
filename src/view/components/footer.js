@@ -13,22 +13,22 @@ class Footer extends React.Component {
             <div id="logos">
                 <div className="logo-container">
                     <a href="https://huda-lab.github.io/">
-                        <img id="hudalab_logo" src="assets/logos/hudalab_logo.png" />
+                        <img id="hudalab_logo" alt="huda lab" src="assets/logos/hudalab_logo.png" />
                     </a>
                 </div>
                 <div className="logo-container">
                     <a href="https://sites.nyuad.nyu.edu/cities/">
-                        <img id="cities_logo" src="assets/logos/cities_logo.png" />
+                        <img id="cities_logo" alt="cities" src="assets/logos/cities_logo.png" />
                     </a>
                 </div>
                 <div className="logo-container">
                     <a href="https://nyuad.nyu.edu/en/research/faculty-labs-and-projects/human-data-interaction-lab.html">
-                        <img id="nyuad_logo" src="assets/logos/nyuad_logo.png" />
+                        <img id="nyuad_logo" alt="nyuad" src="assets/logos/nyuad_logo.png" />
                     </a>
                 </div>
                 <div className="logo-container">
                     <a href="https://nyu.edu/">
-                        <img id="nyu_logo" src="assets/logos/nyu_logo.png" />
+                        <img id="nyu_logo" alt="nyu" src="assets/logos/nyu_logo.png" />
                     </a>
                 </div>
             </div>

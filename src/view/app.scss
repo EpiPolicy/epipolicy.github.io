@@ -106,6 +106,10 @@ h6 {
   background-color: red;
 }
 
+.bigger-bottom-margin {
+  margin-bottom: $xl-margin !important;
+}
+
 a {
   background-color: rgba(187,239,253,0.3);
   border-bottom: 1px solid rgba(0,0,0,0.2);
@@ -175,10 +179,15 @@ dl {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: 0 -$lg-margin;
+
+  .link-card {
+    max-width: $page-content-width / 2 - $lg-margin;
+  }
 
   .card {
     flex-grow: 1;
-    margin: 0 $lg-margin $lg-margin 0;
+    margin: $lg-margin;
   }
 }
 

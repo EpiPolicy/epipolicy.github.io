@@ -60,7 +60,7 @@ class Sidebar extends React.Component {
               {page.name}
             </div>
             <div className="hide-show-menu-parent-item" onClick={() => this.toggleParentItem(page)}>
-              <i class={'fa' + (page.collapse ? ' fa-caret-left' : ' fa-caret-down')} />
+              <i className={'fa' + (page.collapse ? ' fa-caret-left' : ' fa-caret-down')} />
             </div>
           </div>
           <div className={'menu-children' + (page.collapse ? ' menu-children-hide' : '')}>

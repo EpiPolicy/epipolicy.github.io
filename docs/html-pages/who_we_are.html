@@ -1,0 +1,133 @@
+<style>
+    .members-container {
+        display: flex;
+    }
+    .member {
+        display: inline-block;
+        background-color: transparent;
+        border: none;
+        color: black;
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .member:hover {
+        background-color: transparent;
+        border: none;
+    }
+    .member-photo {
+        border-radius: 50%;
+        width: 8rem;
+    }
+    .member-caption {
+        margin-top: 1rem;
+        text-align: center;
+    }
+    .member-name {
+        font-weight: bold;
+    }
+    .member-email img {
+        height: 1rem;
+    }
+    .lab-logo-container {
+        margin-bottom: 2rem;
+        display: flex;
+    }
+    .lab-logo-container > a {
+        margin-right: 2rem;
+    }
+    .lab-logo-container img {
+        height: 2rem;
+        max-height: 5rem;
+    }
+    .lab-logo-container a {
+        background-color: transparent;
+        border: none;
+    }
+    .lab-logo-container a:hover {
+        background-color: transparent;
+        border: none;
+    }
+    img#hudalab_logo {
+        height: 4.5rem;
+    }
+    img#cities_logo {
+        height:  4.5rem;
+    }
+</style>
+<div class="members-container">
+    <a class="member" target="_blank">
+        <img class="member-photo" src="assets/members/anh.jpg" alt="Anh Mai"/>
+        <div class="member-caption">
+            <div class="member-name">Anh Mai</div>
+            <div class="member-email">
+                <img src="assets/members/anh-email.svg" />
+            </div>
+        </div>
+    </a>
+    <a class="member" href="https://www.zaintq.com/" target="_blank">
+        <img class="member-photo" src="assets/members/zain.jpg" alt="Zain Tariq"/>
+        <div class="member-caption">
+            <div class="member-name">Zain Tariq</div>
+            <div class="member-email">
+                <img src="assets/members/zain-email.svg" />
+            </div>
+        </div>
+    </a>
+    <a class="member" href="https://miromannino.com/" target="_blank">
+        <img class="member-photo" src="assets/members/miro.jpg" alt="Miro Mannino"/>
+        <div class="member-caption">
+            <div class="member-name">Miro Mannino</div>
+            <div class="member-email">
+                <img src="assets/members/miro-email.svg" />
+            </div>
+        </div>
+    </a>
+</div>
+<div class="members-container">
+    <a class="member" href="https://cs.nyu.edu/~shasha/" target="_blank">
+        <img class="member-photo" src="assets/members/dennis.jpg" alt="Prof. Dennis Shasha"/>
+        <div class="member-caption">
+            <div class="member-name">Prof. Dennis Shasha</div>
+            <div class="member-email">
+                <img src="assets/members/dennis-email.svg" />
+            </div>
+        </div>
+    </a>
+    <a class="member" href="http://azza.azurewebsites.net/" target="_blank">
+        <img class="member-photo" src="assets/members/azza.jpg" alt="Prof. Azza Abouzied"/>
+        <div class="member-caption">
+            <div class="member-name">Prof. Azza Abouzied</div>
+            <div class="member-email">
+                <img src="assets/members/azza-email.svg" />
+            </div>
+        </div>
+    </a>
+</div>
+
+<h2>Our Labs</h2>
+
+<div>
+    <div class="lab">
+        <div class="lab-logo-container">
+            <a href="https://huda-lab.github.io/">
+                <img id="hudalab_logo" alt="huda lab" src="assets/logos/hudalab_logo.png" />
+            </a>
+            <div class="lab-desc">
+                <div><a href="http://huda-lab.github.io">huda-lab.github.io</a></div>
+                <div>A2-180 New York University, Abu Dhabi</div>
+                <div>P.O. Box 129188</div>
+            </div>
+        </div>
+        <div class="lab-logo-container">
+            <a href="https://sites.nyuad.nyu.edu/cities/">
+                <img id="cities_logo" alt="cities" src="assets/logos/cities_logo.png" />
+            </a>
+            <div class="lab-desc">
+                <div><a href="https://sites.nyuad.nyu.edu/cities/">sites.nyuad.nyu.edu/cities</a></div>
+                <div>New York University, Abu Dhabi</div>
+                <div>P.O. Box 129188</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,7 +3,6 @@
     "name": "Homepage",
     "url": "",
     "hide-title": true,
-    "hide-sidebar": true,
     "hide-page-navbar": true,
     "html-file": "home.html"
   },
@@ -145,7 +144,8 @@
   {
     "name": "Who We Are",
     "url": "who_we_are",
-    "html-file": "who_we_are.html"
+    "html-file": "who_we_are.html",
+    "hide-page-navbar": true
   },
   {
     "name": "Docs",
