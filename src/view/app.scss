@@ -283,6 +283,10 @@ dl {
         background-color: darken($sidebar-background, 10%);
         color: darken($sidebar-background, 30%);
       }
+
+      &.hide-sidebar-toggle {
+        display: none;
+      }
     }
 
     #sidebar-container {
@@ -304,6 +308,52 @@ dl {
       }
     }
 
+    #header {
+      margin: $xl-margin;
+      max-width: $page-content-width;
+      display: flex;
+      
+      &.center-page {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      h1 {
+        display: inline-block;
+        flex-grow: 1;
+        margin: 0;
+      }
+
+      .header-menu-items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .header-menu-item {
+          background-color: transparent;
+          border-bottom: 1px solid rgba(0,0,0,0);
+          text-transform: uppercase;
+          margin-right: $xl-margin;
+          color: $action-color;
+
+          &:hover {
+            color: $action-color-highlighted;
+            border-bottom: 1px solid rgba(0,0,0,0.2);
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
+
+
+      } 
+    }
+
     #main-panel-container {
       padding: 0;
       width: 100%;
@@ -316,6 +366,11 @@ dl {
 
       @media (max-width: $page-content-width + $sidebar-width) {
         margin: 0;
+      }
+
+      &.center-page {
+        margin-left: auto;
+        margin-right: auto;
       }
 
       #page-display {
@@ -363,6 +418,11 @@ dl {
         #page-content {
           transition: margin $sidebar-animation-time ease-in-out;
           max-width: $page-content-width !important;
+
+          &.center-page {
+            margin-left: auto;
+            margin-right: auto;
+          }
         }
       }
 
@@ -398,12 +458,10 @@ dl {
           }
         }
 
-        #footer-remarks {
-          margin: $xl-margin $xl-margin ($xl-margin - $lg-margin) $xl-margin;
-          max-width: $page-content-width !important;
-
-          .btn {
-            margin-right: $lg-margin;
+        &.center-page {
+          #logos {
+            margin-left: auto;
+            margin-right: auto;
           }
         }
 

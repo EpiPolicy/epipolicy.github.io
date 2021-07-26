@@ -5,6 +5,7 @@ import $ from 'jquery';
 import hljs from 'highlight.js';
 import PageNavbar from './page-navbar';
 import Footer from './footer';
+import Header from './header';
 
 // Bootstrap initialization
 window.$ = $;
@@ -26,8 +27,13 @@ class PageDisplay extends React.Component {
     }
     return (
       <div id="page-display" ref={this.pageDisplayRef}>
+        {this.props.model.activePage['show-header'] && <Header model={this.props.model} />}
         {this.model.activePage['hide-title'] ? null : <h1 className="page-title">{this.model.activePage.name}</h1>}
-        <div id="page-content" dangerouslySetInnerHTML={{__html: this.model.activePageContent}}></div>
+        <div 
+          id="page-content" 
+          className={this.props.model.activePage['center-page'] ? 'center-page' : ''}
+          dangerouslySetInnerHTML={{__html: this.model.activePageContent}}
+        ></div>
         <Footer model={this.model}/>
         {!this.model.activePage['hide-page-navbar'] && <PageNavbar model={this.model} />}
       </div>

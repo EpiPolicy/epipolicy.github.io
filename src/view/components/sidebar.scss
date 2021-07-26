@@ -33,11 +33,14 @@
     font-size: 0.9 * $font-size-base;
     cursor: pointer;
     padding: $sm-margin 0 $sm-margin 0;
+    border-bottom: 1px solid rgba(0,0,0,0);
+
     &.active {
       font-weight: 400;
     }
     &:hover {
       color: $action-color-highlighted;
+      border-bottom: 1px solid rgba(0,0,0,0.2);
     }
   }
 

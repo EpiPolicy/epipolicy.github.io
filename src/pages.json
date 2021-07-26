@@ -3,14 +3,29 @@
     "name": "Homepage",
     "url": "",
     "hide-title": true,
+    "hide-sidebar": true,
+    "hide-sidebar-toggle": true,
     "hide-page-navbar": true,
+    "center-page": true,
+    "show-header": true,
     "html-file": "home.html"
+  },
+  {
+    "name": "Docs & Tutorials",
+    "url": "docs_and_tutorials",
+    "html-file": "docs_and_tutorials.html",
+    "hidden": true
+  },
+  {
+    "name": "Get Started",
+    "url": "get_started",
+    "markdown-file": "get_started.md"
   },
   {
     "name": "Concepts",
     "url": "concepts",
     "markdown-file": "concepts.md",
-    "collapse": true,
+    "collapse": false,
     "children": [
       {
         "name": "Compartmental Models",
@@ -43,7 +58,7 @@
     "name": "Basic Tutorials",
     "url": "basic_tutorials",
     "markdown-file": "basic_tutorials.md",
-    "collapse": true,
+    "collapse": false,
     "children": [
       {
         "name": "Create Your First Scenario",
@@ -76,7 +91,7 @@
     "name": "Advanced Tutorials",
     "url": "advanced_tutorials",
     "markdown-file": "advanced_tutorials.md",
-    "collapse": true,
+    "collapse": false,
     "children": [
       {
         "name": "Vaccination",
@@ -99,7 +114,7 @@
     "name": "Case Studies",
     "url": "case_studies",
     "markdown-file": "case_studies.md",
-    "collapse": true,
+    "collapse": false,
     "children": [
       {
         "name": "Effect of Opening Schools during COVID-19",
@@ -112,7 +127,7 @@
     "name": "Advanced Features",
     "url": "advanced_features",
     "markdown-file": "advanced_features.md",
-    "collapse": true,
+    "collapse": false,
     "children": [
       {
         "name": "Tags",
@@ -140,12 +155,6 @@
         "markdown-file": "localeautocomplete.md"
       }
     ]
-  },
-  {
-    "name": "Who We Are",
-    "url": "who_we_are",
-    "html-file": "who_we_are.html",
-    "hide-page-navbar": true
   },
   {
     "name": "Docs",

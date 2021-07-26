@@ -12,7 +12,6 @@ class App extends React.Component {
   }
 
   updateVisibleHeader() {
-    console.log('updateVisibleHeader')
     let mostVisibleHeader = null;
     let visibleHeaders = [];
     let lastVisibleHeader = null;
@@ -50,7 +49,9 @@ class App extends React.Component {
 
   render() {
     return <div id="app" className={this.props.model.activePage['hide-sidebar'] ? 'hide-sidebar' : ''}>
-      <div id="menu-toggle" onClick={() => this.props.model.toggleSidebar()}>
+      <div id="menu-toggle" onClick={() => this.props.model.toggleSidebar()} 
+           className={this.props.model.activePage['hide-sidebar-toggle'] ? 'hide-sidebar-toggle' : ''}
+      >
           <i className="fa fa-bars" aria-hidden="true"></i>
         </div>  
       <div id="sidebar-container">

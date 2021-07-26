@@ -9,7 +9,7 @@ class Footer extends React.Component {
     }
 
     render() {
-        return <div id="footer">
+        return <div id="footer" className={this.props.model.activePage['center-page'] ? 'center-page' : ''}>
             <div id="logos">
                 <div className="logo-container">
                     <a href="https://huda-lab.github.io/">
