@@ -4,7 +4,7 @@ In this tutorial, we  implement a two-dose vaccination scheme with SIRS model. S
 
 <img src="/assets/vaccination/SIRV12-equations.png" alt="model-parameters" width="300"/>  
 
-### Model page
+## Model page
 
 - Anyone in the one-dose compartment <tex>V_1</tex> is 50% less likely to be infected while anyone in the two-dose compartment <tex>V_2</tex> is immune to the disease.
 - The transition rate <tex>v_1</tex> from <tex>S</tex> to <tex>V_1</tex> is <tex>0</tex> because we want to model the vaccination by direct transition rather than the transition rate.
@@ -14,9 +14,9 @@ In this tutorial, we  implement a two-dose vaccination scheme with SIRS model. S
     <img src="/assets/vaccination/model.png" alt="model-parameters"/>  
 </figure>
 
-### Intervention page
+## Intervention page
 
-#### Effect of vaccination
+### Effect of vaccination
 <tex> </tex> **EpiPolicy** provides <tex>sim.move(C_1, C_2, x)</tex> to directly move <tex>x</tex> number of compartment <tex>C_1</tex> to <tex>C_2</tex>
 
 ```python
@@ -24,7 +24,7 @@ def effect(cp, locales):
     sim.move({'compartment':'S', 'locale':locales}, {'compartment':'V1', 'locale':locales}, cp['degree']*cp['max_capacity'])
 ```
 
-#### Cost of vaccination
+### Cost of vaccination
 
 <tex> </tex> **EpiPolicy** provides <tex>sim.add(I_1, c)</tex> to add <tex>c</tex> cost to the intervention <tex>I_1</tex>
 
@@ -34,9 +34,9 @@ def cost(cp, locales):
     sim.add({"intervention":"Vaccination", 'locale':locales}, doses*cp['price_per_dose'])
 ```
 
-### Cost page
+## Cost page
 
-#### Cost of infectious
+### Cost of infectious
 
 <tex> </tex> **EpiPolicy** provides <tex>sim.select(C_1)</tex> to return a [Pandas data frame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) that represents the selected compartment <tex>C_1</tex>
 
@@ -63,7 +63,7 @@ def cost(cp):
     sim.add({"intervention":"Infectious_cost"}, infCount*cp['cost_per_day'])
 ```
 
-### Schedule page
+## Schedule page
 
 In the schedule page, we create a vaccination program starting from March 2021 to May 2021.
 
@@ -71,7 +71,7 @@ In the schedule page, we create a vaccination program starting from March 2021 t
     <img src="/assets/vaccination/SIRV12-schedule.png" alt="model-parameters"/>  
 </figure>
 
-### Initialize page
+## Initialize page
 
 In the initialize page, we create a simulation starting with 100 infectious people.
 
@@ -79,7 +79,7 @@ In the initialize page, we create a simulation starting with 100 infectious peop
     <img src="/assets/vaccination/SIRV12-initialize.png" alt="model-parameters"/>  
 </figure>
 
-### Compare page
+## Compare page
 
 Epipolicy allows user to compare different scenarios. Below is the comparison of the vaccinated scenario and a non-vaccinated scenario in which we simply remove the schedule of the vaccination:
 

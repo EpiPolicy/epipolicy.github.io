@@ -4,7 +4,7 @@ In this tutorial, we will try to implement mask and border closure with an SIRS 
 - Mask-wearing  applies only to public places such as school, workplace, community
 - Border closure is the restriction of movement between two locales.
 
-### Model page
+## Model page
 
 - A standard SIRS system is used
 - Immunity-loss period is 33 days on average
@@ -13,7 +13,7 @@ In this tutorial, we will try to implement mask and border closure with an SIRS 
     <img src="/assets/mask_border/SIRMB.png" alt="model-parameters"/>  
 </figure>
 
-### Locale page
+## Locale page
 
 We choose administrative level 1 for the United Provinces which consists of 3 locales:
 - UnitedProvinces.Pastures
@@ -24,7 +24,7 @@ We choose administrative level 1 for the United Provinces which consists of 3 lo
     <img src="/assets/mask_border/SIRMB-locale.png" alt="model-parameters"/>  
 </figure>
 
-### Group page
+## Group page
 
 We create 3 groups using [GPWv4 data](https://sedac.ciesin.columbia.edu/data/collection/gpw-v4):
 - Children (age 0-19)
@@ -35,7 +35,7 @@ We create 3 groups using [GPWv4 data](https://sedac.ciesin.columbia.edu/data/col
     <img src="/assets/mask_border/SIRMB-group.png" alt="model-parameters" />  
 </figure>
 
-### Facility page
+## Facility page
 
 We create 4 facilities using [Synthpop data](https://github.com/InstituteforDiseaseModeling/synthpops) and the interaction/time spent of each group in each facility:
 - Household
@@ -47,7 +47,7 @@ We create 4 facilities using [Synthpop data](https://github.com/InstituteforDise
     <img src="/assets/mask_border/SIRMB-facility.png" alt="model-parameters"/>  
 </figure>
 
-### Mobility page
+## Mobility page
 
 The mobility matrix is premade with customizable values.
 
@@ -55,9 +55,9 @@ The mobility matrix is premade with customizable values.
     <img src="/assets/mask_border/SIRMB-mobility.png" alt="model-parameters"/>
 </figure>
 
-### Intervention page
+## Intervention page
 
-#### Effect of mask
+### Effect of mask
 Mask-wearing reduces the transmission rate by at most at most 70% when 100% of the population complies. Mask compliance is enforced only at public places such as school, workplace, etc but not household.
 
 Tip:
@@ -69,7 +69,7 @@ def effect(cp, locales):
     sim.apply({'parameter':'beta', 'facility':'~Household', 'locale':locales}, 1-cp['compliance']*0.7)
 ```
 
-#### Effect of border closure
+### Effect of border closure
 
 Border closure at degree 100%  will restrict all movement from one locale to another.
 
