@@ -316,6 +316,11 @@ dl {
       margin: $xl-margin;
       max-width: $page-content-width;
       display: flex;
+
+      @media (max-width: $page-content-width + 2 * $xl-margin) {
+        margin-left: $xl-margin !important;
+        margin-right: $xl-margin !important;
+      }
       
       &.center-page {
         margin-left: auto;
@@ -323,6 +328,7 @@ dl {
       }
 
       h1 {
+        white-space: nowrap;
         display: inline-block;
         flex-grow: 1;
         margin: 0;
@@ -335,10 +341,15 @@ dl {
 
         .header-menu-item {
           background-color: transparent;
+          white-space: nowrap;
           border-bottom: 1px solid rgba(0,0,0,0);
           text-transform: uppercase;
           margin-right: $xl-margin;
           color: $action-color;
+
+          @media (max-width: $page-content-width + 2 * $xl-margin) {
+            font-size: 80%;
+          }
 
           &:hover {
             color: $action-color-highlighted;
@@ -411,6 +422,12 @@ dl {
           img {
             max-width: 100%;
           }
+
+          @media (max-width: $page-content-width + 2 * $xl-margin) {
+            margin-left: $xl-margin !important;
+            margin-right: $xl-margin !important;
+          }
+
         }
 
         @media (max-width: $page-content-width + 2 * $sidebar-width) {
@@ -432,6 +449,11 @@ dl {
 
       #footer {
         border-top: 1px solid darken($sidebar-background, 20%);
+
+        @media (max-width: $page-content-width + 2 * $xl-margin) {
+          margin-left: $xl-margin !important;
+          margin-right: $xl-margin !important;
+        }
 
         #logos {
           margin: $xl-margin - $lg-margin;
