@@ -130,6 +130,11 @@
     "collapse": false,
     "children": [
       {
+        "name": "PyEpiPolicy",
+        "url": "pyepipolicy",
+        "html-file": "pyepipolicy.html"
+      },
+      {
         "name": "Tags",
         "url": "tags",
         "markdown-file": "tags.md"
