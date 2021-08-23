@@ -1,212 +1,249 @@
 <style>
-    .youtube-video-container {
-        position: relative;
-        width: 100%;
-        height: 0;
-        padding-bottom: 59.8%;
-        margin-bottom: 1.2rem;
-    }
-    .youtube-video-container > iframe {
-        border: 1px solid black;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    .abstract {
-        font-size: 120%;
-    }
+  .youtube-video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 59.8%;
+    margin-bottom: 1.2rem;
+  }
+  .youtube-video-container > iframe {
+    border: 1px solid black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .abstract {
+    font-size: 120%;
+  }
 </style>
 
 <img src="assets/results.png" class="bordered-img bigger-bottom-margin" />
 
 <p class="abstract bigger-bottom-margin">
-    <strong>EpiPolicy</strong> is a population-based epidemic simulator and policy aid that allows users
-    to customize its compartmental model to capture different epidemic scenarios for
-    epidemics like COVID-19. Its user interface makes it easy to define various interventions
-    such as social distancing, school closure, vaccination, and disease-specific interventions.
-    EpiPolicy aids policy makers by simulating and constructing locale-specific intervention
-    schedules that reduce disease burden, and minimize social and economic costs.
+  <strong>EpiPolicy</strong> is a population-based epidemic simulator and policy
+  aid that allows users to customize its compartmental model to capture
+  different epidemic scenarios for epidemics like COVID-19. Its user interface
+  makes it easy to define various interventions such as social distancing,
+  school closure, vaccination, and disease-specific interventions. EpiPolicy
+  aids policy makers by simulating and constructing locale-specific intervention
+  schedules that reduce disease burden, and minimize social and economic costs.
 </p>
 
 <div class="youtube-video-container bigger-bottom-margin">
-    <iframe src="https://www.youtube.com/embed/jfPRthNUlp0" frameborder="0" 
-            allow="autoplay; encrypted-media; picture-in-picture" 
-            allowfullscreen></iframe>
+  <iframe
+    src="https://www.youtube.com/embed/jfPRthNUlp0"
+    frameborder="0"
+    allow="autoplay; encrypted-media; picture-in-picture"
+    allowfullscreen
+  ></iframe>
 </div>
 
 <h2>Publications</h2>
 
 <div class="publications bigger-bottom-margin">
-    <div class="publication-entry">
-        <a class="publication-link" href="/assets/epipolicy-uist2021-preprint.pdf">Planning Epidemic Interventions with EpiPolicy (pre-print)</a>
-        <div class="publication-authors">Zain Tariq, Miro Mannino, Mai Le Xuan Anh, Whitney Bagge, Azza Abouzied, Dennis Shasha</div>
-        <div class="publication-conference">UIST 2021</div>
+  <div class="publication-entry">
+    <a class="publication-link" href="/assets/epipolicy-uist2021-preprint.pdf"
+      >Planning Epidemic Interventions with EpiPolicy (pre-print)</a
+    >
+    <div class="publication-authors">
+      Zain Tariq, Miro Mannino, Mai Le Xuan Anh, Whitney Bagge, Azza Abouzied,
+      Dennis Shasha
     </div>
+    <div class="publication-conference">UIST 2021</div>
+  </div>
 </div>
 
 <h2>Docs & Tutorials</h2>
 
 <div class="card-deck bigger-bottom-margin">
+  <div class="card link-card">
+    <a href="/concepts">
+      <div class="card-body">
+        <h2 class="card-title">Concepts</h2>
+        <div class="card-text">
+          The basic concepts of EpiPolicy, such as the Compartmental model, or
+          how to use probabilities to create epidemic models.
+        </div>
+        <div class="card-footer">
+          READ MORE <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </a>
+  </div>
 
-    <div class="card link-card">
-        <a href="/concepts">
-            <div class="card-body">
-                <h2 class="card-title">Concepts</h2>
-                <div class="card-text">
-                    The basic concepts of EpiPolicy, such as the Compartmental model, 
-                    or how to use probabilities to create epidemic models.
-                </div>
-                <div class="card-footer">
-                    READ MORE <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                </div>
-            </div>
-        </a>
-    </div>
+  <div class="card link-card">
+    <a href="/basic_tutorials">
+      <div class="card-body">
+        <h2 class="card-title">Basic Tutorials</h2>
+        <div class="card-text">
+          Create the first scenarios and model basic aspects of the population,
+          such as mobility and facilities.
+        </div>
+        <div class="card-footer">
+          READ MORE <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </a>
+  </div>
 
-    <div class="card link-card">
-        <a href="/basic_tutorials">
-            <div class="card-body">
-                <h2 class="card-title">Basic Tutorials</h2>
-                <div class="card-text">
-                    Create the first scenarios and model basic aspects of the population, 
-                    such as mobility and facilities.
-                </div>
-                <div class="card-footer">
-                    READ MORE <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                </div>
-            </div>
-        </a>
-    </div>
+  <div class="card link-card">
+    <a href="/advanced_tutorials">
+      <div class="card-body">
+        <h2 class="card-title">Advanced Tutorials</h2>
+        <div class="card-text">
+          Dive in more advanced topics, such as vaccination, hospitalization,
+          masks use, and border closure.
+        </div>
+        <div class="card-footer">
+          READ MORE <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </a>
+  </div>
 
-    <div class="card link-card">
-        <a href="/advanced_tutorials">
-            <div class="card-body">
-                <h2 class="card-title">Advanced Tutorials</h2>
-                <div class="card-text">
-                    Dive in more advanced topics, such as vaccination, hospitalization, 
-                    masks use, and border closure.
-                </div>
-                <div class="card-footer">
-                    READ MORE <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                </div>
-            </div>
-        </a>
-    </div>
+  <div class="card link-card">
+    <a href="/case_studies">
+      <div class="card-body">
+        <h2 class="card-title">Case Studies</h2>
+        <div class="card-text">
+          Explore some use cases we worked on with Epidemiologists.
+        </div>
+        <div class="card-footer">
+          READ MORE <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </a>
+  </div>
 
-    <div class="card link-card">
-        <a href="/case_studies">
-            <div class="card-body">
-                <h2 class="card-title">Case Studies</h2>
-                <div class="card-text">
-                    Explore some use cases we worked on with Epidemiologists.
-                </div>
-                <div class="card-footer">
-                    READ MORE <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                </div>
-            </div>
-        </a>
-    </div>
+  <div class="card link-card">
+    <a href="/advanced_features">
+      <div class="card-body">
+        <h2 class="card-title">Advanced Features</h2>
+        <div class="card-text">
+          EpiPolicy advanced features such as Tags, References, and how to
+          export and import data and models.
+        </div>
+        <div class="card-footer">
+          READ MORE <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </a>
+  </div>
 
-    <div class="card link-card">
-        <a href="/advanced_features">
-            <div class="card-body">
-                <h2 class="card-title">Advanced Features</h2>
-                <div class="card-text">
-                    EpiPolicy advanced features such as Tags, References, and how
-                    to export and import data and models.
-                </div>
-                <div class="card-footer">
-                    READ MORE <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                </div>
-            </div>
-        </a>
-    </div>
-
+  <div class="card link-card">
+    <a href="/faqs">
+      <div class="card-body">
+        <h2 class="card-title">Frequently Asked Questions</h2>
+        <div class="card-text">
+          FAQs and common pitfalls.
+        </div>
+        <div class="card-footer">
+          READ MORE <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </a>
+  </div>
 </div>
 
 <h2>Who We Are</h2>
 
 <style>
-    .members-container {
-        display: flex;
-    }
-    .member {
-        display: inline-block;
-        background-color: transparent;
-        border: none;
-        color: black;
-        margin-right: 2rem;
-        margin-bottom: 2rem;
-        text-align: center;
-    }
-    .member:hover {
-        background-color: transparent;
-        border: none;
-    }
-    .member-photo {
-        border-radius: 50%;
-        width: 8rem;
-    }
-    .member-caption {
-        margin-top: 1rem;
-        text-align: center;
-    }
-    .member-name {
-        font-weight: bold;
-    }
-    .member-email img {
-        height: 1rem;
-    }
+  .members-container {
+    display: flex;
+  }
+  .member {
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    color: black;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .member:hover {
+    background-color: transparent;
+    border: none;
+  }
+  .member-photo {
+    border-radius: 50%;
+    width: 8rem;
+  }
+  .member-caption {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  .member-name {
+    font-weight: bold;
+  }
+  .member-email img {
+    height: 1rem;
+  }
 </style>
 
 <div class="members-container">
-    <a class="member" href="https://www.zaintq.com/" target="_blank">
-        <img class="member-photo" src="assets/members/zain.jpg" alt="Zain Tariq"/>
-        <div class="member-caption">
-            <div class="member-name">Zain Tariq</div>
-            <div class="member-email">
-                <img src="assets/members/zain-email.svg" />
-            </div>
-        </div>
-    </a>
-    <a class="member" href="https://miromannino.com/" target="_blank">
-        <img class="member-photo" src="assets/members/miro.jpg" alt="Miro Mannino"/>
-        <div class="member-caption">
-            <div class="member-name">Miro Mannino</div>
-            <div class="member-email">
-                <img src="assets/members/miro-email.svg" />
-            </div>
-        </div>
-    </a>
-    <a class="member" target="_blank">
-        <img class="member-photo" src="assets/members/anh.jpg" alt="Mai Le Xuan Anh"/>
-        <div class="member-caption">
-            <div class="member-name">Mai Le Xuan Anh</div>
-            <div class="member-email">
-                <img src="assets/members/anh-email.svg" />
-            </div>
-        </div>
-    </a>
+  <a class="member" href="https://www.zaintq.com/" target="_blank">
+    <img class="member-photo" src="assets/members/zain.jpg" alt="Zain Tariq" />
+    <div class="member-caption">
+      <div class="member-name">Zain Tariq</div>
+      <div class="member-email">
+        <img src="assets/members/zain-email.svg" />
+      </div>
+    </div>
+  </a>
+  <a class="member" href="https://miromannino.com/" target="_blank">
+    <img
+      class="member-photo"
+      src="assets/members/miro.jpg"
+      alt="Miro Mannino"
+    />
+    <div class="member-caption">
+      <div class="member-name">Miro Mannino</div>
+      <div class="member-email">
+        <img src="assets/members/miro-email.svg" />
+      </div>
+    </div>
+  </a>
+  <a class="member" target="_blank">
+    <img
+      class="member-photo"
+      src="assets/members/anh.jpg"
+      alt="Mai Le Xuan Anh"
+    />
+    <div class="member-caption">
+      <div class="member-name">Mai Le Xuan Anh</div>
+      <div class="member-email">
+        <img src="assets/members/anh-email.svg" />
+      </div>
+    </div>
+  </a>
 </div>
 <div class="members-container">
-    <a class="member" href="https://azza.azurewebsites.net/" target="_blank">
-        <img class="member-photo" src="assets/members/azza.jpg" alt="Prof. Azza Abouzied"/>
-        <div class="member-caption">
-            <div class="member-name">Prof. Azza Abouzied</div>
-            <div class="member-email">
-                <img src="assets/members/azza-email.svg" />
-            </div>
-        </div>
-    </a>
-    <a class="member" href="https://cs.nyu.edu/~shasha/" target="_blank">
-        <img class="member-photo" src="assets/members/dennis.jpg" alt="Prof. Dennis Shasha"/>
-        <div class="member-caption">
-            <div class="member-name">Prof. Dennis Shasha</div>
-            <div class="member-email">
-                <img src="assets/members/dennis-email.svg" />
-            </div>
-        </div>
-    </a>
+  <a class="member" href="https://azza.azurewebsites.net/" target="_blank">
+    <img
+      class="member-photo"
+      src="assets/members/azza.jpg"
+      alt="Prof. Azza Abouzied"
+    />
+    <div class="member-caption">
+      <div class="member-name">Prof. Azza Abouzied</div>
+      <div class="member-email">
+        <img src="assets/members/azza-email.svg" />
+      </div>
+    </div>
+  </a>
+  <a class="member" href="https://cs.nyu.edu/~shasha/" target="_blank">
+    <img
+      class="member-photo"
+      src="assets/members/dennis.jpg"
+      alt="Prof. Dennis Shasha"
+    />
+    <div class="member-caption">
+      <div class="member-name">Prof. Dennis Shasha</div>
+      <div class="member-email">
+        <img src="assets/members/dennis-email.svg" />
+      </div>
+    </div>
+  </a>
 </div>
