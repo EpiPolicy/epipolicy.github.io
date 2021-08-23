@@ -162,6 +162,13 @@
     ]
   },
   {
+    "name": "FAQs",
+    "url": "faqs",
+    "markdown-file": "faqs.md",
+    "collapse": false,
+    "children": []
+  },
+  {
     "name": "Docs",
     "url": "docs",
     "hidden": true,
