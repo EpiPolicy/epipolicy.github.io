@@ -27,4 +27,6 @@
 
 12. Why are my results empty? <br /> Check if your mobility, facilities, and initialize data is set correctly.
 
-13. Why is the status of my simulation "abort"? <br /> This status indicates there is a problem in your simulation specification. Check if your model is set correctly and there are no errors in your equations such as missing tags or multiplicative operators or the population compartment (N). You can also try seeing if your schedule is properly defined as well as whether there are any syntax or logical errors in your Python functions. Lastly, verify if the names of locales, groups, parameters, facilities, etc. are used correctly in all of the sections in which they are used.
+13. Why is the status of my simulation "abort"? <br /> This status indicates there is a problem in your simulation specification. <br /> - Check if your model is set correctly and there are no errors in your equations such as missing tags or multiplicative operators or the population compartment (N). <br /> - You can also try seeing if your schedule is properly defined as well as whether there are any syntax or logical errors in your Python functions. <br /> - Lastly, verify if the names of locales, groups, parameters, facilities, etc. are used correctly in all of the sections in which they are used.
+
+
