@@ -338,53 +338,66 @@ dl {
     #header {
       margin: $xl-margin;
       max-width: $page-content-width;
-      display: flex;
 
-      @media (max-width: $page-content-width + 2 * $xl-margin) {
-        margin-left: $xl-margin !important;
-        margin-right: $xl-margin !important;
-      }
-      
-      &.center-page {
-        margin-left: auto;
-        margin-right: auto;
+      @media (min-width: $page-content-width) {
+        & {
+          flex-wrap: nowrap;
+          justify-content: flex-start;
+        }
+        &.center-page {
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
 
-      h1 {
-        white-space: nowrap;
-        display: inline-block;
+      &.bg-light {
+        background-color: white;
+      }
+
+      .navbar-brand {
+        border: none;
+        background-color: transparent;
         flex-grow: 1;
-        margin: 0;
+
+        h1 {
+          white-space: nowrap;
+          display: inline-block;
+          flex-grow: 1;
+          margin: 0;
+        }
+        
+        &:hover {
+          border: none;
+          background-color: transparent;
+        }
       }
 
-      .header-menu-items {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      .navbar-toggler:focus,
+      .navbar-toggler:active,
+      .navbar-toggler-icon:focus {
+          outline: none;
+          box-shadow: none;
+      }
 
-        .header-menu-item {
+      .navbar-collapse {
+        flex-grow: 0;
+
+        .nav-item {
+          text-align: right;
+        }
+        
+        .nav-link {
+          border: none;
           background-color: transparent;
-          white-space: nowrap;
-          border-bottom: 1px solid rgba(0,0,0,0);
           text-transform: uppercase;
-          margin-right: $xl-margin;
-          color: $action-color;
-
-          @media (max-width: $page-content-width + 2 * $xl-margin) {
-            font-size: 80%;
-          }
 
           &:hover {
-            color: $action-color-highlighted;
-            border-bottom: 1px solid rgba(0,0,0,0.2);
+            border: none;
             background-color: transparent;
           }
-
-          &:last-child {
-            margin-right: 0;
-          }
         }
-      } 
+      }
+
     }
 
     #main-panel-container {
@@ -497,7 +510,7 @@ dl {
             }
 
             img {
-              max-height: 2.5 * $lg-margin;
+              height: 2 * $lg-margin;
             }
           }
         }

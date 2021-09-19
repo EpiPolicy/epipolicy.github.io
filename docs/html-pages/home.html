@@ -6,7 +6,8 @@
     padding-bottom: 59.8%;
     margin-bottom: 1.2rem;
   }
-  .youtube-video-container > iframe {
+
+  .youtube-video-container>iframe {
     border: 1px solid black;
     position: absolute;
     top: 0;
@@ -14,6 +15,7 @@
     width: 100%;
     height: 100%;
   }
+
   .abstract {
     font-size: 120%;
   }
@@ -32,21 +34,16 @@
 </p>
 
 <div class="youtube-video-container bigger-bottom-margin">
-  <iframe
-    src="https://www.youtube.com/embed/jfPRthNUlp0"
-    frameborder="0"
-    allow="autoplay; encrypted-media; picture-in-picture"
-    allowfullscreen
-  ></iframe>
+  <iframe src="https://www.youtube.com/embed/jfPRthNUlp0" frameborder="0"
+    allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 <h2>Publications</h2>
 
 <div class="publications bigger-bottom-margin">
   <div class="publication-entry">
-    <a class="publication-link" href="/assets/epipolicy-uist2021-preprint.pdf"
-      >Planning Epidemic Interventions with EpiPolicy (pre-print)</a
-    >
+    <a class="publication-link" href="/assets/epipolicy-uist2021-preprint.pdf">Planning Epidemic Interventions with
+      EpiPolicy (pre-print)</a>
     <div class="publication-authors">
       Zain Tariq, Miro Mannino, Mai Le Xuan Anh, Whitney Bagge, Azza Abouzied,
       Dennis Shasha
@@ -152,33 +149,47 @@
 <style>
   .members-container {
     display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
   }
+
   .member {
     display: inline-block;
     background-color: transparent;
     border: none;
     color: black;
-    margin-right: 2rem;
-    margin-bottom: 2rem;
     text-align: center;
   }
+
   .member:hover {
     background-color: transparent;
     border: none;
   }
+
   .member-photo {
     border-radius: 50%;
-    width: 8rem;
+    width: 6rem;
   }
+
   .member-caption {
     margin-top: 1rem;
     text-align: center;
   }
+
   .member-name {
     font-weight: bold;
   }
+
   .member-email img {
     height: 1rem;
+  }
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    .member-name {
+      font-size: 80%;
+    }
+
   }
 </style>
 
@@ -193,11 +204,7 @@
     </div>
   </a>
   <a class="member" href="https://miromannino.com/" target="_blank">
-    <img
-      class="member-photo"
-      src="assets/members/miro.jpg"
-      alt="Miro Mannino"
-    />
+    <img class="member-photo" src="assets/members/miro.jpg" alt="Miro Mannino" />
     <div class="member-caption">
       <div class="member-name">Miro Mannino</div>
       <div class="member-email">
@@ -206,11 +213,7 @@
     </div>
   </a>
   <a class="member" target="_blank">
-    <img
-      class="member-photo"
-      src="assets/members/anh.jpg"
-      alt="Mai Le Xuan Anh"
-    />
+    <img class="member-photo" src="assets/members/anh.jpg" alt="Mai Le Xuan Anh" />
     <div class="member-caption">
       <div class="member-name">Mai Le Xuan Anh</div>
       <div class="member-email">
@@ -221,11 +224,7 @@
 </div>
 <div class="members-container">
   <a class="member" href="https://azza.azurewebsites.net/" target="_blank">
-    <img
-      class="member-photo"
-      src="assets/members/azza.jpg"
-      alt="Prof. Azza Abouzied"
-    />
+    <img class="member-photo" src="assets/members/azza.jpg" alt="Prof. Azza Abouzied" />
     <div class="member-caption">
       <div class="member-name">Prof. Azza Abouzied</div>
       <div class="member-email">
@@ -234,11 +233,7 @@
     </div>
   </a>
   <a class="member" href="https://cs.nyu.edu/~shasha/" target="_blank">
-    <img
-      class="member-photo"
-      src="assets/members/dennis.jpg"
-      alt="Prof. Dennis Shasha"
-    />
+    <img class="member-photo" src="assets/members/dennis.jpg" alt="Prof. Dennis Shasha" />
     <div class="member-caption">
       <div class="member-name">Prof. Dennis Shasha</div>
       <div class="member-email">
