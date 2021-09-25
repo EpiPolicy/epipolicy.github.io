@@ -1,0 +1,58 @@
+.uist-container {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  .title {
+    font-size: 2rem;
+    margin-bottom: 50px;
+  }
+  .message {
+    margin-bottom: 20px;
+  }
+  .server-container {
+    .server-info {
+      padding: 10px;
+    //   background-color: rgb(222, 222, 222);
+      .server-info-title {
+        font-weight: 500;
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        line-height:2em;
+        border-bottom: 1px solid rgb(177, 177, 177);
+      }
+      .server-info-item {
+        p {
+          display: inline;
+          margin-left: 15px;
+        }
+        span {
+          font-weight: 500;
+        }
+      }
+    }
+
+    .user-info {
+      div {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      input {
+        margin: 2px;
+      }
+      input[type="text"] {
+        width: 100%;
+        height: 30px;
+        float: left;
+        //   border: none;
+        //   border-bottom: 1px solid black;
+      }
+      input[type="button"] {
+        //   width: 100%;
+        font-size: 0.8rem;
+        height: 30px;
+        //   border: 0px;
+        //   background-color: white;
+      }
+    }
+  }
+}

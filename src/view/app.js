@@ -3,6 +3,7 @@ import {observer} from 'mobx-react';
 import './app.scss';
 import Sidebar from './components/sidebar';
 import PageDisplay from './components/pagedisplay';
+import UIST from "../UIST";
 
 class App extends React.Component {
 
@@ -48,6 +49,8 @@ class App extends React.Component {
   }
 
   render() {
+    const current_location = window.location.pathname.slice(1);
+    if(current_location === 'uist') return <UIST/>
     return <div id="app" className={this.props.model.activePage['hide-sidebar'] ? 'hide-sidebar' : ''}>
       <div id="menu-toggle" onClick={() => this.props.model.toggleSidebar()} 
            className={this.props.model.activePage['hide-sidebar-toggle'] ? 'hide-sidebar-toggle' : ''}
