@@ -47,7 +47,6 @@ export class UIST extends Component {
       });
   };
   getAssignedServer = () => {
-    return;
     const url = this.uist_manager_api + "/get_assigned_server/";
     axios
       .get(url)
@@ -108,6 +107,13 @@ export class UIST extends Component {
                   <span>password:</span>
                   <p>{this.state.server[3]}</p>
                 </div>
+                <input
+                  type="button"
+                  value="Vacate Server"
+                  onClick={() => {
+                    this.markServerAsFree(this.state.server[1]);
+                  }}
+                />
               </div>
             ) : (
               <div className="user-info">
