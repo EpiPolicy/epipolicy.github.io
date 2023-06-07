@@ -149,7 +149,8 @@ a {
     font-size: 90%;
   }
   .download {
-    margin-right: $lg-margin;
+    display: inline-block;
+    margin-right: $md-margin;
   }
 }
 
