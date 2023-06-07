@@ -44,13 +44,8 @@ class PageDisplay extends React.Component {
     window.MathJax.typeset();
   }
 
-  bootstrapToolTips() {
-    $('[data-toggle="tooltip"]').tooltip();
-  }
-
   componentDidUpdate() {
     this.mathJax();
-    this.bootstrapToolTips();
     
     document.querySelectorAll('#page-content pre code').forEach(el => {
       hljs.highlightElement(el);
