@@ -1,12 +1,11 @@
-## Prerequisites
+## Pre-Requisites
 
-We highly recommend that:
-
-- You understand the concept of time of sojourn in compartments via [here](https://server.math.umanitoba.ca/~jarino/courses/math3820/math3820_slides_residence_time.4p.pdf). In particular, whenever there is a transition between compartments A and B of the form <tex>\gamma A</tex>, the time spent in A before entering B is exponentially distributed with mean <tex>\frac{1}{\gamma}</tex>.
+Before reading this article, you should read the following articles:
+- [Compartmental Models](compartmental_models)
 
 ## Introduction
 
-Let's say in our compartmental model, an infectious individual is recovered after <tex>T</tex> days. The system of differential equations that describes this:
+Let's consider the following compartmental model:
 
 <texb>
 \begin{array}{lcl}
@@ -15,15 +14,23 @@ Let's say in our compartmental model, an infectious individual is recovered afte
 \end{array}
 </texb>
 
-where <tex>\gamma = \frac{1}{T}</tex>
+where
+  - <tex>I</tex> represents the _infectious_ compartment
+  - <tex>R</tex> represents the _removed_ compartment
+  - <tex>\gamma = \frac{1}{T}</tex>
+  - <tex>T</tex> is the number of days after which an infectious individual is no longer infectious.
 
-Now we want to model the probability that an infectious individual can die or recovery after a period of time <tex>T</tex>. Each time an individual leaving the infectious compartment, there is <tex>p</tex> chance to enter the death compartment and <tex>1-p</tex> chance to enter the recovered compartment (<tex>0 \leq p \leq 1</tex>).
+In order to demonstrate the concept of splitting probabilities in compartmental models, let's split the _removed_ compartment into two compartments: Death (<tex>D</tex>) and Recovered (<tex>R</tex>).
+
+Let's assume that after the infectious period is over, the population that is removed from the infectious compartment either dies or recovers, i.e, they move either into the _death_ compartment or the _recovered_ compartment. 
+The probability for the former is <tex>p</tex> and for the latter is <tex>1-p</tex>, where <tex>0 \leq p \leq 1</tex>.
 
 <figure class="text-center">
   <img src="assets/probability_rate/IRD.png" width="300"/>
 </figure>
 
-We still want to keep the same rate that an individual leaving compartment <tex>I</tex> while splitting that rate to two compartments <tex>R</tex> and <tex>D</tex>. An "intuitive" approach would be the following system of differential equations:
+The rate with which an individual leaves the _infectious_ compartment is preserved while splitting the _removed_ compartment into the two new compartments. 
+Thus, an intuitive way to construct differential equations for the new model is:
 
 <texb>
 \begin{array}{lcl}
@@ -35,13 +42,17 @@ We still want to keep the same rate that an individual leaving compartment <tex>
 
 ## Proof
 
-Let <tex>T</tex> be the random variable representing the time until leaving the infectious state <tex>I</tex>. Since we assume the time of sojourn of <tex>I</tex> is exponentially distributed with mean <tex>\frac{1}{\gamma}</tex>, <tex>T \sim Exp(\gamma)</tex>. Then the survival function of infectious state <tex>P(t)=e^{-\gamma t}</tex>
+Let <tex>T</tex> be a random variable that represents the time after which an infectious individual leaves the _infectious_ compartment, <tex>I</tex>. 
+As the time of sojourn of <tex>I</tex> is exponentially distributed with mean <tex>\frac{1}{\gamma}</tex>, <tex>T \sim Exp(\gamma)</tex>, the survival function of the infectious state can be written as: <tex>P(t)=e^{-\gamma t}</tex>
 
-Denote <tex>I(t)</tex> the infectious population at time <tex>t \geq 0</tex>. Then <tex>I(t)=I_0P(t)</tex> gives the proportion of <tex>I_0</tex>, the initial infectious population, that is still infectious at time <tex>t</tex>.
+Let <tex>I(t)</tex> be the infectious population at time <tex>t \geq 0</tex>. Then, <tex>I(t)=I_0P(t)</tex> gives the proportion of <tex>I_0</tex>, the initial infectious population, that is still infectious at time <tex>t</tex>.
 
-Let <tex>D(t), R(t)</tex> the death and recovered population at time <tex>t</tex>.
+Let <tex>D(t)</tex> and <tex>R(t)</tex> be the dead and recovered populations, respectively, at time <tex>t</tex>.
 
-Observe that the number of initial infectious population had left <tex>I</tex> at <tex>t</tex> is <tex>I_0-I(t)=I_0(1-P(t))</tex>. Hence:
+Observe that the remaining _infectious_ population, <tex>I</tex>, at <tex>t</tex> is:
+> <tex>I_0-I(t)=I_0(1-P(t))</tex>
+
+Hence:
 
 <texb>
 \begin{array}{lcl}
@@ -50,7 +61,7 @@ R(t)&=& I_0(1-P(t))(1-p) = I_0(1-e^{-\gamma t})(1-p)
 \end{array}
 </texb>
 
-Taking derivative:
+Finally, taking derivatives:
 
 <texb>
 \begin{array}{lcl}
@@ -105,4 +116,4 @@ With the same reasoning, the same conclusion can be drawn for the transition bet
 
 ## Summary
 
-- In this article, we have shown that splitting the transition rate <tex>\gamma I</tex> leaving <tex>I</tex> into <tex>\gamma p I</tex> entering <tex>D</tex> and <tex>\gamma (1-p) I</tex> entering <tex>R</tex> is equivalent of saying that an individual spends time in <tex>I</tex> on average <tex>\frac{1}{\gamma}</tex> days and then has <tex>p</tex> chance of entering <tex>D</tex> and <tex>1-p</tex> chance of entering <tex>R</tex>.
+- In this article, we have shown that splitting the transition rate, <tex>\gamma I</tex>, with which the infectious population leaves the <tex>I</tex> compartment and transitions into either the <tex>D</tex> compartment (<tex>\gamma p I</tex>) or the <tex>R</tex> compartment (<tex>\gamma (1-p) I</tex>), is equivalent to saying that an individual spends  <tex>\frac{1}{\gamma}</tex> days in <tex>I</tex> on average and then has <tex>p</tex> chance of entering <tex>D</tex> and <tex>1-p</tex> chance of entering <tex>R</tex>.

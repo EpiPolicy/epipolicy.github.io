@@ -1,114 +1,279 @@
-<h1 class="title">
-    <img alt="EpiPolicy" class="title-logo" src="logo512.png"> EpiPolicy
-</h1>
+<style>
+  .youtube-video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 59.8%;
+    margin-bottom: 1.2rem;
+  }
 
-<div class="tutorial-video-container">
-    <video class="tutorial-video" autoplay="autoplay" muted loop>
-        <source src="assets/results.m4v" type="video/mp4">
-    </video>
-</div>
+  .youtube-video-container>iframe {
+    border: 1px solid black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 
-<p>
-    <strong>EpiPolicy</strong> is a population-based epidemic simulator and policy aid that allows users
-    to customize its compartmental model to capture different epidemic scenarios for
-    epidemics like COVID-19. Its user interface makes it easy to define various interventions
-    such as social distancing, school closure, vaccination, and disease-specific interventions.
-    EpiPolicy aids policy makers by simulating and constructing locale-specific intervention
-    schedules that reduce disease burden, and minimize social and economic costs.
+  .abstract {
+    font-size: 120%;
+  }
+</style>
+
+<img src="assets/results.png" class="bordered-img bigger-bottom-margin" />
+
+<p class="abstract bigger-bottom-margin">
+  <strong>EpiPolicy</strong> is a population-based epidemic simulator and policy
+  aid that allows users to customize its compartmental model to capture
+  different epidemic scenarios for epidemics like COVID-19. Its user interface
+  makes it easy to define various interventions such as social distancing,
+  school closure, vaccination, and disease-specific interventions. EpiPolicy
+  aids policy makers by simulating and constructing locale-specific intervention
+  schedules that reduce disease burden, and minimize social and economic costs.
 </p>
 
-<h2>Concepts</h2>
-
-<div class="card-deck">
-    <div class="card link-card">
-        <div class="card-body">
-            <a href="/probability_rate">Splitting probability in compartmental model</a>
-        </div>
-    </div>
+<div class="youtube-video-container bigger-bottom-margin">
+  <iframe src="https://www.youtube.com/embed/jfPRthNUlp0" frameborder="0"
+    allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-<h2>Basic Tutorials</h2>
+<h2>Publications</h2>
 
-<div class="card-deck">
-    <div class="card link-card">
-        <div class="card-body">
-            <a href="/create_your_first_scenario">Create your first scenario</a>
-        </div>
+<div class="publications bigger-bottom-margin">
+  <div class="publication-entry">
+    <a class="publication-link" href="https://dl.acm.org/doi/10.1145/3495257">EpiPolicy: a tool for combating epidemics</a>
+    <div class="publication-authors">
+      Mai Le Xuan Anh, Miro Mannino, Zain Tariq, Azza Abouzied, Dennis Shasha
     </div>
-
-    <div class="card link-card">
-        <div class="card-body">
-            <a href="/intro_to_group">Intro to EpiPolicy's group</a>
-        </div>
+    <div class="publication-conference">XRDS 2021</div>
+    <div class="download">
+      <a href="assets/pdfs/EpiPolicy - A tool for combating epidemics.pdf">PDF</a>
     </div>
-
-    <div class="card link-card">
-        <div class="card-body">
-            <a href="/intro_to_facility">Intro to EpiPolicy's facility</a>
-        </div>
+  </div>
+  <br/>
+  <div class="publication-entry">
+    <a class="publication-link" href="https://doi.org/10.1145/3472749.3474794">Planning Epidemic Interventions with
+      EpiPolicy</a>
+    <div class="publication-authors">
+      Zain Tariq, Miro Mannino, Mai Le Xuan Anh, Whitney Bagge, Azza Abouzied, Dennis Shasha
     </div>
-</div>
-<div class="card-deck">
-    <div class="card link-card">
-        <div class="card-body">
-            <a href="/intro_to_static_mobility">Intro to Epipolicy's static mobility</a>
-        </div>
+    <div class="publication-conference">UIST 2021</div>
+    <div class="download">
+      <a href="assets/pdfs/Planning Epidemic Interventions with EpiPolicy.pdf">PDF</a>
     </div>
-
-    <div class="card link-card">
-        <div class="card-body">
-            <a href="/intro_to_dynamic_mobility">Intro to Epipolicy's dynamic mobility</a>
-        </div>
+  </div>
+  <br/>
+  <div class="publication-entry">
+    <a class="publication-link" href="https://arxiv.org/abs/2301.12802">Planning Multiple Epidemic Interventions with Reinforcement Learning</a>
+    <div class="publication-authors">
+      Anh Mai, Nikunj Gupta, Azza Abouzied, Dennis Shasha
     </div>
-</div>
-
-<h2>Advanced Tutorials</h2>
-
-<div class="card-deck">
-    <div class="card link-card">
-        <div class="card-body">
-            <a href="/vaccination">Vaccination</a>
-        </div>
+    <div class="publication-conference">IJCAI 2023</div>
+    <div class="download">
+      <a href="assets/pdfs/Planning Multiple Epidemic Interventions with Reinforcement Learning.pdf">PDF</a>
+      <a href="https://github.com/huda-lab/RL-Epidemic-Benchmark">GitHub Repository</a>
     </div>
-
-    <div class="card link-card">
-        <div class="card-body">
-            <a href="/hospitalization">Hospitalization</a>
-        </div>
-    </div>
-
-    <div class="card link-card">
-        <div class="card-body">
-            <a href="/mask_border">Mask and border closure</a>
-        </div>
-    </div>
-</div>
-<div class="card-deck">
-    <div class="card link-card">
-        <div class="card-body">
-            <a href="/state-data">State Data</a>
-        </div>
-    </div>
-
-    <div class="card link-card">
-        <div class="card-body">
-            <a href="/regex-syntax">Regex Syntax</a>
-        </div>
-    </div>
+  </div>
 </div>
 
-<h2>Case Studies</h2>
+<h2>Docs & Tutorials</h2>
 
-<div class="card-deck">
-    <div class="card link-card">
-        <div class="card-body">
-            <a href="/alberto-2">Vaccination</a>
+<div class="card-deck bigger-bottom-margin">
+  <div class="card link-card">
+    <a href="/concepts">
+      <div class="card-body">
+        <h2 class="card-title">Concepts</h2>
+        <div class="card-text">
+          The basic concepts of EpiPolicy, such as the Compartmental model, or
+          how to use probabilities to create epidemic models.
         </div>
-    </div>
+        <div class="card-footer">
+          READ MORE <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </a>
+  </div>
 
-    <div class="card link-card">
-        <div class="card-body">
-            <a href="/hospitalization">Effect of Opening Schools during COVID-19</a>
+  <div class="card link-card">
+    <a href="/basic_tutorials">
+      <div class="card-body">
+        <h2 class="card-title">Basic Tutorials</h2>
+        <div class="card-text">
+          Create the first scenarios and model basic aspects of the population,
+          such as mobility and facilities.
         </div>
+        <div class="card-footer">
+          READ MORE <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="card link-card">
+    <a href="/advanced_tutorials">
+      <div class="card-body">
+        <h2 class="card-title">Advanced Tutorials</h2>
+        <div class="card-text">
+          Dive in more advanced topics, such as vaccination, hospitalization,
+          masks use, and border closure.
+        </div>
+        <div class="card-footer">
+          READ MORE <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="card link-card">
+    <a href="/case_studies">
+      <div class="card-body">
+        <h2 class="card-title">Case Studies</h2>
+        <div class="card-text">
+          Explore some use cases we worked on with Epidemiologists.
+        </div>
+        <div class="card-footer">
+          READ MORE <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="card link-card">
+    <a href="/advanced_features">
+      <div class="card-body">
+        <h2 class="card-title">Advanced Features</h2>
+        <div class="card-text">
+          EpiPolicy advanced features such as Tags, References, and how to
+          export and import data and models.
+        </div>
+        <div class="card-footer">
+          READ MORE <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="card link-card">
+    <a href="/faqs">
+      <div class="card-body">
+        <h2 class="card-title">Frequently Asked Questions</h2>
+        <div class="card-text">
+          FAQs and common pitfalls.
+        </div>
+        <div class="card-footer">
+          READ MORE <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<h2>Who We Are</h2>
+
+<style>
+  .members-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .member {
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    color: black;
+    text-align: center;
+  }
+
+  .member:hover {
+    background-color: transparent;
+    border: none;
+  }
+
+  .member-photo {
+    border-radius: 50%;
+    width: 6rem;
+  }
+
+  .member-caption {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .member-name {
+    font-weight: bold;
+  }
+
+  .member-email img {
+    height: 1rem;
+  }
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    .member-name {
+      font-size: 80%;
+    }
+
+  }
+</style>
+
+<div class="members-container">
+  <a class="member" href="https://www.zaintq.com/" target="_blank">
+    <img class="member-photo" src="assets/members/zain.jpg" alt="Zain Tariq" />
+    <div class="member-caption">
+      <div class="member-name">Zain Tariq</div>
+      <div class="member-email">
+        <img src="assets/members/zain-email.svg" />
+      </div>
     </div>
+  </a>
+  <a class="member" href="https://miromannino.com/" target="_blank">
+    <img class="member-photo" src="assets/members/miro.jpg" alt="Miro Mannino" />
+    <div class="member-caption">
+      <div class="member-name">Miro Mannino</div>
+      <div class="member-email">
+        <img src="assets/members/miro-email.svg" />
+      </div>
+    </div>
+  </a>
+  <a class="member" target="_blank">
+    <img class="member-photo" src="assets/members/anh.jpg" alt="Mai Le Xuan Anh" />
+    <div class="member-caption">
+      <div class="member-name">Mai Le Xuan Anh</div>
+      <div class="member-email">
+        <img src="assets/members/anh-email.svg" />
+      </div>
+    </div>
+  </a>
+</div>
+<div class="members-container">
+  <a class="member" href="https://azza.azurewebsites.net/" target="_blank">
+    <img class="member-photo" src="assets/members/azza.jpg" alt="Prof. Azza Abouzied" />
+    <div class="member-caption">
+      <div class="member-name">Prof. Azza Abouzied</div>
+      <div class="member-email">
+        <img src="assets/members/azza-email.svg" />
+      </div>
+    </div>
+  </a>
+  <a class="member" href="https://cs.nyu.edu/~shasha/" target="_blank">
+    <img class="member-photo" src="assets/members/dennis.jpg" alt="Prof. Dennis Shasha" />
+    <div class="member-caption">
+      <div class="member-name">Prof. Dennis Shasha</div>
+      <div class="member-email">
+        <img src="assets/members/dennis-email.svg" />
+      </div>
+    </div>
+  </a>
+</div>
+
+<h2>Acknowledgments</h2>
+
+ <div class="ack">
+  This work was supported by the NYUAD Center for Interacting Urban Networks (CITIES), 
+  funded by Tamkeen under the NYUAD Research Institute Award CG001, 
+  by the Swiss Re Institute under the Quantum Cities™ initiative, 
+  by the NYUAD COVID-19 Facilitator Research Fund, 
+  and by the ASPIRE Abu Dhabi Award for Research Excellence (AARE) 2020 award for PI Abouzied.
 </div>

@@ -1,4 +1,4 @@
-The config file for this tutorial is available [here](/assets/HSIRD.json).
+The config file for this tutorial is available [here](/assets/hospitalization/HSIRD.json).
 
 In this tutorial, we build an SIR model including hospitalization where hospitals have capacity limits. Specifically, the ODE (ordinary differential equation) system that describes our model is:
 
@@ -10,19 +10,19 @@ In this tutorial, we build an SIR model including hospitalization where hospital
 \frac{dD}{dt} &=& r_i d_i I +  r_h d_h H \end{array}
 </texb>
 
-### Model page
+## Model page
 
 - The mortality rate of the hospitalized compartment is 10 times lower than that of infectious compartment. (1% versus 10%).
 - A person who is not admitted to hospital will spend 33 days to recover on average
 - A person who is admitted to hospital (after 8 days on average) will spend 20 days to recover. [Dennis asks whether this is a total or 20 more days]
 
 <figure>
-    <img src="/assets/HSIRD.png" alt="model-parameters" />  
+    <img src="/assets/hospitalization/HSIRD.png" alt="model-parameters" />  
 </figure>
 
-### Intervention page
+## Intervention page
 
-#### Effect of hospital capacity
+### Effect of hospital capacity
 We must adjust the hospitalization rate <tex>i_h</tex> to ensure that the number of people hospitalized is not above the capacity. We observe that the number of transition from <tex>I</tex> to <tex>H</tex> is approximately <tex>i_h I</tex>. The new rate can be computed as <tex>\frac{\text{left-over capacity}}{I} = \frac{\text{current capacity} - H}{I}</tex>
 
 **EpiPolicy** provides <tex>sim.apply(P_1, m)</tex> that applies a multiplicative factor <tex>m</tex> to the default value of the paramater <tex>P_1</tex>. Hence we compute <tex>m</tex> as <tex>\frac{\text{new }i_h}{\text{default }i_h}</tex>
@@ -44,9 +44,9 @@ def effect(cp, locales):
         sim.apply({"parameter":"ih"}, ih/defaultIh)
 ```
 
-### Cost page
+## Cost page
 
-#### Cost of death
+### Cost of death
 
 The cost of death is different from the cost of infections because the death cost is a one-time cost while the cost of infection is recurring as long as a person stays  in the infectious compartment.
 
@@ -60,18 +60,29 @@ def cost(cp):
     sim.add({"intervention":"Death_cost"}, deathInc*cp['cost_per_death'])
 ```
 
-### Schedule page
+## Schedule page
 
 In the schedule page, we create an increase in hospital capacity (from 100000 to 400000) starting in March 2021
 
 <figure>
-    <img src="/assets/HSIRD-schedule.png" alt="model-parameters" width="1200"/>  
+    <img src="/assets/hospitalization/HSIRD-schedule.png" alt="model-parameters" width="1200"/>  
 </figure>
 
-### Compare page
+
+
+## Initialize page
+
+In the initialize page, we create a simulation starting with 100 infectious people.
+
+<figure>
+    <img src="/assets/hospitalization/initialize.png" alt="initialize"/>  
+</figure>
+
+
+## Compare page
 
 Below is the comparison of the increasing hospital scenario and a non-increasing scenario (hospital capacity stays at 100000):
 
 <figure>
-<img src="/assets/HSIRD-compare.png" alt="model-parameters" width="1200"/>  
+<img src="/assets/hospitalization/HSIRD-compare.png" alt="model-parameters" width="1200"/>  
 </figure>
