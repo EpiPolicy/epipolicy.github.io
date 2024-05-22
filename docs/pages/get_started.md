@@ -20,6 +20,6 @@ Use these testing credentials in order to access
 <tr>
     <td>Username</td><td>user</td>
 </tr><tr>
-    <td>Password</td><td>user-psw-42</td>
+    <td>Password</td><td>health24#Realize</td>
 </tr>
 </table>
